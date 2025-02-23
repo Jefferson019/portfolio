@@ -25,16 +25,27 @@ def list_zip_from_ftp(ftp, zip_filename):
     with zipfile.ZipFile(zip_file, "r") as z:
         file_list = z.namelist()  # Lista de arquivos no ZIP
         print("Arquivos no ZIP:", file_list)
-
+        
     return file_list
 
-def process_zip_from_ftp(ftp, list_zip):
+def download_save(list_zip, path_save):
+    for filename in list_zip:
+        if filename.endswith(".csv"):  # Se for um CSV
+            with open(filename) as file:
+                df = pd.read_csv(file, encoding="utf-8")
+                path_save = path_save+"/"+file
+                df.to_csv(path_save)
+    return print(f"Arquivos salvos no PATH: {path_save}")
+
+
+
+def process_zip_from_ftp(list_zip):
     dataframes = {}
         
     # Ler cada arquivo no ZIP e salvar em um dicionário
     for filename in list_zip:
         if filename.endswith(".csv"):  # Se for um CSV
-            with z.open(filename) as file:
+            with open(filename) as file:
                 df = pd.read_csv(file, encoding="utf-8")  # Ajuste o encoding se necessário
                 dataframes[filename] = df
                 print(f"Lido: {filename}, {df.shape}")
