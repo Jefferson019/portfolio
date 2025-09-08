@@ -2,7 +2,6 @@ estudo/
 prj_app/
 prj_ia_catolica/databases/
 google-chrome-stable_current_amd64.deb/
-prj_ia_catolica
 prj_ans/bases/
 prj_ans/operadoras/
-
+prj_automacao/ETL/scraper_transfermarket.py
