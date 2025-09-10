@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  jupyter-delta:
+    build: .
+    image: jupyter-delta
+    ports:
+      - "1000:8888"
+    volumes:
+      - ./notebooks:/home/jovyan/work
+    environment:
+      - PYSPARK_SUBMIT_ARGS=--packages io.delta:delta-core_2.12:2.4.0 pyspark-shell
+    command: start-notebook.sh --NotebookApp.token=''

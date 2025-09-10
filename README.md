@@ -1,3 +1,8 @@
+
+# Portfolio de DataScience
+
+Este é o repositório dos meus projetos pessoais.
+=======
 # 👋 Olá, eu sou Jefferson Marques da Silva  
 
 🎯 **Cientista de Dados Sênior** com +10 anos de experiência em **ciência de dados, auditoria e inteligência aplicada à saúde suplementar**, já tendo gerado **mais de R$ 27 milhões em economias comprovadas** com soluções baseadas em **Machine Learning, IA Generativa e Big Data**.  
@@ -47,3 +52,4 @@
 ## 🌐 Conecte-se comigo  
 - 💼 [LinkedIn](https://www.linkedin.com/in/jefferson-marques-da-silva-431606165)  
 - 📧 **Jeffersonm019@gmail.com**  
+
