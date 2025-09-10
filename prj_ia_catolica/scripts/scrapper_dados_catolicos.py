@@ -2,6 +2,7 @@ import pandas as pd
 from bs4 import BeautifulSoup
 import requests
 import spacy
+import os
 
 from langchain_chroma import Chroma
 from langchain_community.embeddings.spacy_embeddings import SpacyEmbeddings
@@ -37,8 +38,8 @@ def get_all_texts(all_links):
 
     textos_link = []
 
-    for link in all_links:
-        print("...get link:",link)
+    for i, link in enumerate(all_links):
+        print(f"-->>> {str(i)}.get link:",link)
         page = requests.get(link)
         soup = BeautifulSoup(page.text, 'html.parser')
 
@@ -54,23 +55,32 @@ def get_all_texts(all_links):
 
     return textos_link
 
-def get_embeddings(texto):
-    
-    return nlp_sm(texto).vector
+
+def save_scrapper(texts_scrapper):
+    try:
+        df = pd.DataFrame(texts_scrapper)
+        df.to_csv("../files/scrapper_dados_catecismo_lg.csv", index=False)
+        print("Embeddings salvos com sucesso!")
+    except Exception as e:
+        print("Erro ao salvar embeddings:", e)
 
 
 DEBUG = True
 
 if __name__ == '__main__':
-    texts_embeddings = []
+    texts_links = []
     if DEBUG:
         all_links = get_links(url, soup)
-        textos = get_all_texts(all_links)
+        textos = get_all_texts(all_links[11:])
 
-        for text in [texts['textos'] for texts in textos[:-1]]:
-            
-            if not isinstance(text, list):
-                texts_embeddings.append(get_embeddings(text))
+        for texts in textos:
+            for text in texts['textos']:
+                link = texts['link']
+                #print(text)
+                if not isinstance(text, list):
+                    texts_links.append({'link':link, 'text': text})
+
+        save_scrapper(texts_links)
             
         #for t in textos[:10]:
         #    print(t)
