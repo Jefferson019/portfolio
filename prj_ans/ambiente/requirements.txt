@@ -1,5 +1,0 @@
-delta-spark
-pandas
-scikit-learn
-matplotlib
-seaborn
