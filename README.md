@@ -3,13 +3,13 @@
 
 Este é o repositório dos meus projetos pessoais.
 =======
-# 👋 Olá, eu sou Jefferson Marques da Silva  
+# Olá, eu sou Jefferson Marques da Silva  
 
-🎯 **Cientista de Dados Sênior** com +10 anos de experiência em **ciência de dados, auditoria e inteligência aplicada à saúde suplementar**, já tendo gerado **mais de R$ 27 milhões em economias comprovadas** com soluções baseadas em **Machine Learning, IA Generativa e Big Data**.  
+**Cientista de Dados Sênior** com +10 anos de experiência em **ciência de dados, auditoria e inteligência aplicada à saúde suplementar**, já tendo gerado **mais de R$ 27 milhões em economias comprovadas** com soluções baseadas em **Machine Learning, IA Generativa e Big Data**.  
 
 ---
 
-## 🚀 Sobre mim  
+## Sobre mim  
 - Especialista em **detecção de fraudes/anomalias, NLP, visão computacional, forecasting e IA Generativa**.  
 - Experiência prática em **modelagem supervisionada, não supervisionada, deep learning e ensemble methods**.  
 - Forte atuação em **Big Data, pipelines em tempo real e MLOps**, com **Spark Streaming, Kafka, Databricks, MLflow e Azure**.  
@@ -17,7 +17,7 @@ Este é o repositório dos meus projetos pessoais.
 
 ---
 
-## 🔬 Projetos em Destaque  
+## Projetos em Destaque  
 - ✅ **Detecção de anomalias em contas médicas** com métodos estatísticos e ML (IQR, 3 Sigmas, Isolation Forest, centroides).  
 - ✅ **Forecasting de despesas assistenciais** com ARIMA, SARIMA, Prophet e LSTM.  
 - ✅ **Pipeline OCR + NLP + deduplicação de documentos médicos em tempo real** com Spark Streaming + Kafka.  
@@ -28,7 +28,7 @@ Este é o repositório dos meus projetos pessoais.
 
 ---
 
-## 🛠️ Principais Competências  
+## Principais Competências  
 - **Linguagens:** Python, R, SQL, SAS  
 - **Machine Learning & Deep Learning:** Scikit-Learn, TensorFlow, Keras, PyTorch, Prophet  
 - **Big Data & MLOps:** Databricks, Spark, Kafka, Delta Lake, MLflow (Tracking & Model Serving), Azure  
@@ -41,7 +41,9 @@ Este é o repositório dos meus projetos pessoais.
 ## 📚 Formação & Certificações  
 🎓 **MBA em Business Intelligence & Analytics**  
 🎓 **Graduação em Análise e Desenvolvimento de Software – IESB**  
+🎓 **Pós em Engenharia de IA - Data Science Academy** 
 
+📜 **Databricks Certified Machine Learning Professional**  
 📜 **Databricks Certified Machine Learning Associate**  
 📜 **Microsoft Certified: Azure AI Fundamentals**  
 📜 **Formação Cientista de Dados – Data Science Academy**  
