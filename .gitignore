@@ -3,9 +3,10 @@ prj_app/
 prj_ia_catolica/databases/
 prj_ia_catolica/files/
 google-chrome-stable_current_amd64.deb/
-prj_ans/bases/
-prj_ans/operadoras/
-prj_automacao/ETL/scraper_transfermarket.py
-prj_futebol/ETL
-prj_agentes/.env
-prj_agentes/create_key.ipynb
+datascience/prj_ans/bases/
+datascience/prj_ans/operadoras/
+datascience/prj_automacao/ETL/scraper_transfermarket.py
+datascience/prj_futebol/ETL
+datascience/prj_agentes/.env
+datascience/prj_agentes/create_key.ipynb
+datascience/prj_estudos
