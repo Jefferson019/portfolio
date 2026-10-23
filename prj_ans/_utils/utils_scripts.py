@@ -1,4 +1,5 @@
-import io 
+import io
+import os
 from ftplib import FTP
 import zipfile
 import pandas as pd
@@ -28,25 +29,35 @@ def list_zip_from_ftp(ftp, zip_filename):
         
     return file_list
 
-def download_save(list_zip, path_save):
-    for filename in list_zip:
-        if filename.endswith(".csv"):  # Se for um CSV
-            with open(filename) as file:
-                df = pd.read_csv(file, encoding="utf-8")
-                path_save = path_save+"/"+file
-                df.to_csv(path_save)
-    return print(f"Arquivos salvos no PATH: {path_save}")
+def download_save(ftp, zip_filename, path_save, encoding="latin1", sep=";"):
+    # Baixa o ZIP do FTP e salva cada CSV de dentro dele em path_save
+    zip_file = get_readfile(ftp, zip_filename)
+    saved = []
+
+    with zipfile.ZipFile(zip_file, "r") as z:
+        for filename in z.namelist():
+            if filename.lower().endswith(".csv"):  # Se for um CSV
+                with z.open(filename) as file:
+                    df = pd.read_csv(file, encoding=encoding, sep=sep, low_memory=False)
+                dest = os.path.join(path_save, os.path.basename(filename))
+                df.to_csv(dest, index=False)
+                saved.append(dest)
+
+    print(f"Arquivos salvos no PATH: {path_save}")
+    return saved
 
 
 
-def process_zip_from_ftp(list_zip):
+def process_zip_from_ftp(ftp, zip_filename, encoding="latin1", sep=";"):
     dataframes = {}
-        
-    # Ler cada arquivo no ZIP e salvar em um dicionário
-    for filename in list_zip:
-        if filename.endswith(".csv"):  # Se for um CSV
-            with open(filename) as file:
-                df = pd.read_csv(file, encoding="utf-8")  # Ajuste o encoding se necessário
+    zip_file = get_readfile(ftp, zip_filename)
+
+    # Ler cada CSV de dentro do ZIP e salvar em um dicionário
+    with zipfile.ZipFile(zip_file, "r") as z:
+        for filename in z.namelist():
+            if filename.lower().endswith(".csv"):  # Se for um CSV
+                with z.open(filename) as file:
+                    df = pd.read_csv(file, encoding=encoding, sep=sep, low_memory=False)
                 dataframes[filename] = df
                 print(f"Lido: {filename}, {df.shape}")
 

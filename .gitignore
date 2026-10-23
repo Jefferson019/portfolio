@@ -9,3 +9,6 @@ prj_automacao/ETL/scraper_transfermarket.py
 prj_futebol/ETL
 prj_agentes/.env
 prj_agentes/create_key.ipynb
+
+.venv/
+__pycache__/
