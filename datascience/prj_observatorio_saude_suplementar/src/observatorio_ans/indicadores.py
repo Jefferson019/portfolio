@@ -80,12 +80,16 @@ def calcular_razoes(d: pd.DataFrame, variante_sinistralidade: str = "bruta") -> 
     d["sinistralidade_bruta"] = dividir(d["despesa_assistencial"], rc)
     d["sinistralidade_liquida"] = dividir(d["despesa_assistencial"], d["contraprestacoes_liquidas"])
     d["sinistralidade"] = d[f"sinistralidade_{variante_sinistralidade}"]
-    d["indice_despesa_administrativa"] = dividir(d["despesa_administrativa"], rc)
-    d["indice_despesa_comercializacao"] = dividir(d["despesa_comercializacao"], rc)
+    # Todas as razões sobre a receita usam a mesma base da sinistralidade adotada, para que
+    # "de cada R$ 100 de mensalidade" some corretamente (assistencial + administrativa + ...)
+    base = d["contraprestacoes_liquidas"] if variante_sinistralidade == "liquida" else rc
+    d["receita_base"] = base
+    d["indice_despesa_administrativa"] = dividir(d["despesa_administrativa"], base)
+    d["indice_despesa_comercializacao"] = dividir(d["despesa_comercializacao"], base)
     d["indice_combinado"] = dividir(
-        d["despesa_assistencial"] + d["despesa_administrativa"] + d["despesa_comercializacao"], rc
+        d["despesa_assistencial"] + d["despesa_administrativa"] + d["despesa_comercializacao"], base
     )
-    d["margem_operacional"] = dividir(d["resultado_operacional"], rc)
+    d["margem_operacional"] = dividir(d["resultado_operacional"], base)
     d["margem_liquida"] = dividir(d["resultado_liquido"], d["receita_total"])
     d["liquidez_corrente"] = dividir(d["ativo_circulante"], d["passivo_circulante"])
     d["liquidez_geral"] = dividir(
@@ -99,7 +103,7 @@ def calcular_razoes(d: pd.DataFrame, variante_sinistralidade: str = "bruta") -> 
 
     doze = d["janela"].eq("12_meses")
     d["roe"] = np.where(doze, dividir(d["resultado_liquido"], d["patrimonio_liquido"]), np.nan)
-    d["pmcr_dias"] = np.where(doze, dividir(d["creditos_operacoes_planos"], rc) * 360, np.nan)
+    d["pmcr_dias"] = np.where(doze, dividir(d["creditos_operacoes_planos"], base) * 360, np.nan)
 
     if "beneficiarios_medios" in d:
         benef = d["beneficiarios_medios"]

@@ -22,6 +22,7 @@ PERIODOS_OPERADORAS = 5  # trimestres com detalhe por operadora (o mais recente 
 COLUNAS_MERCADO = [
     "n_operadoras",
     "receita_contraprestacoes",
+    "contraprestacoes_liquidas",
     "despesa_assistencial",
     "despesa_administrativa",
     "despesa_comercializacao",
@@ -55,6 +56,7 @@ COLUNAS_MERCADO = [
 ]
 COLUNAS_OPERADORA = [
     "receita_contraprestacoes",
+    "receita_base",
     "despesa_assistencial",
     "resultado_operacional",
     "resultado_liquido",
@@ -90,6 +92,8 @@ INTEIRAS = {
     "beneficiarios",
     "receita_por_beneficiario_mes",
     "n_operadoras",
+    "contraprestacoes_liquidas",
+    "receita_base",
 }
 TEXTO = {"periodo", "janela", "recorte", "valor"}
 

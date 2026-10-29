@@ -278,10 +278,11 @@ const CONTRATACAO = { coletivo_empresarial: "Coletivo empresarial", coletivo_ade
   individual: "Individual ou familiar", outros: "Outros / não identificado" };
 const INDICADOR = { sinistralidade: "Sinistralidade", resultado_liquido: "Resultado líquido",
   resultado_operacional: "Resultado operacional", resultado_financeiro: "Resultado financeiro",
-  receita_total: "Receita total", aplicacoes_financeiras: "Aplicações financeiras",
+  receita_total: "Receita total", aplicacoes_financeiras: "Aplicações financeiras", contraprestacoes_liquidas: "Contraprestações líquidas",
   pct_resultado_liquido_positivo: "Operadoras com lucro", roe: "ROE", receita_contraprestacoes: "Receita de contraprestações",
   despesa_assistencial: "Despesa assistencial", despesa_administrativa: "Despesa administrativa",
   despesa_comercializacao: "Despesa de comercialização" };
+const BASE = META.variante_sinistralidade === "liquida" ? "contraprestacoes_liquidas" : "receita_contraprestacoes";
 const MESES = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
 
 // ------------------------------------------------------------------ formatação (pt-BR)
@@ -638,7 +639,7 @@ function tabelaSimples(alvo, cabecalho, linhas, numericas = []) {
 const estado = {
   periodo: PER_OPS[PER_OPS.length - 1] || PER[PER.length - 1], janela: "acumulado_ano", segmento: "medico_hospitalar",
   destaque: null, busca: "", modalidade: "", porte: "", uf: "", amostra: true,
-  ordem: { col: "receita_contraprestacoes", dir: -1 }, limite: 25, operadora: null, tabelas: {},
+  ordem: { col: "receita_base", dir: -1 }, limite: 25, operadora: null, tabelas: {},
 };
 const COR = { s1: "var(--s1)", s2: "var(--s2)", s3: "var(--s3)", ctx: "var(--contexto)" };
 
@@ -712,7 +713,7 @@ function renderizarDestaque() {
   }
   heroi.append(el("p", { class: "frase", texto: `${num(a.n_operadoras, 0)} operadoras com dados no período. Mediana entre operadoras: ${pct(a.sinistralidade_mediana)} (metade entre ${pct(a.sinistralidade_p25)} e ${pct(a.sinistralidade_p75)}).` }));
   kpis.append(
-    kpi("Receita de contraprestações", reais(a.receita_contraprestacoes), delta(a.receita_contraprestacoes, b && b.receita_contraprestacoes, "rel", 0, antCurto)),
+    kpi("Receita de contraprestações", reais(a[BASE]), delta(a[BASE], b && b[BASE], "rel", 0, antCurto), BASE === "contraprestacoes_liquidas" ? "Líquida de tributos diretos" : null),
     kpi("Despesa assistencial", reais(a.despesa_assistencial), delta(a.despesa_assistencial, b && b.despesa_assistencial, "rel", 0, antCurto)),
     kpi("Resultado operacional", reais(a.resultado_operacional), delta(a.margem_operacional, b && b.margem_operacional, "pp", 1, antCurto, "margem "), `Margem operacional ${pct(a.margem_operacional)}`),
     kpi("Resultado financeiro", reais(a.resultado_financeiro), delta(a.resultado_financeiro, b && b.resultado_financeiro, "rel", 0, antCurto), "Rendimento das aplicações, líquido"),
@@ -896,7 +897,7 @@ const COLUNAS_OPS = [
   ["nome", "Operadora", (o) => o.cad.nome, null],
   ["modalidade", "Modalidade", (o) => CURTO[o.cad.modalidade] || o.cad.modalidade, null],
   ["beneficiarios", "Beneficiários", (o) => o.beneficiarios, pessoas],
-  ["receita_contraprestacoes", "Receita", (o) => o.receita_contraprestacoes, (v) => reais(v)],
+  ["receita_base", "Receita", (o) => o.receita_base ?? o.receita_contraprestacoes, (v) => reais(v)],
   ["sinistralidade", "Sinistralidade", (o) => o.sinistralidade, (v) => pct(v)],
   ["indice_despesa_administrativa", "Desp. adm.", (o) => o.indice_despesa_administrativa, (v) => pct(v)],
   ["indice_despesa_comercializacao", "Desp. com.", (o) => o.indice_despesa_comercializacao, (v) => pct(v)],
@@ -968,7 +969,7 @@ function renderizarDetalhe() {
   if (o) {
     k.append(
       kpi("Sinistralidade", pct(o.sinistralidade), null, `${CURTO[c.modalidade] || c.modalidade}: ${pct(modRef && modRef.sinistralidade)}`),
-      kpi("Receita de contraprestações", reais(o.receita_contraprestacoes), null, rotJanela(estado.periodo, estado.janela)),
+      kpi("Receita de contraprestações", reais(o.receita_base ?? o.receita_contraprestacoes), null, rotJanela(estado.periodo, estado.janela)),
       kpi("Margem líquida", pct(o.margem_liquida), null, `Resultado líquido ${reais(o.resultado_liquido)}`),
       kpi("Beneficiários", pessoas(o.beneficiarios), null, ok(o.receita_por_beneficiario_mes) ? `Mensalidade média R$ ${fmt(o.receita_por_beneficiario_mes, 0)}` : "fim do trimestre"),
     );
