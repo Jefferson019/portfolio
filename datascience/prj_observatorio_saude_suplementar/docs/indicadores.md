@@ -58,20 +58,21 @@ Valores monetários em reais (R$). Razões como fração (0,82 = 82%).
 
 | Coluna | Fórmula | Leitura |
 |---|---|---|
-| `sinistralidade` | despesa assistencial ÷ contraprestações (variante adotada) | De cada R$ 1 de mensalidade, quanto foi para assistência |
+| `receita_base` | contraprestações na mesma definição da sinistralidade adotada (brutas ou líquidas de tributos) | Denominador de todas as razões sobre a receita |
+| `sinistralidade` | despesa assistencial ÷ `receita_base` (variante adotada) | De cada R$ 1 de mensalidade, quanto foi para assistência |
 | `sinistralidade_bruta` | despesa assistencial ÷ contraprestações efetivas (31) | |
 | `sinistralidade_liquida` | despesa assistencial ÷ contraprestações líquidas de tributos (31 + 32) | |
-| `indice_despesa_administrativa` | despesa administrativa ÷ contraprestações | |
-| `indice_despesa_comercializacao` | despesa de comercialização ÷ contraprestações | |
-| `indice_combinado` | (assistencial + administrativa + comercialização) ÷ contraprestações | Acima de 100%: a mensalidade não cobre essas três despesas |
-| `margem_operacional` | resultado operacional ÷ contraprestações | |
+| `indice_despesa_administrativa` | despesa administrativa ÷ `receita_base` | |
+| `indice_despesa_comercializacao` | despesa de comercialização ÷ `receita_base` | |
+| `indice_combinado` | (assistencial + administrativa + comercialização) ÷ `receita_base` | Acima de 100%: a mensalidade não cobre essas três despesas |
+| `margem_operacional` | resultado operacional ÷ `receita_base` | |
 | `margem_liquida` | resultado líquido ÷ receita total | Como a ANS divulga ("a cada R$ 100 de receitas…") |
 | `liquidez_corrente` | ativo circulante ÷ passivo circulante | |
 | `liquidez_geral` | (ativo circulante + realizável a longo prazo) ÷ (passivo circulante + não circulante) | |
 | `endividamento` | (passivo circulante + não circulante) ÷ patrimônio líquido | Só com PL positivo |
 | `cobertura_provisoes` | aplicações financeiras ÷ provisões técnicas | Aproximação; não é o cálculo regulatório de ativos garantidores |
 | `roe` | resultado líquido em 12 meses ÷ patrimônio líquido | Só na janela de 12 meses |
-| `pmcr_dias` | créditos de operações com planos ÷ contraprestações em 12 meses × 360 | Prazo médio de recebimento |
+| `pmcr_dias` | créditos de operações com planos ÷ `receita_base` em 12 meses × 360 | Prazo médio de recebimento |
 | `receita_por_beneficiario_mes` | contraprestações em 12 meses ÷ beneficiários médios ÷ 12 | Mensalidade média |
 | `despesa_assistencial_por_beneficiario_mes` | despesa assistencial em 12 meses ÷ beneficiários médios ÷ 12 | Custo assistencial per capita |
 

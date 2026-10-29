@@ -148,3 +148,37 @@ def test_listagem_de_indice_no_estilo_do_portal(monkeypatch):
         entradas[0].url
         == "https://dadosabertos.ans.gov.br/FTP/PDA/demonstracoes_contabeis/2025/1T2025.zip"
     )
+
+
+def test_razoes_usam_a_base_da_variante_escolhida():
+    from observatorio_ans.indicadores import calcular_razoes
+
+    d = pd.DataFrame(
+        {
+            "janela": ["12_meses"],
+            "receita_contraprestacoes": [1000.0],
+            "contraprestacoes_liquidas": [980.0],
+            "despesa_assistencial": [800.0],
+            "despesa_administrativa": [100.0],
+            "despesa_comercializacao": [20.0],
+            "resultado_operacional": [50.0],
+            "resultado_liquido": [40.0],
+            "receita_total": [1100.0],
+            "ativo_circulante": [500.0],
+            "passivo_circulante": [250.0],
+            "realizavel_longo_prazo": [0.0],
+            "passivo_nao_circulante": [0.0],
+            "patrimonio_liquido": [400.0],
+            "aplicacoes_financeiras": [300.0],
+            "provisoes_tecnicas": [200.0],
+            "creditos_operacoes_planos": [49.0],
+        }
+    )
+    bruta = calcular_razoes(d, "bruta").iloc[0]
+    liquida = calcular_razoes(d, "liquida").iloc[0]
+    assert bruta["sinistralidade"] == pytest.approx(0.8) and bruta[
+        "indice_combinado"
+    ] == pytest.approx(0.92)
+    assert liquida["sinistralidade"] == pytest.approx(800 / 980)
+    assert liquida["indice_combinado"] == pytest.approx(920 / 980)  # mesma base em todas as razões
+    assert liquida["receita_base"] == pytest.approx(980)

@@ -101,7 +101,12 @@ As fórmulas estão em [indicadores.md](indicadores.md). Dois pontos importantes
   contraprestações efetivas (grupo 31) ou contraprestações líquidas de tributos diretos (31 + 32). O pipeline
   calcula as duas e, no modo `auto`, adota a que tiver **menor erro médio contra as sinistralidades oficiais**
   divulgadas pela ANS. A escolha e os erros ficam no relatório de qualidade e no painel. Para fixar uma definição,
-  ajuste `sinistralidade` em `projeto.toml`.
+  ajuste `sinistralidade` em `projeto.toml`. Na primeira execução com dados reais, a variante líquida de tributos
+  ficou com erro médio de 0,2 p.p. contra 15 sinistralidades oficiais (a bruta, 1,2 p.p.), e a receita de
+  contraprestações por modalidade da Sala de Situação da ANS também bate com a receita líquida de tributos.
+- **Mesma base em todas as razões sobre a receita.** Despesa administrativa, comercialização, índice combinado, margem
+  operacional e prazo médio de recebimento usam o mesmo denominador da sinistralidade adotada (coluna
+  `receita_base`), para que "de cada R$ 100 de mensalidade" some corretamente.
 - **Razões de mercado** são calculadas sobre somas (soma das despesas ÷ soma das receitas), como a ANS faz — e não
   como média simples entre operadoras. A distribuição entre operadoras (mediana e quartis) é mostrada à parte, só
   com operadoras com receita de pelo menos R$ 1 milhão na janela e sinistralidade entre 20% e 200%.
