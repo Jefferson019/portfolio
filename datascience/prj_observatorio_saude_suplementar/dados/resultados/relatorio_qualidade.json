@@ -1,0 +1,5206 @@
+{
+ "fonte": "https://dadosabertos.ans.gov.br/FTP/PDA/",
+ "gerado_em": "2026-10-29 23:14:07",
+ "leitura": {
+  "2018T1": {
+   "arquivo": "1T2018.zip",
+   "periodo": "2018T1",
+   "avisos": [
+    "arquivo sem VL_SALDO_INICIAL"
+   ],
+   "encoding": "latin-1",
+   "separador": ";",
+   "colunas": [
+    "DATA",
+    "REG_ANS",
+    "CD_CONTA_CONTABIL",
+    "DESCRICAO",
+    "VL_SALDO_FINAL"
+   ],
+   "codigos_largura_fixa": false,
+   "data_exemplo": "01/01/2018",
+   "formato_data": "DD/MM/AAAA",
+   "linhas_lidas": 572106,
+   "linhas_mantidas": 57696,
+   "duplicatas_removidas": 0,
+   "operadoras": 901
+  },
+  "2018T2": {
+   "arquivo": "2T2018.zip",
+   "periodo": "2018T2",
+   "avisos": [
+    "arquivo sem VL_SALDO_INICIAL"
+   ],
+   "encoding": "latin-1",
+   "separador": ";",
+   "colunas": [
+    "DATA",
+    "REG_ANS",
+    "CD_CONTA_CONTABIL",
+    "DESCRICAO",
+    "VL_SALDO_FINAL"
+   ],
+   "codigos_largura_fixa": false,
+   "data_exemplo": "01/04/2018",
+   "formato_data": "DD/MM/AAAA",
+   "linhas_lidas": 737465,
+   "linhas_mantidas": 58618,
+   "duplicatas_removidas": 0,
+   "operadoras": 906
+  },
+  "2018T3": {
+   "arquivo": "3T2018.zip",
+   "periodo": "2018T3",
+   "avisos": [
+    "arquivo sem VL_SALDO_INICIAL"
+   ],
+   "encoding": "latin-1",
+   "separador": ";",
+   "colunas": [
+    "DATA",
+    "REG_ANS",
+    "CD_CONTA_CONTABIL",
+    "DESCRICAO",
+    "VL_SALDO_FINAL"
+   ],
+   "codigos_largura_fixa": false,
+   "data_exemplo": "01/07/2018",
+   "formato_data": "DD/MM/AAAA",
+   "linhas_lidas": 578214,
+   "linhas_mantidas": 58600,
+   "duplicatas_removidas": 0,
+   "operadoras": 905
+  },
+  "2018T4": {
+   "arquivo": "4T2018.zip",
+   "periodo": "2018T4",
+   "avisos": [
+    "arquivo sem VL_SALDO_INICIAL"
+   ],
+   "encoding": "latin-1",
+   "separador": ";",
+   "colunas": [
+    "DATA",
+    "REG_ANS",
+    "CD_CONTA_CONTABIL",
+    "DESCRICAO",
+    "VL_SALDO_FINAL"
+   ],
+   "codigos_largura_fixa": false,
+   "data_exemplo": "01/10/2018",
+   "formato_data": "DD/MM/AAAA",
+   "linhas_lidas": 730990,
+   "linhas_mantidas": 71284,
+   "duplicatas_removidas": 0,
+   "operadoras": 1112
+  },
+  "2019T1": {
+   "arquivo": "1T2019.zip",
+   "periodo": "2019T1",
+   "avisos": [
+    "arquivo sem VL_SALDO_INICIAL"
+   ],
+   "encoding": "latin-1",
+   "separador": ";",
+   "colunas": [
+    "DATA",
+    "REG_ANS",
+    "CD_CONTA_CONTABIL",
+    "DESCRICAO",
+    "VL_SALDO_FINAL"
+   ],
+   "codigos_largura_fixa": false,
+   "data_exemplo": "01/01/2019",
+   "formato_data": "DD/MM/AAAA",
+   "linhas_lidas": 635332,
+   "linhas_mantidas": 57326,
+   "duplicatas_removidas": 0,
+   "operadoras": 897
+  },
+  "2019T2": {
+   "arquivo": "2T2019.zip",
+   "periodo": "2019T2",
+   "avisos": [
+    "arquivo sem VL_SALDO_INICIAL"
+   ],
+   "encoding": "latin-1",
+   "separador": ";",
+   "colunas": [
+    "DATA",
+    "REG_ANS",
+    "CD_CONTA_CONTABIL",
+    "DESCRICAO",
+    "VL_SALDO_FINAL"
+   ],
+   "codigos_largura_fixa": false,
+   "data_exemplo": "01/04/2019",
+   "formato_data": "DD/MM/AAAA",
+   "linhas_lidas": 683291,
+   "linhas_mantidas": 58826,
+   "duplicatas_removidas": 0,
+   "operadoras": 905
+  },
+  "2019T3": {
+   "arquivo": "3T2019.zip",
+   "periodo": "2019T3",
+   "avisos": [
+    "arquivo sem VL_SALDO_INICIAL"
+   ],
+   "encoding": "latin-1",
+   "separador": ";",
+   "colunas": [
+    "DATA",
+    "REG_ANS",
+    "CD_CONTA_CONTABIL",
+    "DESCRICAO",
+    "VL_SALDO_FINAL"
+   ],
+   "codigos_largura_fixa": false,
+   "data_exemplo": "01/07/2019",
+   "formato_data": "DD/MM/AAAA",
+   "linhas_lidas": 684066,
+   "linhas_mantidas": 58844,
+   "duplicatas_removidas": 0,
+   "operadoras": 904
+  },
+  "2019T4": {
+   "arquivo": "4T2019.zip",
+   "periodo": "2019T4",
+   "avisos": [
+    "arquivo sem VL_SALDO_INICIAL"
+   ],
+   "encoding": "latin-1",
+   "separador": ";",
+   "colunas": [
+    "DATA",
+    "REG_ANS",
+    "CD_CONTA_CONTABIL",
+    "DESCRICAO",
+    "VL_SALDO_FINAL"
+   ],
+   "codigos_largura_fixa": false,
+   "data_exemplo": "01/10/2019",
+   "formato_data": "DD/MM/AAAA",
+   "linhas_lidas": 860529,
+   "linhas_mantidas": 71367,
+   "duplicatas_removidas": 0,
+   "operadoras": 1094
+  },
+  "2020T1": {
+   "arquivo": "1T2020.zip",
+   "periodo": "2020T1",
+   "avisos": [
+    "arquivo sem VL_SALDO_INICIAL"
+   ],
+   "encoding": "latin-1",
+   "separador": ";",
+   "colunas": [
+    "DATA",
+    "REG_ANS",
+    "CD_CONTA_CONTABIL",
+    "DESCRICAO",
+    "VL_SALDO_FINAL"
+   ],
+   "codigos_largura_fixa": false,
+   "data_exemplo": "01/01/2020",
+   "formato_data": "DD/MM/AAAA",
+   "linhas_lidas": 679640,
+   "linhas_mantidas": 57958,
+   "duplicatas_removidas": 0,
+   "operadoras": 899
+  },
+  "2020T2": {
+   "arquivo": "2T2020.zip",
+   "periodo": "2020T2",
+   "avisos": [
+    "arquivo sem VL_SALDO_INICIAL"
+   ],
+   "encoding": "latin-1",
+   "separador": ";",
+   "colunas": [
+    "DATA",
+    "REG_ANS",
+    "CD_CONTA_CONTABIL",
+    "DESCRICAO",
+    "VL_SALDO_FINAL"
+   ],
+   "codigos_largura_fixa": false,
+   "data_exemplo": "01/04/2020",
+   "formato_data": "DD/MM/AAAA",
+   "linhas_lidas": 672239,
+   "linhas_mantidas": 58137,
+   "duplicatas_removidas": 0,
+   "operadoras": 899
+  },
+  "2020T3": {
+   "arquivo": "3T2020.zip",
+   "periodo": "2020T3",
+   "avisos": [
+    "arquivo sem VL_SALDO_INICIAL"
+   ],
+   "encoding": "latin-1",
+   "separador": ";",
+   "colunas": [
+    "DATA",
+    "REG_ANS",
+    "CD_CONTA_CONTABIL",
+    "DESCRICAO",
+    "VL_SALDO_FINAL"
+   ],
+   "codigos_largura_fixa": false,
+   "data_exemplo": "01/07/2020",
+   "formato_data": "DD/MM/AAAA",
+   "linhas_lidas": 686756,
+   "linhas_mantidas": 58229,
+   "duplicatas_removidas": 0,
+   "operadoras": 893
+  },
+  "2020T4": {
+   "arquivo": "4T2020.zip",
+   "periodo": "2020T4",
+   "avisos": [
+    "arquivo sem VL_SALDO_INICIAL"
+   ],
+   "encoding": "latin-1",
+   "separador": ";",
+   "colunas": [
+    "DATA",
+    "REG_ANS",
+    "CD_CONTA_CONTABIL",
+    "DESCRICAO",
+    "VL_SALDO_FINAL"
+   ],
+   "codigos_largura_fixa": false,
+   "data_exemplo": "01/10/2020",
+   "formato_data": "DD/MM/AAAA",
+   "linhas_lidas": 865171,
+   "linhas_mantidas": 70781,
+   "duplicatas_removidas": 0,
+   "operadoras": 1073
+  },
+  "2021T1": {
+   "arquivo": "1T2021.zip",
+   "periodo": "2021T1",
+   "avisos": [
+    "arquivo sem VL_SALDO_INICIAL"
+   ],
+   "encoding": "latin-1",
+   "separador": ";",
+   "colunas": [
+    "DATA",
+    "REG_ANS",
+    "CD_CONTA_CONTABIL",
+    "DESCRICAO",
+    "VL_SALDO_FINAL"
+   ],
+   "codigos_largura_fixa": false,
+   "data_exemplo": "01/01/2021",
+   "formato_data": "DD/MM/AAAA",
+   "linhas_lidas": 688887,
+   "linhas_mantidas": 57721,
+   "duplicatas_removidas": 0,
+   "operadoras": 892
+  },
+  "2021T2": {
+   "arquivo": "2T2021.zip",
+   "periodo": "2021T2",
+   "avisos": [
+    "arquivo sem VL_SALDO_INICIAL"
+   ],
+   "encoding": "latin-1",
+   "separador": ";",
+   "colunas": [
+    "DATA",
+    "REG_ANS",
+    "CD_CONTA_CONTABIL",
+    "DESCRICAO",
+    "VL_SALDO_FINAL"
+   ],
+   "codigos_largura_fixa": false,
+   "data_exemplo": "01/04/2021",
+   "formato_data": "DD/MM/AAAA",
+   "linhas_lidas": 723536,
+   "linhas_mantidas": 59361,
+   "duplicatas_removidas": 0,
+   "operadoras": 904
+  },
+  "2021T3": {
+   "arquivo": "3T2021.zip",
+   "periodo": "2021T3",
+   "avisos": [
+    "arquivo sem VL_SALDO_INICIAL"
+   ],
+   "encoding": "latin-1",
+   "separador": ";",
+   "colunas": [
+    "DATA",
+    "REG_ANS",
+    "CD_CONTA_CONTABIL",
+    "DESCRICAO",
+    "VL_SALDO_FINAL"
+   ],
+   "codigos_largura_fixa": false,
+   "data_exemplo": "01/07/2021",
+   "formato_data": "DD/MM/AAAA",
+   "linhas_lidas": 742529,
+   "linhas_mantidas": 59869,
+   "duplicatas_removidas": 0,
+   "operadoras": 903
+  },
+  "2021T4": {
+   "arquivo": "4T2021.zip",
+   "periodo": "2021T4",
+   "avisos": [],
+   "encoding": "utf-8-sig",
+   "separador": ";",
+   "colunas": [
+    "DATA",
+    "REG_ANS",
+    "CD_CONTA_CONTABIL",
+    "DESCRICAO",
+    "VL_SALDO_INICIAL",
+    "VL_SALDO_FINAL"
+   ],
+   "codigos_largura_fixa": false,
+   "data_exemplo": "2021-10-01",
+   "formato_data": "AAAA-MM-DD",
+   "linhas_lidas": 907099,
+   "linhas_mantidas": 71511,
+   "duplicatas_removidas": 0,
+   "operadoras": 1082
+  },
+  "2022T1": {
+   "arquivo": "1T2022.zip",
+   "periodo": "2022T1",
+   "avisos": [],
+   "encoding": "utf-8-sig",
+   "separador": ";",
+   "colunas": [
+    "DATA",
+    "REG_ANS",
+    "CD_CONTA_CONTABIL",
+    "DESCRICAO",
+    "VL_SALDO_INICIAL",
+    "VL_SALDO_FINAL"
+   ],
+   "codigos_largura_fixa": false,
+   "data_exemplo": "2022/01/01",
+   "formato_data": "DD/MM/AAAA",
+   "linhas_lidas": 728981,
+   "linhas_mantidas": 58712,
+   "duplicatas_removidas": 0,
+   "operadoras": 905
+  },
+  "2022T2": {
+   "arquivo": "2T2022.zip",
+   "periodo": "2022T2",
+   "avisos": [],
+   "encoding": "latin-1",
+   "separador": ";",
+   "colunas": [
+    "DATA",
+    "REG_ANS",
+    "CD_CONTA_CONTABIL",
+    "DESCRICAO",
+    "VL_SALDO_INICIAL",
+    "VL_SALDO_FINAL"
+   ],
+   "codigos_largura_fixa": false,
+   "data_exemplo": "01/04/2022",
+   "formato_data": "DD/MM/AAAA",
+   "linhas_lidas": 755972,
+   "linhas_mantidas": 59688,
+   "duplicatas_removidas": 0,
+   "operadoras": 905
+  },
+  "2022T3": {
+   "arquivo": "3T2022.zip",
+   "periodo": "2022T3",
+   "avisos": [],
+   "encoding": "utf-8-sig",
+   "separador": ";",
+   "colunas": [
+    "DATA",
+    "REG_ANS",
+    "CD_CONTA_CONTABIL",
+    "DESCRICAO",
+    "VL_SALDO_INICIAL",
+    "VL_SALDO_FINAL"
+   ],
+   "codigos_largura_fixa": false,
+   "data_exemplo": "2022-07-01",
+   "formato_data": "AAAA-MM-DD",
+   "linhas_lidas": 756917,
+   "linhas_mantidas": 59809,
+   "duplicatas_removidas": 0,
+   "operadoras": 896
+  },
+  "2022T4": {
+   "arquivo": "4T2022.zip",
+   "periodo": "2022T4",
+   "avisos": [],
+   "encoding": "utf-8-sig",
+   "separador": ";",
+   "colunas": [
+    "DATA",
+    "REG_ANS",
+    "CD_CONTA_CONTABIL",
+    "DESCRICAO",
+    "VL_SALDO_INICIAL",
+    "VL_SALDO_FINAL"
+   ],
+   "codigos_largura_fixa": false,
+   "data_exemplo": "2022-10-01",
+   "formato_data": "AAAA-MM-DD",
+   "linhas_lidas": 934857,
+   "linhas_mantidas": 71792,
+   "duplicatas_removidas": 0,
+   "operadoras": 1077
+  },
+  "2023T1": {
+   "arquivo": "1T2023.zip",
+   "periodo": "2023T1",
+   "avisos": [],
+   "encoding": "utf-8-sig",
+   "separador": ";",
+   "colunas": [
+    "DATA",
+    "REG_ANS",
+    "CD_CONTA_CONTABIL",
+    "DESCRICAO",
+    "VL_SALDO_INICIAL",
+    "VL_SALDO_FINAL"
+   ],
+   "codigos_largura_fixa": false,
+   "data_exemplo": "2023-01-01",
+   "formato_data": "AAAA-MM-DD",
+   "linhas_lidas": 729476,
+   "linhas_mantidas": 58761,
+   "duplicatas_removidas": 0,
+   "operadoras": 890
+  },
+  "2023T2": {
+   "arquivo": "2T2023.zip",
+   "periodo": "2023T2",
+   "avisos": [],
+   "encoding": "utf-8-sig",
+   "separador": ";",
+   "colunas": [
+    "DATA",
+    "REG_ANS",
+    "CD_CONTA_CONTABIL",
+    "DESCRICAO",
+    "VL_SALDO_INICIAL",
+    "VL_SALDO_FINAL"
+   ],
+   "codigos_largura_fixa": false,
+   "data_exemplo": "2023-04-01",
+   "formato_data": "AAAA-MM-DD",
+   "linhas_lidas": 742059,
+   "linhas_mantidas": 59061,
+   "duplicatas_removidas": 0,
+   "operadoras": 881
+  },
+  "2023T3": {
+   "arquivo": "3T2023.zip",
+   "periodo": "2023T3",
+   "avisos": [],
+   "encoding": "utf-8-sig",
+   "separador": ";",
+   "colunas": [
+    "DATA",
+    "REG_ANS",
+    "CD_CONTA_CONTABIL",
+    "DESCRICAO",
+    "VL_SALDO_INICIAL",
+    "VL_SALDO_FINAL"
+   ],
+   "codigos_largura_fixa": false,
+   "data_exemplo": "2023-07-01",
+   "formato_data": "AAAA-MM-DD",
+   "linhas_lidas": 764300,
+   "linhas_mantidas": 59656,
+   "duplicatas_removidas": 0,
+   "operadoras": 882
+  },
+  "2023T4": {
+   "arquivo": "4T2023.zip",
+   "periodo": "2023T4",
+   "avisos": [],
+   "encoding": "utf-8-sig",
+   "separador": ";",
+   "colunas": [
+    "DATA",
+    "REG_ANS",
+    "CD_CONTA_CONTABIL",
+    "DESCRICAO",
+    "VL_SALDO_INICIAL",
+    "VL_SALDO_FINAL"
+   ],
+   "codigos_largura_fixa": false,
+   "data_exemplo": "01/10/2023",
+   "formato_data": "DD/MM/AAAA",
+   "linhas_lidas": 959034,
+   "linhas_mantidas": 71439,
+   "duplicatas_removidas": 0,
+   "operadoras": 1053
+  },
+  "2024T1": {
+   "arquivo": "1T2024.zip",
+   "periodo": "2024T1",
+   "avisos": [],
+   "encoding": "utf-8-sig",
+   "separador": ";",
+   "colunas": [
+    "DATA",
+    "REG_ANS",
+    "CD_CONTA_CONTABIL",
+    "DESCRICAO",
+    "VL_SALDO_INICIAL",
+    "VL_SALDO_FINAL"
+   ],
+   "codigos_largura_fixa": false,
+   "data_exemplo": "2024-01-01",
+   "formato_data": "AAAA-MM-DD",
+   "linhas_lidas": 689695,
+   "linhas_mantidas": 54687,
+   "duplicatas_removidas": 0,
+   "operadoras": 795
+  },
+  "2024T2": {
+   "arquivo": "2T2024.zip",
+   "periodo": "2024T2",
+   "avisos": [],
+   "encoding": "utf-8-sig",
+   "separador": ";",
+   "colunas": [
+    "DATA",
+    "REG_ANS",
+    "CD_CONTA_CONTABIL",
+    "DESCRICAO",
+    "VL_SALDO_INICIAL",
+    "VL_SALDO_FINAL"
+   ],
+   "codigos_largura_fixa": false,
+   "data_exemplo": "2024-04-01",
+   "formato_data": "AAAA-MM-DD",
+   "linhas_lidas": 708106,
+   "linhas_mantidas": 55128,
+   "duplicatas_removidas": 0,
+   "operadoras": 787
+  },
+  "2024T3": {
+   "arquivo": "3T2024.zip",
+   "periodo": "2024T3",
+   "avisos": [],
+   "encoding": "utf-8-sig",
+   "separador": ";",
+   "colunas": [
+    "DATA",
+    "REG_ANS",
+    "CD_CONTA_CONTABIL",
+    "DESCRICAO",
+    "VL_SALDO_INICIAL",
+    "VL_SALDO_FINAL"
+   ],
+   "codigos_largura_fixa": false,
+   "data_exemplo": "2024-07-01",
+   "formato_data": "AAAA-MM-DD",
+   "linhas_lidas": 721821,
+   "linhas_mantidas": 55924,
+   "duplicatas_removidas": 0,
+   "operadoras": 797
+  },
+  "2024T4": {
+   "arquivo": "4T2024.zip",
+   "periodo": "2024T4",
+   "avisos": [],
+   "encoding": "utf-8-sig",
+   "separador": ";",
+   "colunas": [
+    "DATA",
+    "REG_ANS",
+    "CD_CONTA_CONTABIL",
+    "DESCRICAO",
+    "VL_SALDO_INICIAL",
+    "VL_SALDO_FINAL"
+   ],
+   "codigos_largura_fixa": false,
+   "data_exemplo": "2024-10-01",
+   "formato_data": "AAAA-MM-DD",
+   "linhas_lidas": 942370,
+   "linhas_mantidas": 69586,
+   "duplicatas_removidas": 0,
+   "operadoras": 1021
+  },
+  "2025T1": {
+   "arquivo": "1T2025.zip",
+   "periodo": "2025T1",
+   "avisos": [],
+   "encoding": "utf-8-sig",
+   "separador": ";",
+   "colunas": [
+    "DATA",
+    "REG_ANS",
+    "CD_CONTA_CONTABIL",
+    "DESCRICAO",
+    "VL_SALDO_INICIAL",
+    "VL_SALDO_FINAL"
+   ],
+   "codigos_largura_fixa": false,
+   "data_exemplo": "2025-01-01",
+   "formato_data": "AAAA-MM-DD",
+   "linhas_lidas": 705390,
+   "linhas_mantidas": 54291,
+   "duplicatas_removidas": 0,
+   "operadoras": 779
+  },
+  "2025T2": {
+   "arquivo": "2T2025.zip",
+   "periodo": "2025T2",
+   "avisos": [],
+   "encoding": "utf-8-sig",
+   "separador": ";",
+   "colunas": [
+    "DATA",
+    "REG_ANS",
+    "CD_CONTA_CONTABIL",
+    "DESCRICAO",
+    "VL_SALDO_INICIAL",
+    "VL_SALDO_FINAL"
+   ],
+   "codigos_largura_fixa": false,
+   "data_exemplo": "2025-04-01",
+   "formato_data": "AAAA-MM-DD",
+   "linhas_lidas": 696591,
+   "linhas_mantidas": 54823,
+   "duplicatas_removidas": 0,
+   "operadoras": 790
+  },
+  "2025T3": {
+   "arquivo": "3T2025.zip",
+   "periodo": "2025T3",
+   "avisos": [],
+   "encoding": "utf-8-sig",
+   "separador": ";",
+   "colunas": [
+    "DATA",
+    "REG_ANS",
+    "CD_CONTA_CONTABIL",
+    "DESCRICAO",
+    "VL_SALDO_INICIAL",
+    "VL_SALDO_FINAL"
+   ],
+   "codigos_largura_fixa": false,
+   "data_exemplo": "2025-07-01",
+   "formato_data": "AAAA-MM-DD",
+   "linhas_lidas": 711943,
+   "linhas_mantidas": 55306,
+   "duplicatas_removidas": 0,
+   "operadoras": 792
+  },
+  "2025T4": {
+   "arquivo": "4T2025.zip",
+   "periodo": "2025T4",
+   "avisos": [],
+   "encoding": "utf-8-sig",
+   "separador": ";",
+   "colunas": [
+    "DATA",
+    "REG_ANS",
+    "CD_CONTA_CONTABIL",
+    "DESCRICAO",
+    "VL_SALDO_INICIAL",
+    "VL_SALDO_FINAL"
+   ],
+   "codigos_largura_fixa": false,
+   "data_exemplo": "2025-10-01",
+   "formato_data": "AAAA-MM-DD",
+   "linhas_lidas": 926610,
+   "linhas_mantidas": 68855,
+   "duplicatas_removidas": 0,
+   "operadoras": 1019
+  },
+  "2026T1": {
+   "arquivo": "1T2026.zip",
+   "periodo": "2026T1",
+   "avisos": [],
+   "encoding": "utf-8-sig",
+   "separador": ";",
+   "colunas": [
+    "DATA",
+    "REG_ANS",
+    "CD_CONTA_CONTABIL",
+    "DESCRICAO",
+    "VL_SALDO_INICIAL",
+    "VL_SALDO_FINAL"
+   ],
+   "codigos_largura_fixa": false,
+   "data_exemplo": "2026-01-01",
+   "formato_data": "AAAA-MM-DD",
+   "linhas_lidas": 702622,
+   "linhas_mantidas": 54126,
+   "duplicatas_removidas": 0,
+   "operadoras": 781
+  },
+  "2026T2": {
+   "arquivo": "2T2026.zip",
+   "periodo": "2026T2",
+   "avisos": [],
+   "encoding": "utf-8-sig",
+   "separador": ";",
+   "colunas": [
+    "DATA",
+    "REG_ANS",
+    "CD_CONTA_CONTABIL",
+    "DESCRICAO",
+    "VL_SALDO_INICIAL",
+    "VL_SALDO_FINAL"
+   ],
+   "codigos_largura_fixa": false,
+   "data_exemplo": "2026-04-01",
+   "formato_data": "AAAA-MM-DD",
+   "linhas_lidas": 731372,
+   "linhas_mantidas": 55122,
+   "duplicatas_removidas": 0,
+   "operadoras": 787
+  }
+ },
+ "beneficiarios_competencias": [
+  "202506",
+  "202508",
+  "202509",
+  "202512",
+  "202603",
+  "202606",
+  "202608"
+ ],
+ "conceitos": {
+  "2018T1": {
+   "sinais": {
+    "classes_invertidas": [],
+    "redutoras_invertidas": []
+   },
+   "resolucao": {
+    "contas": {
+     "tributos_diretos_operacoes": [
+      "32"
+     ],
+     "tributos_diretos_outras": [
+      "34"
+     ],
+     "receita_contraprestacoes": [
+      "31"
+     ],
+     "outras_receitas_operacionais": [
+      "33"
+     ],
+     "receitas_financeiras": [
+      "35"
+     ],
+     "receitas_patrimoniais": [
+      "36"
+     ],
+     "despesa_assistencial": [
+      "41"
+     ],
+     "despesa_comercializacao": [
+      "43"
+     ],
+     "outras_despesas_operacionais": [
+      "44"
+     ],
+     "despesas_financeiras": [
+      "45"
+     ],
+     "despesa_administrativa": [
+      "46"
+     ],
+     "despesas_patrimoniais": [
+      "47"
+     ],
+     "impostos_participacoes": [
+      "61"
+     ],
+     "ativo_total": [
+      "1"
+     ],
+     "ativo_circulante": [
+      "12"
+     ],
+     "ativo_nao_circulante": [
+      "13"
+     ],
+     "disponivel": [
+      "121"
+     ],
+     "aplicacoes_financeiras_cp": [
+      "122"
+     ],
+     "creditos_operacoes_planos": [
+      "123"
+     ],
+     "realizavel_longo_prazo": [
+      "131"
+     ],
+     "aplicacoes_financeiras_lp": [
+      "1311",
+      "1312"
+     ],
+     "passivo_total": [
+      "2"
+     ],
+     "passivo_circulante": [
+      "21"
+     ],
+     "passivo_nao_circulante": [
+      "23"
+     ],
+     "patrimonio_liquido": [
+      "25"
+     ],
+     "provisoes_tecnicas_cp": [
+      "211"
+     ],
+     "provisoes_tecnicas_lp": [
+      "231"
+     ]
+    },
+    "origem": {
+     "tributos_diretos_operacoes": "descricao",
+     "tributos_diretos_outras": "descricao",
+     "receita_contraprestacoes": "codigo_padrao",
+     "outras_receitas_operacionais": "descricao",
+     "receitas_financeiras": "descricao",
+     "receitas_patrimoniais": "descricao",
+     "despesa_assistencial": "descricao",
+     "despesa_comercializacao": "descricao",
+     "outras_despesas_operacionais": "descricao",
+     "despesas_financeiras": "descricao",
+     "despesa_administrativa": "descricao",
+     "despesas_patrimoniais": "descricao",
+     "impostos_participacoes": "descricao",
+     "ativo_total": "descricao",
+     "ativo_circulante": "descricao",
+     "ativo_nao_circulante": "descricao",
+     "disponivel": "descricao",
+     "aplicacoes_financeiras_cp": "descricao",
+     "creditos_operacoes_planos": "descricao",
+     "realizavel_longo_prazo": "descricao",
+     "aplicacoes_financeiras_lp": "descricao",
+     "passivo_total": "descricao",
+     "passivo_circulante": "descricao",
+     "passivo_nao_circulante": "descricao",
+     "patrimonio_liquido": "descricao",
+     "provisoes_tecnicas_cp": "descricao",
+     "provisoes_tecnicas_lp": "descricao"
+    },
+    "avisos": [
+     "receita_contraprestacoes: descrição da conta 31 ('RECEITAS COM OPERACOES DE ASSISTENCIA A SAUDE') não confere; usado o código padrão"
+    ]
+   },
+   "validacao": {
+    "classe_3_confere": 1.0,
+    "classe_4_confere": 1.0
+   }
+  },
+  "2018T2": {
+   "sinais": {
+    "classes_invertidas": [],
+    "redutoras_invertidas": []
+   },
+   "resolucao": {
+    "contas": {
+     "tributos_diretos_operacoes": [
+      "32"
+     ],
+     "tributos_diretos_outras": [
+      "34"
+     ],
+     "receita_contraprestacoes": [
+      "31"
+     ],
+     "outras_receitas_operacionais": [
+      "33"
+     ],
+     "receitas_financeiras": [
+      "35"
+     ],
+     "receitas_patrimoniais": [
+      "36"
+     ],
+     "despesa_assistencial": [
+      "41"
+     ],
+     "despesa_comercializacao": [
+      "43"
+     ],
+     "outras_despesas_operacionais": [
+      "44"
+     ],
+     "despesas_financeiras": [
+      "45"
+     ],
+     "despesa_administrativa": [
+      "46"
+     ],
+     "despesas_patrimoniais": [
+      "47"
+     ],
+     "impostos_participacoes": [
+      "61"
+     ],
+     "ativo_total": [
+      "1"
+     ],
+     "ativo_circulante": [
+      "12"
+     ],
+     "ativo_nao_circulante": [
+      "13"
+     ],
+     "disponivel": [
+      "121"
+     ],
+     "aplicacoes_financeiras_cp": [
+      "122"
+     ],
+     "creditos_operacoes_planos": [
+      "123"
+     ],
+     "realizavel_longo_prazo": [
+      "131"
+     ],
+     "aplicacoes_financeiras_lp": [
+      "1311",
+      "1312"
+     ],
+     "passivo_total": [
+      "2"
+     ],
+     "passivo_circulante": [
+      "21"
+     ],
+     "passivo_nao_circulante": [
+      "23"
+     ],
+     "patrimonio_liquido": [
+      "25"
+     ],
+     "provisoes_tecnicas_cp": [
+      "211"
+     ],
+     "provisoes_tecnicas_lp": [
+      "231"
+     ]
+    },
+    "origem": {
+     "tributos_diretos_operacoes": "descricao",
+     "tributos_diretos_outras": "descricao",
+     "receita_contraprestacoes": "codigo_padrao",
+     "outras_receitas_operacionais": "descricao",
+     "receitas_financeiras": "descricao",
+     "receitas_patrimoniais": "descricao",
+     "despesa_assistencial": "descricao",
+     "despesa_comercializacao": "descricao",
+     "outras_despesas_operacionais": "descricao",
+     "despesas_financeiras": "descricao",
+     "despesa_administrativa": "descricao",
+     "despesas_patrimoniais": "descricao",
+     "impostos_participacoes": "descricao",
+     "ativo_total": "descricao",
+     "ativo_circulante": "descricao",
+     "ativo_nao_circulante": "descricao",
+     "disponivel": "descricao",
+     "aplicacoes_financeiras_cp": "descricao",
+     "creditos_operacoes_planos": "descricao",
+     "realizavel_longo_prazo": "descricao",
+     "aplicacoes_financeiras_lp": "descricao",
+     "passivo_total": "descricao",
+     "passivo_circulante": "descricao",
+     "passivo_nao_circulante": "descricao",
+     "patrimonio_liquido": "descricao",
+     "provisoes_tecnicas_cp": "descricao",
+     "provisoes_tecnicas_lp": "descricao"
+    },
+    "avisos": [
+     "receita_contraprestacoes: descrição da conta 31 ('RECEITAS COM OPERACOES DE ASSISTENCIA A SAUDE') não confere; usado o código padrão"
+    ]
+   },
+   "validacao": {
+    "classe_3_confere": 1.0,
+    "classe_4_confere": 1.0
+   }
+  },
+  "2018T3": {
+   "sinais": {
+    "classes_invertidas": [],
+    "redutoras_invertidas": []
+   },
+   "resolucao": {
+    "contas": {
+     "tributos_diretos_operacoes": [
+      "32"
+     ],
+     "tributos_diretos_outras": [
+      "34"
+     ],
+     "receita_contraprestacoes": [
+      "31"
+     ],
+     "outras_receitas_operacionais": [
+      "33"
+     ],
+     "receitas_financeiras": [
+      "35"
+     ],
+     "receitas_patrimoniais": [
+      "36"
+     ],
+     "despesa_assistencial": [
+      "41"
+     ],
+     "despesa_comercializacao": [
+      "43"
+     ],
+     "outras_despesas_operacionais": [
+      "44"
+     ],
+     "despesas_financeiras": [
+      "45"
+     ],
+     "despesa_administrativa": [
+      "46"
+     ],
+     "despesas_patrimoniais": [
+      "47"
+     ],
+     "impostos_participacoes": [
+      "61"
+     ],
+     "ativo_total": [
+      "1"
+     ],
+     "ativo_circulante": [
+      "12"
+     ],
+     "ativo_nao_circulante": [
+      "13"
+     ],
+     "disponivel": [
+      "121"
+     ],
+     "aplicacoes_financeiras_cp": [
+      "122"
+     ],
+     "creditos_operacoes_planos": [
+      "123"
+     ],
+     "realizavel_longo_prazo": [
+      "131"
+     ],
+     "aplicacoes_financeiras_lp": [
+      "1311",
+      "1312"
+     ],
+     "passivo_total": [
+      "2"
+     ],
+     "passivo_circulante": [
+      "21"
+     ],
+     "passivo_nao_circulante": [
+      "23"
+     ],
+     "patrimonio_liquido": [
+      "25"
+     ],
+     "provisoes_tecnicas_cp": [
+      "211"
+     ],
+     "provisoes_tecnicas_lp": [
+      "231"
+     ]
+    },
+    "origem": {
+     "tributos_diretos_operacoes": "descricao",
+     "tributos_diretos_outras": "descricao",
+     "receita_contraprestacoes": "codigo_padrao",
+     "outras_receitas_operacionais": "descricao",
+     "receitas_financeiras": "descricao",
+     "receitas_patrimoniais": "descricao",
+     "despesa_assistencial": "descricao",
+     "despesa_comercializacao": "descricao",
+     "outras_despesas_operacionais": "descricao",
+     "despesas_financeiras": "descricao",
+     "despesa_administrativa": "descricao",
+     "despesas_patrimoniais": "descricao",
+     "impostos_participacoes": "descricao",
+     "ativo_total": "descricao",
+     "ativo_circulante": "descricao",
+     "ativo_nao_circulante": "descricao",
+     "disponivel": "descricao",
+     "aplicacoes_financeiras_cp": "descricao",
+     "creditos_operacoes_planos": "descricao",
+     "realizavel_longo_prazo": "descricao",
+     "aplicacoes_financeiras_lp": "descricao",
+     "passivo_total": "descricao",
+     "passivo_circulante": "descricao",
+     "passivo_nao_circulante": "descricao",
+     "patrimonio_liquido": "descricao",
+     "provisoes_tecnicas_cp": "descricao",
+     "provisoes_tecnicas_lp": "descricao"
+    },
+    "avisos": [
+     "receita_contraprestacoes: descrição da conta 31 ('RECEITAS COM OPERACOES DE ASSISTENCIA A SAUDE') não confere; usado o código padrão"
+    ]
+   },
+   "validacao": {
+    "classe_3_confere": 1.0,
+    "classe_4_confere": 1.0
+   }
+  },
+  "2018T4": {
+   "sinais": {
+    "classes_invertidas": [],
+    "redutoras_invertidas": []
+   },
+   "resolucao": {
+    "contas": {
+     "tributos_diretos_operacoes": [
+      "32"
+     ],
+     "tributos_diretos_outras": [
+      "34"
+     ],
+     "receita_contraprestacoes": [
+      "31"
+     ],
+     "outras_receitas_operacionais": [
+      "33"
+     ],
+     "receitas_financeiras": [
+      "35"
+     ],
+     "receitas_patrimoniais": [
+      "36"
+     ],
+     "despesa_assistencial": [
+      "41"
+     ],
+     "despesa_comercializacao": [
+      "43"
+     ],
+     "outras_despesas_operacionais": [
+      "44"
+     ],
+     "despesas_financeiras": [
+      "45"
+     ],
+     "despesa_administrativa": [
+      "46"
+     ],
+     "despesas_patrimoniais": [
+      "47"
+     ],
+     "impostos_participacoes": [
+      "61"
+     ],
+     "ativo_total": [
+      "1"
+     ],
+     "ativo_circulante": [
+      "12"
+     ],
+     "ativo_nao_circulante": [
+      "13"
+     ],
+     "disponivel": [
+      "121"
+     ],
+     "aplicacoes_financeiras_cp": [
+      "122"
+     ],
+     "creditos_operacoes_planos": [
+      "123"
+     ],
+     "realizavel_longo_prazo": [
+      "131"
+     ],
+     "aplicacoes_financeiras_lp": [
+      "1311",
+      "1312"
+     ],
+     "passivo_total": [
+      "2"
+     ],
+     "passivo_circulante": [
+      "21"
+     ],
+     "passivo_nao_circulante": [
+      "23"
+     ],
+     "patrimonio_liquido": [
+      "25"
+     ],
+     "provisoes_tecnicas_cp": [
+      "211"
+     ],
+     "provisoes_tecnicas_lp": [
+      "231"
+     ]
+    },
+    "origem": {
+     "tributos_diretos_operacoes": "descricao",
+     "tributos_diretos_outras": "descricao",
+     "receita_contraprestacoes": "codigo_padrao",
+     "outras_receitas_operacionais": "descricao",
+     "receitas_financeiras": "descricao",
+     "receitas_patrimoniais": "descricao",
+     "despesa_assistencial": "descricao",
+     "despesa_comercializacao": "descricao",
+     "outras_despesas_operacionais": "descricao",
+     "despesas_financeiras": "descricao",
+     "despesa_administrativa": "descricao",
+     "despesas_patrimoniais": "descricao",
+     "impostos_participacoes": "descricao",
+     "ativo_total": "descricao",
+     "ativo_circulante": "descricao",
+     "ativo_nao_circulante": "descricao",
+     "disponivel": "descricao",
+     "aplicacoes_financeiras_cp": "descricao",
+     "creditos_operacoes_planos": "descricao",
+     "realizavel_longo_prazo": "descricao",
+     "aplicacoes_financeiras_lp": "descricao",
+     "passivo_total": "descricao",
+     "passivo_circulante": "descricao",
+     "passivo_nao_circulante": "descricao",
+     "patrimonio_liquido": "descricao",
+     "provisoes_tecnicas_cp": "descricao",
+     "provisoes_tecnicas_lp": "descricao"
+    },
+    "avisos": [
+     "receita_contraprestacoes: descrição da conta 31 ('RECEITAS COM OPERACOES DE ASSISTENCIA A SAUDE') não confere; usado o código padrão"
+    ]
+   },
+   "validacao": {
+    "classe_3_confere": 1.0,
+    "classe_4_confere": 1.0
+   }
+  },
+  "2019T1": {
+   "sinais": {
+    "classes_invertidas": [],
+    "redutoras_invertidas": []
+   },
+   "resolucao": {
+    "contas": {
+     "tributos_diretos_operacoes": [
+      "32"
+     ],
+     "tributos_diretos_outras": [
+      "34"
+     ],
+     "receita_contraprestacoes": [
+      "31"
+     ],
+     "outras_receitas_operacionais": [
+      "33"
+     ],
+     "receitas_financeiras": [
+      "35"
+     ],
+     "receitas_patrimoniais": [
+      "36"
+     ],
+     "despesa_assistencial": [
+      "41"
+     ],
+     "despesa_comercializacao": [
+      "43"
+     ],
+     "outras_despesas_operacionais": [
+      "44"
+     ],
+     "despesas_financeiras": [
+      "45"
+     ],
+     "despesa_administrativa": [
+      "46"
+     ],
+     "despesas_patrimoniais": [
+      "47"
+     ],
+     "impostos_participacoes": [
+      "61"
+     ],
+     "ativo_total": [
+      "1"
+     ],
+     "ativo_circulante": [
+      "12"
+     ],
+     "ativo_nao_circulante": [
+      "13"
+     ],
+     "disponivel": [
+      "121"
+     ],
+     "aplicacoes_financeiras_cp": [
+      "122"
+     ],
+     "creditos_operacoes_planos": [
+      "123"
+     ],
+     "realizavel_longo_prazo": [
+      "131"
+     ],
+     "aplicacoes_financeiras_lp": [
+      "1311",
+      "1312"
+     ],
+     "passivo_total": [
+      "2"
+     ],
+     "passivo_circulante": [
+      "21"
+     ],
+     "passivo_nao_circulante": [
+      "23"
+     ],
+     "patrimonio_liquido": [
+      "25"
+     ],
+     "provisoes_tecnicas_cp": [
+      "211"
+     ],
+     "provisoes_tecnicas_lp": [
+      "231"
+     ]
+    },
+    "origem": {
+     "tributos_diretos_operacoes": "descricao",
+     "tributos_diretos_outras": "descricao",
+     "receita_contraprestacoes": "codigo_padrao",
+     "outras_receitas_operacionais": "descricao",
+     "receitas_financeiras": "descricao",
+     "receitas_patrimoniais": "descricao",
+     "despesa_assistencial": "descricao",
+     "despesa_comercializacao": "descricao",
+     "outras_despesas_operacionais": "descricao",
+     "despesas_financeiras": "descricao",
+     "despesa_administrativa": "descricao",
+     "despesas_patrimoniais": "descricao",
+     "impostos_participacoes": "descricao",
+     "ativo_total": "descricao",
+     "ativo_circulante": "descricao",
+     "ativo_nao_circulante": "descricao",
+     "disponivel": "descricao",
+     "aplicacoes_financeiras_cp": "descricao",
+     "creditos_operacoes_planos": "descricao",
+     "realizavel_longo_prazo": "descricao",
+     "aplicacoes_financeiras_lp": "descricao",
+     "passivo_total": "descricao",
+     "passivo_circulante": "descricao",
+     "passivo_nao_circulante": "descricao",
+     "patrimonio_liquido": "descricao",
+     "provisoes_tecnicas_cp": "descricao",
+     "provisoes_tecnicas_lp": "descricao"
+    },
+    "avisos": [
+     "receita_contraprestacoes: descrição da conta 31 ('RECEITAS COM OPERACOES DE ASSISTENCIA A SAUDE') não confere; usado o código padrão"
+    ]
+   },
+   "validacao": {
+    "classe_3_confere": 1.0,
+    "classe_4_confere": 1.0
+   }
+  },
+  "2019T2": {
+   "sinais": {
+    "classes_invertidas": [],
+    "redutoras_invertidas": []
+   },
+   "resolucao": {
+    "contas": {
+     "tributos_diretos_operacoes": [
+      "32"
+     ],
+     "tributos_diretos_outras": [
+      "34"
+     ],
+     "receita_contraprestacoes": [
+      "31"
+     ],
+     "outras_receitas_operacionais": [
+      "33"
+     ],
+     "receitas_financeiras": [
+      "35"
+     ],
+     "receitas_patrimoniais": [
+      "36"
+     ],
+     "despesa_assistencial": [
+      "41"
+     ],
+     "despesa_comercializacao": [
+      "43"
+     ],
+     "outras_despesas_operacionais": [
+      "44"
+     ],
+     "despesas_financeiras": [
+      "45"
+     ],
+     "despesa_administrativa": [
+      "46"
+     ],
+     "despesas_patrimoniais": [
+      "47"
+     ],
+     "impostos_participacoes": [
+      "61"
+     ],
+     "ativo_total": [
+      "1"
+     ],
+     "ativo_circulante": [
+      "12"
+     ],
+     "ativo_nao_circulante": [
+      "13"
+     ],
+     "disponivel": [
+      "121"
+     ],
+     "aplicacoes_financeiras_cp": [
+      "122"
+     ],
+     "creditos_operacoes_planos": [
+      "123"
+     ],
+     "realizavel_longo_prazo": [
+      "131"
+     ],
+     "aplicacoes_financeiras_lp": [
+      "1311",
+      "1312"
+     ],
+     "passivo_total": [
+      "2"
+     ],
+     "passivo_circulante": [
+      "21"
+     ],
+     "passivo_nao_circulante": [
+      "23"
+     ],
+     "patrimonio_liquido": [
+      "25"
+     ],
+     "provisoes_tecnicas_cp": [
+      "211"
+     ],
+     "provisoes_tecnicas_lp": [
+      "231"
+     ]
+    },
+    "origem": {
+     "tributos_diretos_operacoes": "descricao",
+     "tributos_diretos_outras": "descricao",
+     "receita_contraprestacoes": "codigo_padrao",
+     "outras_receitas_operacionais": "descricao",
+     "receitas_financeiras": "descricao",
+     "receitas_patrimoniais": "descricao",
+     "despesa_assistencial": "descricao",
+     "despesa_comercializacao": "descricao",
+     "outras_despesas_operacionais": "descricao",
+     "despesas_financeiras": "descricao",
+     "despesa_administrativa": "descricao",
+     "despesas_patrimoniais": "descricao",
+     "impostos_participacoes": "descricao",
+     "ativo_total": "descricao",
+     "ativo_circulante": "descricao",
+     "ativo_nao_circulante": "descricao",
+     "disponivel": "descricao",
+     "aplicacoes_financeiras_cp": "descricao",
+     "creditos_operacoes_planos": "descricao",
+     "realizavel_longo_prazo": "descricao",
+     "aplicacoes_financeiras_lp": "descricao",
+     "passivo_total": "descricao",
+     "passivo_circulante": "descricao",
+     "passivo_nao_circulante": "descricao",
+     "patrimonio_liquido": "descricao",
+     "provisoes_tecnicas_cp": "descricao",
+     "provisoes_tecnicas_lp": "descricao"
+    },
+    "avisos": [
+     "receita_contraprestacoes: descrição da conta 31 ('RECEITAS COM OPERACOES DE ASSISTENCIA A SAUDE') não confere; usado o código padrão"
+    ]
+   },
+   "validacao": {
+    "classe_3_confere": 1.0,
+    "classe_4_confere": 1.0
+   }
+  },
+  "2019T3": {
+   "sinais": {
+    "classes_invertidas": [],
+    "redutoras_invertidas": []
+   },
+   "resolucao": {
+    "contas": {
+     "tributos_diretos_operacoes": [
+      "32"
+     ],
+     "tributos_diretos_outras": [
+      "34"
+     ],
+     "receita_contraprestacoes": [
+      "31"
+     ],
+     "outras_receitas_operacionais": [
+      "33"
+     ],
+     "receitas_financeiras": [
+      "35"
+     ],
+     "receitas_patrimoniais": [
+      "36"
+     ],
+     "despesa_assistencial": [
+      "41"
+     ],
+     "despesa_comercializacao": [
+      "43"
+     ],
+     "outras_despesas_operacionais": [
+      "44"
+     ],
+     "despesas_financeiras": [
+      "45"
+     ],
+     "despesa_administrativa": [
+      "46"
+     ],
+     "despesas_patrimoniais": [
+      "47"
+     ],
+     "impostos_participacoes": [
+      "61"
+     ],
+     "ativo_total": [
+      "1"
+     ],
+     "ativo_circulante": [
+      "12"
+     ],
+     "ativo_nao_circulante": [
+      "13"
+     ],
+     "disponivel": [
+      "121"
+     ],
+     "aplicacoes_financeiras_cp": [
+      "122"
+     ],
+     "creditos_operacoes_planos": [
+      "123"
+     ],
+     "realizavel_longo_prazo": [
+      "131"
+     ],
+     "aplicacoes_financeiras_lp": [
+      "1311",
+      "1312"
+     ],
+     "passivo_total": [
+      "2"
+     ],
+     "passivo_circulante": [
+      "21"
+     ],
+     "passivo_nao_circulante": [
+      "23"
+     ],
+     "patrimonio_liquido": [
+      "25"
+     ],
+     "provisoes_tecnicas_cp": [
+      "211"
+     ],
+     "provisoes_tecnicas_lp": [
+      "231"
+     ]
+    },
+    "origem": {
+     "tributos_diretos_operacoes": "descricao",
+     "tributos_diretos_outras": "descricao",
+     "receita_contraprestacoes": "codigo_padrao",
+     "outras_receitas_operacionais": "descricao",
+     "receitas_financeiras": "descricao",
+     "receitas_patrimoniais": "descricao",
+     "despesa_assistencial": "descricao",
+     "despesa_comercializacao": "descricao",
+     "outras_despesas_operacionais": "descricao",
+     "despesas_financeiras": "descricao",
+     "despesa_administrativa": "descricao",
+     "despesas_patrimoniais": "descricao",
+     "impostos_participacoes": "descricao",
+     "ativo_total": "descricao",
+     "ativo_circulante": "descricao",
+     "ativo_nao_circulante": "descricao",
+     "disponivel": "descricao",
+     "aplicacoes_financeiras_cp": "descricao",
+     "creditos_operacoes_planos": "descricao",
+     "realizavel_longo_prazo": "descricao",
+     "aplicacoes_financeiras_lp": "descricao",
+     "passivo_total": "descricao",
+     "passivo_circulante": "descricao",
+     "passivo_nao_circulante": "descricao",
+     "patrimonio_liquido": "descricao",
+     "provisoes_tecnicas_cp": "descricao",
+     "provisoes_tecnicas_lp": "descricao"
+    },
+    "avisos": [
+     "receita_contraprestacoes: descrição da conta 31 ('RECEITAS COM OPERACOES DE ASSISTENCIA A SAUDE') não confere; usado o código padrão"
+    ]
+   },
+   "validacao": {
+    "classe_3_confere": 1.0,
+    "classe_4_confere": 1.0
+   }
+  },
+  "2019T4": {
+   "sinais": {
+    "classes_invertidas": [],
+    "redutoras_invertidas": []
+   },
+   "resolucao": {
+    "contas": {
+     "tributos_diretos_operacoes": [
+      "32"
+     ],
+     "tributos_diretos_outras": [
+      "34"
+     ],
+     "receita_contraprestacoes": [
+      "31"
+     ],
+     "outras_receitas_operacionais": [
+      "33"
+     ],
+     "receitas_financeiras": [
+      "35"
+     ],
+     "receitas_patrimoniais": [
+      "36"
+     ],
+     "despesa_assistencial": [
+      "41"
+     ],
+     "despesa_comercializacao": [
+      "43"
+     ],
+     "outras_despesas_operacionais": [
+      "44"
+     ],
+     "despesas_financeiras": [
+      "45"
+     ],
+     "despesa_administrativa": [
+      "46"
+     ],
+     "despesas_patrimoniais": [
+      "47"
+     ],
+     "impostos_participacoes": [
+      "61"
+     ],
+     "ativo_total": [
+      "1"
+     ],
+     "ativo_circulante": [
+      "12"
+     ],
+     "ativo_nao_circulante": [
+      "13"
+     ],
+     "disponivel": [
+      "121"
+     ],
+     "aplicacoes_financeiras_cp": [
+      "122"
+     ],
+     "creditos_operacoes_planos": [
+      "123"
+     ],
+     "realizavel_longo_prazo": [
+      "131"
+     ],
+     "aplicacoes_financeiras_lp": [
+      "1311",
+      "1312"
+     ],
+     "passivo_total": [
+      "2"
+     ],
+     "passivo_circulante": [
+      "21"
+     ],
+     "passivo_nao_circulante": [
+      "23"
+     ],
+     "patrimonio_liquido": [
+      "25"
+     ],
+     "provisoes_tecnicas_cp": [
+      "211"
+     ],
+     "provisoes_tecnicas_lp": [
+      "231"
+     ]
+    },
+    "origem": {
+     "tributos_diretos_operacoes": "descricao",
+     "tributos_diretos_outras": "descricao",
+     "receita_contraprestacoes": "codigo_padrao",
+     "outras_receitas_operacionais": "descricao",
+     "receitas_financeiras": "descricao",
+     "receitas_patrimoniais": "descricao",
+     "despesa_assistencial": "descricao",
+     "despesa_comercializacao": "descricao",
+     "outras_despesas_operacionais": "descricao",
+     "despesas_financeiras": "descricao",
+     "despesa_administrativa": "descricao",
+     "despesas_patrimoniais": "descricao",
+     "impostos_participacoes": "descricao",
+     "ativo_total": "descricao",
+     "ativo_circulante": "descricao",
+     "ativo_nao_circulante": "descricao",
+     "disponivel": "descricao",
+     "aplicacoes_financeiras_cp": "descricao",
+     "creditos_operacoes_planos": "descricao",
+     "realizavel_longo_prazo": "descricao",
+     "aplicacoes_financeiras_lp": "descricao",
+     "passivo_total": "descricao",
+     "passivo_circulante": "descricao",
+     "passivo_nao_circulante": "descricao",
+     "patrimonio_liquido": "descricao",
+     "provisoes_tecnicas_cp": "descricao",
+     "provisoes_tecnicas_lp": "descricao"
+    },
+    "avisos": [
+     "receita_contraprestacoes: descrição da conta 31 ('RECEITAS COM OPERACOES DE ASSISTENCIA A SAUDE') não confere; usado o código padrão"
+    ]
+   },
+   "validacao": {
+    "classe_3_confere": 1.0,
+    "classe_4_confere": 1.0
+   }
+  },
+  "2020T1": {
+   "sinais": {
+    "classes_invertidas": [],
+    "redutoras_invertidas": []
+   },
+   "resolucao": {
+    "contas": {
+     "tributos_diretos_operacoes": [
+      "32"
+     ],
+     "tributos_diretos_outras": [
+      "34"
+     ],
+     "receita_contraprestacoes": [
+      "31"
+     ],
+     "outras_receitas_operacionais": [
+      "33"
+     ],
+     "receitas_financeiras": [
+      "35"
+     ],
+     "receitas_patrimoniais": [
+      "36"
+     ],
+     "despesa_assistencial": [
+      "41"
+     ],
+     "despesa_comercializacao": [
+      "43"
+     ],
+     "outras_despesas_operacionais": [
+      "44"
+     ],
+     "despesas_financeiras": [
+      "45"
+     ],
+     "despesa_administrativa": [
+      "46"
+     ],
+     "despesas_patrimoniais": [
+      "47"
+     ],
+     "impostos_participacoes": [
+      "61"
+     ],
+     "ativo_total": [
+      "1"
+     ],
+     "ativo_circulante": [
+      "12"
+     ],
+     "ativo_nao_circulante": [
+      "13"
+     ],
+     "disponivel": [
+      "121"
+     ],
+     "aplicacoes_financeiras_cp": [
+      "122"
+     ],
+     "creditos_operacoes_planos": [
+      "123"
+     ],
+     "realizavel_longo_prazo": [
+      "131"
+     ],
+     "aplicacoes_financeiras_lp": [
+      "1311",
+      "1312"
+     ],
+     "passivo_total": [
+      "2"
+     ],
+     "passivo_circulante": [
+      "21"
+     ],
+     "passivo_nao_circulante": [
+      "23"
+     ],
+     "patrimonio_liquido": [
+      "25"
+     ],
+     "provisoes_tecnicas_cp": [
+      "211"
+     ],
+     "provisoes_tecnicas_lp": [
+      "231"
+     ]
+    },
+    "origem": {
+     "tributos_diretos_operacoes": "descricao",
+     "tributos_diretos_outras": "descricao",
+     "receita_contraprestacoes": "codigo_padrao",
+     "outras_receitas_operacionais": "descricao",
+     "receitas_financeiras": "descricao",
+     "receitas_patrimoniais": "descricao",
+     "despesa_assistencial": "descricao",
+     "despesa_comercializacao": "descricao",
+     "outras_despesas_operacionais": "descricao",
+     "despesas_financeiras": "descricao",
+     "despesa_administrativa": "descricao",
+     "despesas_patrimoniais": "descricao",
+     "impostos_participacoes": "descricao",
+     "ativo_total": "descricao",
+     "ativo_circulante": "descricao",
+     "ativo_nao_circulante": "descricao",
+     "disponivel": "descricao",
+     "aplicacoes_financeiras_cp": "descricao",
+     "creditos_operacoes_planos": "descricao",
+     "realizavel_longo_prazo": "descricao",
+     "aplicacoes_financeiras_lp": "descricao",
+     "passivo_total": "descricao",
+     "passivo_circulante": "descricao",
+     "passivo_nao_circulante": "descricao",
+     "patrimonio_liquido": "descricao",
+     "provisoes_tecnicas_cp": "descricao",
+     "provisoes_tecnicas_lp": "descricao"
+    },
+    "avisos": [
+     "receita_contraprestacoes: descrição da conta 31 ('RECEITAS COM OPERACOES DE ASSISTENCIA A SAUDE') não confere; usado o código padrão"
+    ]
+   },
+   "validacao": {
+    "classe_3_confere": 1.0,
+    "classe_4_confere": 1.0
+   }
+  },
+  "2020T2": {
+   "sinais": {
+    "classes_invertidas": [],
+    "redutoras_invertidas": []
+   },
+   "resolucao": {
+    "contas": {
+     "tributos_diretos_operacoes": [
+      "32"
+     ],
+     "tributos_diretos_outras": [
+      "34"
+     ],
+     "receita_contraprestacoes": [
+      "31"
+     ],
+     "outras_receitas_operacionais": [
+      "33"
+     ],
+     "receitas_financeiras": [
+      "35"
+     ],
+     "receitas_patrimoniais": [
+      "36"
+     ],
+     "despesa_assistencial": [
+      "41"
+     ],
+     "despesa_comercializacao": [
+      "43"
+     ],
+     "outras_despesas_operacionais": [
+      "44"
+     ],
+     "despesas_financeiras": [
+      "45"
+     ],
+     "despesa_administrativa": [
+      "46"
+     ],
+     "despesas_patrimoniais": [
+      "47"
+     ],
+     "impostos_participacoes": [
+      "61"
+     ],
+     "ativo_total": [
+      "1"
+     ],
+     "ativo_circulante": [
+      "12"
+     ],
+     "ativo_nao_circulante": [
+      "13"
+     ],
+     "disponivel": [
+      "121"
+     ],
+     "aplicacoes_financeiras_cp": [
+      "122"
+     ],
+     "creditos_operacoes_planos": [
+      "123"
+     ],
+     "realizavel_longo_prazo": [
+      "131"
+     ],
+     "aplicacoes_financeiras_lp": [
+      "1311",
+      "1312"
+     ],
+     "passivo_total": [
+      "2"
+     ],
+     "passivo_circulante": [
+      "21"
+     ],
+     "passivo_nao_circulante": [
+      "23"
+     ],
+     "patrimonio_liquido": [
+      "25"
+     ],
+     "provisoes_tecnicas_cp": [
+      "211"
+     ],
+     "provisoes_tecnicas_lp": [
+      "231"
+     ]
+    },
+    "origem": {
+     "tributos_diretos_operacoes": "descricao",
+     "tributos_diretos_outras": "descricao",
+     "receita_contraprestacoes": "codigo_padrao",
+     "outras_receitas_operacionais": "descricao",
+     "receitas_financeiras": "descricao",
+     "receitas_patrimoniais": "descricao",
+     "despesa_assistencial": "descricao",
+     "despesa_comercializacao": "descricao",
+     "outras_despesas_operacionais": "descricao",
+     "despesas_financeiras": "descricao",
+     "despesa_administrativa": "descricao",
+     "despesas_patrimoniais": "descricao",
+     "impostos_participacoes": "descricao",
+     "ativo_total": "descricao",
+     "ativo_circulante": "descricao",
+     "ativo_nao_circulante": "descricao",
+     "disponivel": "descricao",
+     "aplicacoes_financeiras_cp": "descricao",
+     "creditos_operacoes_planos": "descricao",
+     "realizavel_longo_prazo": "descricao",
+     "aplicacoes_financeiras_lp": "descricao",
+     "passivo_total": "descricao",
+     "passivo_circulante": "descricao",
+     "passivo_nao_circulante": "descricao",
+     "patrimonio_liquido": "descricao",
+     "provisoes_tecnicas_cp": "descricao",
+     "provisoes_tecnicas_lp": "descricao"
+    },
+    "avisos": [
+     "receita_contraprestacoes: descrição da conta 31 ('RECEITAS COM OPERACOES DE ASSISTENCIA A SAUDE') não confere; usado o código padrão"
+    ]
+   },
+   "validacao": {
+    "classe_3_confere": 1.0,
+    "classe_4_confere": 1.0
+   }
+  },
+  "2020T3": {
+   "sinais": {
+    "classes_invertidas": [],
+    "redutoras_invertidas": []
+   },
+   "resolucao": {
+    "contas": {
+     "tributos_diretos_operacoes": [
+      "32"
+     ],
+     "tributos_diretos_outras": [
+      "34"
+     ],
+     "receita_contraprestacoes": [
+      "31"
+     ],
+     "outras_receitas_operacionais": [
+      "33"
+     ],
+     "receitas_financeiras": [
+      "35"
+     ],
+     "receitas_patrimoniais": [
+      "36"
+     ],
+     "despesa_assistencial": [
+      "41"
+     ],
+     "despesa_comercializacao": [
+      "43"
+     ],
+     "outras_despesas_operacionais": [
+      "44"
+     ],
+     "despesas_financeiras": [
+      "45"
+     ],
+     "despesa_administrativa": [
+      "46"
+     ],
+     "despesas_patrimoniais": [
+      "47"
+     ],
+     "impostos_participacoes": [
+      "61"
+     ],
+     "ativo_total": [
+      "1"
+     ],
+     "ativo_circulante": [
+      "12"
+     ],
+     "ativo_nao_circulante": [
+      "13"
+     ],
+     "disponivel": [
+      "121"
+     ],
+     "aplicacoes_financeiras_cp": [
+      "122"
+     ],
+     "creditos_operacoes_planos": [
+      "123"
+     ],
+     "realizavel_longo_prazo": [
+      "131"
+     ],
+     "aplicacoes_financeiras_lp": [
+      "1311",
+      "1312"
+     ],
+     "passivo_total": [
+      "2"
+     ],
+     "passivo_circulante": [
+      "21"
+     ],
+     "passivo_nao_circulante": [
+      "23"
+     ],
+     "patrimonio_liquido": [
+      "25"
+     ],
+     "provisoes_tecnicas_cp": [
+      "211"
+     ],
+     "provisoes_tecnicas_lp": [
+      "231"
+     ]
+    },
+    "origem": {
+     "tributos_diretos_operacoes": "descricao",
+     "tributos_diretos_outras": "descricao",
+     "receita_contraprestacoes": "codigo_padrao",
+     "outras_receitas_operacionais": "descricao",
+     "receitas_financeiras": "descricao",
+     "receitas_patrimoniais": "descricao",
+     "despesa_assistencial": "descricao",
+     "despesa_comercializacao": "descricao",
+     "outras_despesas_operacionais": "descricao",
+     "despesas_financeiras": "descricao",
+     "despesa_administrativa": "descricao",
+     "despesas_patrimoniais": "descricao",
+     "impostos_participacoes": "descricao",
+     "ativo_total": "descricao",
+     "ativo_circulante": "descricao",
+     "ativo_nao_circulante": "descricao",
+     "disponivel": "descricao",
+     "aplicacoes_financeiras_cp": "descricao",
+     "creditos_operacoes_planos": "descricao",
+     "realizavel_longo_prazo": "descricao",
+     "aplicacoes_financeiras_lp": "descricao",
+     "passivo_total": "descricao",
+     "passivo_circulante": "descricao",
+     "passivo_nao_circulante": "descricao",
+     "patrimonio_liquido": "descricao",
+     "provisoes_tecnicas_cp": "descricao",
+     "provisoes_tecnicas_lp": "descricao"
+    },
+    "avisos": [
+     "receita_contraprestacoes: descrição da conta 31 ('RECEITAS COM OPERACOES DE ASSISTENCIA A SAUDE') não confere; usado o código padrão"
+    ]
+   },
+   "validacao": {
+    "classe_3_confere": 1.0,
+    "classe_4_confere": 1.0
+   }
+  },
+  "2020T4": {
+   "sinais": {
+    "classes_invertidas": [],
+    "redutoras_invertidas": []
+   },
+   "resolucao": {
+    "contas": {
+     "tributos_diretos_operacoes": [
+      "32"
+     ],
+     "tributos_diretos_outras": [
+      "34"
+     ],
+     "receita_contraprestacoes": [
+      "31"
+     ],
+     "outras_receitas_operacionais": [
+      "33"
+     ],
+     "receitas_financeiras": [
+      "35"
+     ],
+     "receitas_patrimoniais": [
+      "36"
+     ],
+     "despesa_assistencial": [
+      "41"
+     ],
+     "despesa_comercializacao": [
+      "43"
+     ],
+     "outras_despesas_operacionais": [
+      "44"
+     ],
+     "despesas_financeiras": [
+      "45"
+     ],
+     "despesa_administrativa": [
+      "46"
+     ],
+     "despesas_patrimoniais": [
+      "47"
+     ],
+     "impostos_participacoes": [
+      "61"
+     ],
+     "ativo_total": [
+      "1"
+     ],
+     "ativo_circulante": [
+      "12"
+     ],
+     "ativo_nao_circulante": [
+      "13"
+     ],
+     "disponivel": [
+      "121"
+     ],
+     "aplicacoes_financeiras_cp": [
+      "122"
+     ],
+     "creditos_operacoes_planos": [
+      "123"
+     ],
+     "realizavel_longo_prazo": [
+      "131"
+     ],
+     "aplicacoes_financeiras_lp": [
+      "1311",
+      "1312"
+     ],
+     "passivo_total": [
+      "2"
+     ],
+     "passivo_circulante": [
+      "21"
+     ],
+     "passivo_nao_circulante": [
+      "23"
+     ],
+     "patrimonio_liquido": [
+      "25"
+     ],
+     "provisoes_tecnicas_cp": [
+      "211"
+     ],
+     "provisoes_tecnicas_lp": [
+      "231"
+     ]
+    },
+    "origem": {
+     "tributos_diretos_operacoes": "descricao",
+     "tributos_diretos_outras": "descricao",
+     "receita_contraprestacoes": "codigo_padrao",
+     "outras_receitas_operacionais": "descricao",
+     "receitas_financeiras": "descricao",
+     "receitas_patrimoniais": "descricao",
+     "despesa_assistencial": "descricao",
+     "despesa_comercializacao": "descricao",
+     "outras_despesas_operacionais": "descricao",
+     "despesas_financeiras": "descricao",
+     "despesa_administrativa": "descricao",
+     "despesas_patrimoniais": "descricao",
+     "impostos_participacoes": "descricao",
+     "ativo_total": "descricao",
+     "ativo_circulante": "descricao",
+     "ativo_nao_circulante": "descricao",
+     "disponivel": "descricao",
+     "aplicacoes_financeiras_cp": "descricao",
+     "creditos_operacoes_planos": "descricao",
+     "realizavel_longo_prazo": "descricao",
+     "aplicacoes_financeiras_lp": "descricao",
+     "passivo_total": "descricao",
+     "passivo_circulante": "descricao",
+     "passivo_nao_circulante": "descricao",
+     "patrimonio_liquido": "descricao",
+     "provisoes_tecnicas_cp": "descricao",
+     "provisoes_tecnicas_lp": "descricao"
+    },
+    "avisos": [
+     "receita_contraprestacoes: descrição da conta 31 ('RECEITAS COM OPERACOES DE ASSISTENCIA A SAUDE') não confere; usado o código padrão"
+    ]
+   },
+   "validacao": {
+    "classe_3_confere": 1.0,
+    "classe_4_confere": 1.0
+   }
+  },
+  "2021T1": {
+   "sinais": {
+    "classes_invertidas": [],
+    "redutoras_invertidas": []
+   },
+   "resolucao": {
+    "contas": {
+     "tributos_diretos_operacoes": [
+      "32"
+     ],
+     "tributos_diretos_outras": [
+      "34"
+     ],
+     "receita_contraprestacoes": [
+      "31"
+     ],
+     "outras_receitas_operacionais": [
+      "33"
+     ],
+     "receitas_financeiras": [
+      "35"
+     ],
+     "receitas_patrimoniais": [
+      "36"
+     ],
+     "despesa_assistencial": [
+      "41"
+     ],
+     "despesa_comercializacao": [
+      "43"
+     ],
+     "outras_despesas_operacionais": [
+      "44"
+     ],
+     "despesas_financeiras": [
+      "45"
+     ],
+     "despesa_administrativa": [
+      "46"
+     ],
+     "despesas_patrimoniais": [
+      "47"
+     ],
+     "impostos_participacoes": [
+      "61"
+     ],
+     "ativo_total": [
+      "1"
+     ],
+     "ativo_circulante": [
+      "12"
+     ],
+     "ativo_nao_circulante": [
+      "13"
+     ],
+     "disponivel": [
+      "121"
+     ],
+     "aplicacoes_financeiras_cp": [
+      "122"
+     ],
+     "creditos_operacoes_planos": [
+      "123"
+     ],
+     "realizavel_longo_prazo": [
+      "131"
+     ],
+     "aplicacoes_financeiras_lp": [
+      "1311",
+      "1312"
+     ],
+     "passivo_total": [
+      "2"
+     ],
+     "passivo_circulante": [
+      "21"
+     ],
+     "passivo_nao_circulante": [
+      "23"
+     ],
+     "patrimonio_liquido": [
+      "25"
+     ],
+     "provisoes_tecnicas_cp": [
+      "211"
+     ],
+     "provisoes_tecnicas_lp": [
+      "231"
+     ]
+    },
+    "origem": {
+     "tributos_diretos_operacoes": "descricao",
+     "tributos_diretos_outras": "descricao",
+     "receita_contraprestacoes": "codigo_padrao",
+     "outras_receitas_operacionais": "descricao",
+     "receitas_financeiras": "descricao",
+     "receitas_patrimoniais": "descricao",
+     "despesa_assistencial": "descricao",
+     "despesa_comercializacao": "descricao",
+     "outras_despesas_operacionais": "descricao",
+     "despesas_financeiras": "descricao",
+     "despesa_administrativa": "descricao",
+     "despesas_patrimoniais": "descricao",
+     "impostos_participacoes": "descricao",
+     "ativo_total": "descricao",
+     "ativo_circulante": "descricao",
+     "ativo_nao_circulante": "descricao",
+     "disponivel": "descricao",
+     "aplicacoes_financeiras_cp": "descricao",
+     "creditos_operacoes_planos": "descricao",
+     "realizavel_longo_prazo": "descricao",
+     "aplicacoes_financeiras_lp": "descricao",
+     "passivo_total": "descricao",
+     "passivo_circulante": "descricao",
+     "passivo_nao_circulante": "descricao",
+     "patrimonio_liquido": "descricao",
+     "provisoes_tecnicas_cp": "descricao",
+     "provisoes_tecnicas_lp": "descricao"
+    },
+    "avisos": [
+     "receita_contraprestacoes: descrição da conta 31 ('RECEITAS COM OPERACOES DE ASSISTENCIA A SAUDE') não confere; usado o código padrão"
+    ]
+   },
+   "validacao": {
+    "classe_3_confere": 1.0,
+    "classe_4_confere": 1.0
+   }
+  },
+  "2021T2": {
+   "sinais": {
+    "classes_invertidas": [],
+    "redutoras_invertidas": []
+   },
+   "resolucao": {
+    "contas": {
+     "tributos_diretos_operacoes": [
+      "32"
+     ],
+     "tributos_diretos_outras": [
+      "34"
+     ],
+     "receita_contraprestacoes": [
+      "31"
+     ],
+     "outras_receitas_operacionais": [
+      "33"
+     ],
+     "receitas_financeiras": [
+      "35"
+     ],
+     "receitas_patrimoniais": [
+      "36"
+     ],
+     "despesa_assistencial": [
+      "41"
+     ],
+     "despesa_comercializacao": [
+      "43"
+     ],
+     "outras_despesas_operacionais": [
+      "44"
+     ],
+     "despesas_financeiras": [
+      "45"
+     ],
+     "despesa_administrativa": [
+      "46"
+     ],
+     "despesas_patrimoniais": [
+      "47"
+     ],
+     "impostos_participacoes": [
+      "61"
+     ],
+     "ativo_total": [
+      "1"
+     ],
+     "ativo_circulante": [
+      "12"
+     ],
+     "ativo_nao_circulante": [
+      "13"
+     ],
+     "disponivel": [
+      "121"
+     ],
+     "aplicacoes_financeiras_cp": [
+      "122"
+     ],
+     "creditos_operacoes_planos": [
+      "123"
+     ],
+     "realizavel_longo_prazo": [
+      "131"
+     ],
+     "aplicacoes_financeiras_lp": [
+      "1311",
+      "1312"
+     ],
+     "passivo_total": [
+      "2"
+     ],
+     "passivo_circulante": [
+      "21"
+     ],
+     "passivo_nao_circulante": [
+      "23"
+     ],
+     "patrimonio_liquido": [
+      "25"
+     ],
+     "provisoes_tecnicas_cp": [
+      "211"
+     ],
+     "provisoes_tecnicas_lp": [
+      "231"
+     ]
+    },
+    "origem": {
+     "tributos_diretos_operacoes": "descricao",
+     "tributos_diretos_outras": "descricao",
+     "receita_contraprestacoes": "codigo_padrao",
+     "outras_receitas_operacionais": "descricao",
+     "receitas_financeiras": "descricao",
+     "receitas_patrimoniais": "descricao",
+     "despesa_assistencial": "descricao",
+     "despesa_comercializacao": "descricao",
+     "outras_despesas_operacionais": "descricao",
+     "despesas_financeiras": "descricao",
+     "despesa_administrativa": "descricao",
+     "despesas_patrimoniais": "descricao",
+     "impostos_participacoes": "descricao",
+     "ativo_total": "descricao",
+     "ativo_circulante": "descricao",
+     "ativo_nao_circulante": "descricao",
+     "disponivel": "descricao",
+     "aplicacoes_financeiras_cp": "descricao",
+     "creditos_operacoes_planos": "descricao",
+     "realizavel_longo_prazo": "descricao",
+     "aplicacoes_financeiras_lp": "descricao",
+     "passivo_total": "descricao",
+     "passivo_circulante": "descricao",
+     "passivo_nao_circulante": "descricao",
+     "patrimonio_liquido": "descricao",
+     "provisoes_tecnicas_cp": "descricao",
+     "provisoes_tecnicas_lp": "descricao"
+    },
+    "avisos": [
+     "receita_contraprestacoes: descrição da conta 31 ('RECEITAS COM OPERACOES DE ASSISTENCIA A SAUDE') não confere; usado o código padrão"
+    ]
+   },
+   "validacao": {
+    "classe_3_confere": 1.0,
+    "classe_4_confere": 1.0
+   }
+  },
+  "2021T3": {
+   "sinais": {
+    "classes_invertidas": [],
+    "redutoras_invertidas": []
+   },
+   "resolucao": {
+    "contas": {
+     "tributos_diretos_operacoes": [
+      "32"
+     ],
+     "tributos_diretos_outras": [
+      "34"
+     ],
+     "receita_contraprestacoes": [
+      "31"
+     ],
+     "outras_receitas_operacionais": [
+      "33"
+     ],
+     "receitas_financeiras": [
+      "35"
+     ],
+     "receitas_patrimoniais": [
+      "36"
+     ],
+     "despesa_assistencial": [
+      "41"
+     ],
+     "despesa_comercializacao": [
+      "43"
+     ],
+     "outras_despesas_operacionais": [
+      "44"
+     ],
+     "despesas_financeiras": [
+      "45"
+     ],
+     "despesa_administrativa": [
+      "46"
+     ],
+     "despesas_patrimoniais": [
+      "47"
+     ],
+     "impostos_participacoes": [
+      "61"
+     ],
+     "ativo_total": [
+      "1"
+     ],
+     "ativo_circulante": [
+      "12"
+     ],
+     "ativo_nao_circulante": [
+      "13"
+     ],
+     "disponivel": [
+      "121"
+     ],
+     "aplicacoes_financeiras_cp": [
+      "122"
+     ],
+     "creditos_operacoes_planos": [
+      "123"
+     ],
+     "realizavel_longo_prazo": [
+      "131"
+     ],
+     "aplicacoes_financeiras_lp": [
+      "1311",
+      "1312"
+     ],
+     "passivo_total": [
+      "2"
+     ],
+     "passivo_circulante": [
+      "21"
+     ],
+     "passivo_nao_circulante": [
+      "23"
+     ],
+     "patrimonio_liquido": [
+      "25"
+     ],
+     "provisoes_tecnicas_cp": [
+      "211"
+     ],
+     "provisoes_tecnicas_lp": [
+      "231"
+     ]
+    },
+    "origem": {
+     "tributos_diretos_operacoes": "descricao",
+     "tributos_diretos_outras": "descricao",
+     "receita_contraprestacoes": "codigo_padrao",
+     "outras_receitas_operacionais": "descricao",
+     "receitas_financeiras": "descricao",
+     "receitas_patrimoniais": "descricao",
+     "despesa_assistencial": "descricao",
+     "despesa_comercializacao": "descricao",
+     "outras_despesas_operacionais": "descricao",
+     "despesas_financeiras": "descricao",
+     "despesa_administrativa": "descricao",
+     "despesas_patrimoniais": "descricao",
+     "impostos_participacoes": "descricao",
+     "ativo_total": "descricao",
+     "ativo_circulante": "descricao",
+     "ativo_nao_circulante": "descricao",
+     "disponivel": "descricao",
+     "aplicacoes_financeiras_cp": "descricao",
+     "creditos_operacoes_planos": "descricao",
+     "realizavel_longo_prazo": "descricao",
+     "aplicacoes_financeiras_lp": "descricao",
+     "passivo_total": "descricao",
+     "passivo_circulante": "descricao",
+     "passivo_nao_circulante": "descricao",
+     "patrimonio_liquido": "descricao",
+     "provisoes_tecnicas_cp": "descricao",
+     "provisoes_tecnicas_lp": "descricao"
+    },
+    "avisos": [
+     "receita_contraprestacoes: descrição da conta 31 ('RECEITAS COM OPERACOES DE ASSISTENCIA A SAUDE') não confere; usado o código padrão"
+    ]
+   },
+   "validacao": {
+    "classe_3_confere": 1.0,
+    "classe_4_confere": 1.0
+   }
+  },
+  "2021T4": {
+   "sinais": {
+    "classes_invertidas": [],
+    "redutoras_invertidas": []
+   },
+   "resolucao": {
+    "contas": {
+     "tributos_diretos_operacoes": [
+      "32"
+     ],
+     "tributos_diretos_outras": [
+      "34"
+     ],
+     "receita_contraprestacoes": [
+      "31"
+     ],
+     "outras_receitas_operacionais": [
+      "33"
+     ],
+     "receitas_financeiras": [
+      "35"
+     ],
+     "receitas_patrimoniais": [
+      "36"
+     ],
+     "despesa_assistencial": [
+      "41"
+     ],
+     "despesa_comercializacao": [
+      "43"
+     ],
+     "outras_despesas_operacionais": [
+      "44"
+     ],
+     "despesas_financeiras": [
+      "45"
+     ],
+     "despesa_administrativa": [
+      "46"
+     ],
+     "despesas_patrimoniais": [
+      "47"
+     ],
+     "impostos_participacoes": [
+      "61"
+     ],
+     "ativo_total": [
+      "1"
+     ],
+     "ativo_circulante": [
+      "12"
+     ],
+     "ativo_nao_circulante": [
+      "13"
+     ],
+     "disponivel": [
+      "121"
+     ],
+     "aplicacoes_financeiras_cp": [
+      "122"
+     ],
+     "creditos_operacoes_planos": [
+      "123"
+     ],
+     "realizavel_longo_prazo": [
+      "131"
+     ],
+     "aplicacoes_financeiras_lp": [
+      "1311",
+      "1312"
+     ],
+     "passivo_total": [
+      "2"
+     ],
+     "passivo_circulante": [
+      "21"
+     ],
+     "passivo_nao_circulante": [
+      "23"
+     ],
+     "patrimonio_liquido": [
+      "25"
+     ],
+     "provisoes_tecnicas_cp": [
+      "211"
+     ],
+     "provisoes_tecnicas_lp": [
+      "231"
+     ]
+    },
+    "origem": {
+     "tributos_diretos_operacoes": "descricao",
+     "tributos_diretos_outras": "descricao",
+     "receita_contraprestacoes": "codigo_padrao",
+     "outras_receitas_operacionais": "descricao",
+     "receitas_financeiras": "descricao",
+     "receitas_patrimoniais": "descricao",
+     "despesa_assistencial": "descricao",
+     "despesa_comercializacao": "descricao",
+     "outras_despesas_operacionais": "descricao",
+     "despesas_financeiras": "descricao",
+     "despesa_administrativa": "descricao",
+     "despesas_patrimoniais": "descricao",
+     "impostos_participacoes": "descricao",
+     "ativo_total": "descricao",
+     "ativo_circulante": "descricao",
+     "ativo_nao_circulante": "descricao",
+     "disponivel": "descricao",
+     "aplicacoes_financeiras_cp": "descricao",
+     "creditos_operacoes_planos": "descricao",
+     "realizavel_longo_prazo": "descricao",
+     "aplicacoes_financeiras_lp": "descricao",
+     "passivo_total": "descricao",
+     "passivo_circulante": "descricao",
+     "passivo_nao_circulante": "descricao",
+     "patrimonio_liquido": "descricao",
+     "provisoes_tecnicas_cp": "descricao",
+     "provisoes_tecnicas_lp": "descricao"
+    },
+    "avisos": [
+     "receita_contraprestacoes: descrição da conta 31 ('RECEITAS COM OPERACOES DE ASSISTENCIA A SAUDE') não confere; usado o código padrão"
+    ]
+   },
+   "validacao": {
+    "classe_3_confere": 1.0,
+    "classe_4_confere": 1.0
+   }
+  },
+  "2022T1": {
+   "sinais": {
+    "classes_invertidas": [],
+    "redutoras_invertidas": []
+   },
+   "resolucao": {
+    "contas": {
+     "tributos_diretos_operacoes": [
+      "32"
+     ],
+     "tributos_diretos_outras": [
+      "34"
+     ],
+     "receita_contraprestacoes": [
+      "31"
+     ],
+     "outras_receitas_operacionais": [
+      "33"
+     ],
+     "receitas_financeiras": [
+      "35"
+     ],
+     "receitas_patrimoniais": [
+      "36"
+     ],
+     "despesa_assistencial": [
+      "41"
+     ],
+     "despesa_comercializacao": [
+      "43"
+     ],
+     "outras_despesas_operacionais": [
+      "44"
+     ],
+     "despesas_financeiras": [
+      "45"
+     ],
+     "despesa_administrativa": [
+      "46"
+     ],
+     "despesas_patrimoniais": [
+      "47"
+     ],
+     "impostos_participacoes": [
+      "61"
+     ],
+     "ativo_total": [
+      "1"
+     ],
+     "ativo_circulante": [
+      "12"
+     ],
+     "ativo_nao_circulante": [
+      "13"
+     ],
+     "disponivel": [
+      "121"
+     ],
+     "aplicacoes_financeiras_cp": [
+      "122"
+     ],
+     "creditos_operacoes_planos": [
+      "123"
+     ],
+     "realizavel_longo_prazo": [
+      "131"
+     ],
+     "aplicacoes_financeiras_lp": [
+      "1311",
+      "1312"
+     ],
+     "passivo_total": [
+      "2"
+     ],
+     "passivo_circulante": [
+      "21"
+     ],
+     "passivo_nao_circulante": [
+      "23"
+     ],
+     "patrimonio_liquido": [
+      "25"
+     ],
+     "provisoes_tecnicas_cp": [
+      "211"
+     ],
+     "provisoes_tecnicas_lp": [
+      "231"
+     ]
+    },
+    "origem": {
+     "tributos_diretos_operacoes": "descricao",
+     "tributos_diretos_outras": "descricao",
+     "receita_contraprestacoes": "codigo_padrao",
+     "outras_receitas_operacionais": "descricao",
+     "receitas_financeiras": "descricao",
+     "receitas_patrimoniais": "descricao",
+     "despesa_assistencial": "descricao",
+     "despesa_comercializacao": "descricao",
+     "outras_despesas_operacionais": "descricao",
+     "despesas_financeiras": "descricao",
+     "despesa_administrativa": "descricao",
+     "despesas_patrimoniais": "descricao",
+     "impostos_participacoes": "descricao",
+     "ativo_total": "descricao",
+     "ativo_circulante": "descricao",
+     "ativo_nao_circulante": "descricao",
+     "disponivel": "descricao",
+     "aplicacoes_financeiras_cp": "descricao",
+     "creditos_operacoes_planos": "descricao",
+     "realizavel_longo_prazo": "descricao",
+     "aplicacoes_financeiras_lp": "descricao",
+     "passivo_total": "descricao",
+     "passivo_circulante": "descricao",
+     "passivo_nao_circulante": "descricao",
+     "patrimonio_liquido": "descricao",
+     "provisoes_tecnicas_cp": "descricao",
+     "provisoes_tecnicas_lp": "descricao"
+    },
+    "avisos": [
+     "receita_contraprestacoes: descrição da conta 31 ('RECEITAS COM OPERACOES DE ASSISTENCIA A SAUDE') não confere; usado o código padrão"
+    ]
+   },
+   "validacao": {
+    "classe_3_confere": 1.0,
+    "classe_4_confere": 1.0
+   }
+  },
+  "2022T2": {
+   "sinais": {
+    "classes_invertidas": [],
+    "redutoras_invertidas": []
+   },
+   "resolucao": {
+    "contas": {
+     "tributos_diretos_operacoes": [
+      "32"
+     ],
+     "tributos_diretos_outras": [
+      "34"
+     ],
+     "receita_contraprestacoes": [
+      "31"
+     ],
+     "outras_receitas_operacionais": [
+      "33"
+     ],
+     "receitas_financeiras": [
+      "35"
+     ],
+     "receitas_patrimoniais": [
+      "36"
+     ],
+     "despesa_assistencial": [
+      "41"
+     ],
+     "despesa_comercializacao": [
+      "43"
+     ],
+     "outras_despesas_operacionais": [
+      "44"
+     ],
+     "despesas_financeiras": [
+      "45"
+     ],
+     "despesa_administrativa": [
+      "46"
+     ],
+     "despesas_patrimoniais": [
+      "47"
+     ],
+     "impostos_participacoes": [
+      "61"
+     ],
+     "ativo_total": [
+      "1"
+     ],
+     "ativo_circulante": [
+      "12"
+     ],
+     "ativo_nao_circulante": [
+      "13"
+     ],
+     "disponivel": [
+      "121"
+     ],
+     "aplicacoes_financeiras_cp": [
+      "122"
+     ],
+     "creditos_operacoes_planos": [
+      "123"
+     ],
+     "realizavel_longo_prazo": [
+      "131"
+     ],
+     "aplicacoes_financeiras_lp": [
+      "1311",
+      "1312"
+     ],
+     "passivo_total": [
+      "2"
+     ],
+     "passivo_circulante": [
+      "21"
+     ],
+     "passivo_nao_circulante": [
+      "23"
+     ],
+     "patrimonio_liquido": [
+      "25"
+     ],
+     "provisoes_tecnicas_cp": [
+      "211"
+     ],
+     "provisoes_tecnicas_lp": [
+      "231"
+     ]
+    },
+    "origem": {
+     "tributos_diretos_operacoes": "descricao",
+     "tributos_diretos_outras": "descricao",
+     "receita_contraprestacoes": "codigo_padrao",
+     "outras_receitas_operacionais": "descricao",
+     "receitas_financeiras": "descricao",
+     "receitas_patrimoniais": "descricao",
+     "despesa_assistencial": "descricao",
+     "despesa_comercializacao": "descricao",
+     "outras_despesas_operacionais": "descricao",
+     "despesas_financeiras": "descricao",
+     "despesa_administrativa": "descricao",
+     "despesas_patrimoniais": "descricao",
+     "impostos_participacoes": "descricao",
+     "ativo_total": "descricao",
+     "ativo_circulante": "descricao",
+     "ativo_nao_circulante": "descricao",
+     "disponivel": "descricao",
+     "aplicacoes_financeiras_cp": "descricao",
+     "creditos_operacoes_planos": "descricao",
+     "realizavel_longo_prazo": "descricao",
+     "aplicacoes_financeiras_lp": "descricao",
+     "passivo_total": "descricao",
+     "passivo_circulante": "descricao",
+     "passivo_nao_circulante": "descricao",
+     "patrimonio_liquido": "descricao",
+     "provisoes_tecnicas_cp": "descricao",
+     "provisoes_tecnicas_lp": "descricao"
+    },
+    "avisos": [
+     "receita_contraprestacoes: descrição da conta 31 ('RECEITAS COM OPERACOES DE ASSISTENCIA A SAUDE') não confere; usado o código padrão"
+    ]
+   },
+   "validacao": {
+    "classe_3_confere": 1.0,
+    "classe_4_confere": 1.0
+   }
+  },
+  "2022T3": {
+   "sinais": {
+    "classes_invertidas": [],
+    "redutoras_invertidas": []
+   },
+   "resolucao": {
+    "contas": {
+     "tributos_diretos_operacoes": [
+      "32"
+     ],
+     "tributos_diretos_outras": [
+      "34"
+     ],
+     "receita_contraprestacoes": [
+      "31"
+     ],
+     "outras_receitas_operacionais": [
+      "33"
+     ],
+     "receitas_financeiras": [
+      "35"
+     ],
+     "receitas_patrimoniais": [
+      "36"
+     ],
+     "despesa_assistencial": [
+      "41"
+     ],
+     "despesa_comercializacao": [
+      "43"
+     ],
+     "outras_despesas_operacionais": [
+      "44"
+     ],
+     "despesas_financeiras": [
+      "45"
+     ],
+     "despesa_administrativa": [
+      "46"
+     ],
+     "despesas_patrimoniais": [
+      "47"
+     ],
+     "impostos_participacoes": [
+      "61"
+     ],
+     "ativo_total": [
+      "1"
+     ],
+     "ativo_circulante": [
+      "12"
+     ],
+     "ativo_nao_circulante": [
+      "13"
+     ],
+     "disponivel": [
+      "121"
+     ],
+     "aplicacoes_financeiras_cp": [
+      "122"
+     ],
+     "creditos_operacoes_planos": [
+      "123"
+     ],
+     "realizavel_longo_prazo": [
+      "131"
+     ],
+     "aplicacoes_financeiras_lp": [
+      "1311",
+      "1312"
+     ],
+     "passivo_total": [
+      "2"
+     ],
+     "passivo_circulante": [
+      "21"
+     ],
+     "passivo_nao_circulante": [
+      "23"
+     ],
+     "patrimonio_liquido": [
+      "25"
+     ],
+     "provisoes_tecnicas_cp": [
+      "211"
+     ],
+     "provisoes_tecnicas_lp": [
+      "231"
+     ]
+    },
+    "origem": {
+     "tributos_diretos_operacoes": "descricao",
+     "tributos_diretos_outras": "descricao",
+     "receita_contraprestacoes": "codigo_padrao",
+     "outras_receitas_operacionais": "descricao",
+     "receitas_financeiras": "descricao",
+     "receitas_patrimoniais": "descricao",
+     "despesa_assistencial": "descricao",
+     "despesa_comercializacao": "descricao",
+     "outras_despesas_operacionais": "descricao",
+     "despesas_financeiras": "descricao",
+     "despesa_administrativa": "descricao",
+     "despesas_patrimoniais": "descricao",
+     "impostos_participacoes": "descricao",
+     "ativo_total": "descricao",
+     "ativo_circulante": "descricao",
+     "ativo_nao_circulante": "descricao",
+     "disponivel": "descricao",
+     "aplicacoes_financeiras_cp": "descricao",
+     "creditos_operacoes_planos": "descricao",
+     "realizavel_longo_prazo": "descricao",
+     "aplicacoes_financeiras_lp": "descricao",
+     "passivo_total": "descricao",
+     "passivo_circulante": "descricao",
+     "passivo_nao_circulante": "descricao",
+     "patrimonio_liquido": "descricao",
+     "provisoes_tecnicas_cp": "descricao",
+     "provisoes_tecnicas_lp": "descricao"
+    },
+    "avisos": [
+     "receita_contraprestacoes: descrição da conta 31 ('RECEITAS COM OPERACOES DE ASSISTENCIA A SAUDE') não confere; usado o código padrão"
+    ]
+   },
+   "validacao": {
+    "classe_3_confere": 1.0,
+    "classe_4_confere": 1.0
+   }
+  },
+  "2022T4": {
+   "sinais": {
+    "classes_invertidas": [],
+    "redutoras_invertidas": []
+   },
+   "resolucao": {
+    "contas": {
+     "tributos_diretos_operacoes": [
+      "32"
+     ],
+     "tributos_diretos_outras": [
+      "34"
+     ],
+     "receita_contraprestacoes": [
+      "31"
+     ],
+     "outras_receitas_operacionais": [
+      "33"
+     ],
+     "receitas_financeiras": [
+      "35"
+     ],
+     "receitas_patrimoniais": [
+      "36"
+     ],
+     "despesa_assistencial": [
+      "41"
+     ],
+     "despesa_comercializacao": [
+      "43"
+     ],
+     "outras_despesas_operacionais": [
+      "44"
+     ],
+     "despesas_financeiras": [
+      "45"
+     ],
+     "despesa_administrativa": [
+      "46"
+     ],
+     "despesas_patrimoniais": [
+      "47"
+     ],
+     "impostos_participacoes": [
+      "61"
+     ],
+     "ativo_total": [
+      "1"
+     ],
+     "ativo_circulante": [
+      "12"
+     ],
+     "ativo_nao_circulante": [
+      "13"
+     ],
+     "disponivel": [
+      "121"
+     ],
+     "aplicacoes_financeiras_cp": [
+      "122"
+     ],
+     "creditos_operacoes_planos": [
+      "123"
+     ],
+     "realizavel_longo_prazo": [
+      "131"
+     ],
+     "aplicacoes_financeiras_lp": [
+      "1311",
+      "1312"
+     ],
+     "passivo_total": [
+      "2"
+     ],
+     "passivo_circulante": [
+      "21"
+     ],
+     "passivo_nao_circulante": [
+      "23"
+     ],
+     "patrimonio_liquido": [
+      "25"
+     ],
+     "provisoes_tecnicas_cp": [
+      "211"
+     ],
+     "provisoes_tecnicas_lp": [
+      "231"
+     ]
+    },
+    "origem": {
+     "tributos_diretos_operacoes": "descricao",
+     "tributos_diretos_outras": "descricao",
+     "receita_contraprestacoes": "codigo_padrao",
+     "outras_receitas_operacionais": "descricao",
+     "receitas_financeiras": "descricao",
+     "receitas_patrimoniais": "descricao",
+     "despesa_assistencial": "descricao",
+     "despesa_comercializacao": "descricao",
+     "outras_despesas_operacionais": "descricao",
+     "despesas_financeiras": "descricao",
+     "despesa_administrativa": "descricao",
+     "despesas_patrimoniais": "descricao",
+     "impostos_participacoes": "descricao",
+     "ativo_total": "descricao",
+     "ativo_circulante": "descricao",
+     "ativo_nao_circulante": "descricao",
+     "disponivel": "descricao",
+     "aplicacoes_financeiras_cp": "descricao",
+     "creditos_operacoes_planos": "descricao",
+     "realizavel_longo_prazo": "descricao",
+     "aplicacoes_financeiras_lp": "descricao",
+     "passivo_total": "descricao",
+     "passivo_circulante": "descricao",
+     "passivo_nao_circulante": "descricao",
+     "patrimonio_liquido": "descricao",
+     "provisoes_tecnicas_cp": "descricao",
+     "provisoes_tecnicas_lp": "descricao"
+    },
+    "avisos": [
+     "receita_contraprestacoes: descrição da conta 31 ('RECEITAS COM OPERACOES DE ASSISTENCIA A SAUDE') não confere; usado o código padrão"
+    ]
+   },
+   "validacao": {
+    "classe_3_confere": 1.0,
+    "classe_4_confere": 1.0
+   }
+  },
+  "2023T1": {
+   "sinais": {
+    "classes_invertidas": [],
+    "redutoras_invertidas": []
+   },
+   "resolucao": {
+    "contas": {
+     "tributos_diretos_operacoes": [
+      "32"
+     ],
+     "tributos_diretos_outras": [
+      "34"
+     ],
+     "receita_contraprestacoes": [
+      "31"
+     ],
+     "outras_receitas_operacionais": [
+      "33"
+     ],
+     "receitas_financeiras": [
+      "35"
+     ],
+     "receitas_patrimoniais": [
+      "36"
+     ],
+     "despesa_assistencial": [
+      "41"
+     ],
+     "despesa_comercializacao": [
+      "43"
+     ],
+     "outras_despesas_operacionais": [
+      "44"
+     ],
+     "despesas_financeiras": [
+      "45"
+     ],
+     "despesa_administrativa": [
+      "46"
+     ],
+     "despesas_patrimoniais": [
+      "47"
+     ],
+     "impostos_participacoes": [
+      "61"
+     ],
+     "ativo_total": [
+      "1"
+     ],
+     "ativo_circulante": [
+      "12"
+     ],
+     "ativo_nao_circulante": [
+      "13"
+     ],
+     "disponivel": [
+      "121"
+     ],
+     "aplicacoes_financeiras_cp": [
+      "122"
+     ],
+     "creditos_operacoes_planos": [
+      "123"
+     ],
+     "realizavel_longo_prazo": [
+      "131"
+     ],
+     "aplicacoes_financeiras_lp": [
+      "1311",
+      "1312"
+     ],
+     "passivo_total": [
+      "2"
+     ],
+     "passivo_circulante": [
+      "21"
+     ],
+     "passivo_nao_circulante": [
+      "23"
+     ],
+     "patrimonio_liquido": [
+      "25"
+     ],
+     "provisoes_tecnicas_cp": [
+      "211"
+     ],
+     "provisoes_tecnicas_lp": [
+      "231"
+     ]
+    },
+    "origem": {
+     "tributos_diretos_operacoes": "descricao",
+     "tributos_diretos_outras": "descricao",
+     "receita_contraprestacoes": "codigo_padrao",
+     "outras_receitas_operacionais": "descricao",
+     "receitas_financeiras": "descricao",
+     "receitas_patrimoniais": "descricao",
+     "despesa_assistencial": "descricao",
+     "despesa_comercializacao": "descricao",
+     "outras_despesas_operacionais": "descricao",
+     "despesas_financeiras": "descricao",
+     "despesa_administrativa": "descricao",
+     "despesas_patrimoniais": "descricao",
+     "impostos_participacoes": "descricao",
+     "ativo_total": "descricao",
+     "ativo_circulante": "descricao",
+     "ativo_nao_circulante": "descricao",
+     "disponivel": "descricao",
+     "aplicacoes_financeiras_cp": "descricao",
+     "creditos_operacoes_planos": "descricao",
+     "realizavel_longo_prazo": "descricao",
+     "aplicacoes_financeiras_lp": "descricao",
+     "passivo_total": "descricao",
+     "passivo_circulante": "descricao",
+     "passivo_nao_circulante": "descricao",
+     "patrimonio_liquido": "descricao",
+     "provisoes_tecnicas_cp": "descricao",
+     "provisoes_tecnicas_lp": "descricao"
+    },
+    "avisos": [
+     "receita_contraprestacoes: descrição da conta 31 ('RECEITAS COM OPERACOES DE ASSISTENCIA A SAUDE') não confere; usado o código padrão"
+    ]
+   },
+   "validacao": {
+    "classe_3_confere": 1.0,
+    "classe_4_confere": 1.0
+   }
+  },
+  "2023T2": {
+   "sinais": {
+    "classes_invertidas": [],
+    "redutoras_invertidas": []
+   },
+   "resolucao": {
+    "contas": {
+     "tributos_diretos_operacoes": [
+      "32"
+     ],
+     "tributos_diretos_outras": [
+      "34"
+     ],
+     "receita_contraprestacoes": [
+      "31"
+     ],
+     "outras_receitas_operacionais": [
+      "33"
+     ],
+     "receitas_financeiras": [
+      "35"
+     ],
+     "receitas_patrimoniais": [
+      "36"
+     ],
+     "despesa_assistencial": [
+      "41"
+     ],
+     "despesa_comercializacao": [
+      "43"
+     ],
+     "outras_despesas_operacionais": [
+      "44"
+     ],
+     "despesas_financeiras": [
+      "45"
+     ],
+     "despesa_administrativa": [
+      "46"
+     ],
+     "despesas_patrimoniais": [
+      "47"
+     ],
+     "impostos_participacoes": [
+      "61"
+     ],
+     "ativo_total": [
+      "1"
+     ],
+     "ativo_circulante": [
+      "12"
+     ],
+     "ativo_nao_circulante": [
+      "13"
+     ],
+     "disponivel": [
+      "121"
+     ],
+     "aplicacoes_financeiras_cp": [
+      "122"
+     ],
+     "creditos_operacoes_planos": [
+      "123"
+     ],
+     "realizavel_longo_prazo": [
+      "131"
+     ],
+     "aplicacoes_financeiras_lp": [
+      "1311",
+      "1312"
+     ],
+     "passivo_total": [
+      "2"
+     ],
+     "passivo_circulante": [
+      "21"
+     ],
+     "passivo_nao_circulante": [
+      "23"
+     ],
+     "patrimonio_liquido": [
+      "25"
+     ],
+     "provisoes_tecnicas_cp": [
+      "211"
+     ],
+     "provisoes_tecnicas_lp": [
+      "231"
+     ]
+    },
+    "origem": {
+     "tributos_diretos_operacoes": "descricao",
+     "tributos_diretos_outras": "descricao",
+     "receita_contraprestacoes": "codigo_padrao",
+     "outras_receitas_operacionais": "descricao",
+     "receitas_financeiras": "descricao",
+     "receitas_patrimoniais": "descricao",
+     "despesa_assistencial": "descricao",
+     "despesa_comercializacao": "descricao",
+     "outras_despesas_operacionais": "descricao",
+     "despesas_financeiras": "descricao",
+     "despesa_administrativa": "descricao",
+     "despesas_patrimoniais": "descricao",
+     "impostos_participacoes": "descricao",
+     "ativo_total": "descricao",
+     "ativo_circulante": "descricao",
+     "ativo_nao_circulante": "descricao",
+     "disponivel": "descricao",
+     "aplicacoes_financeiras_cp": "descricao",
+     "creditos_operacoes_planos": "descricao",
+     "realizavel_longo_prazo": "descricao",
+     "aplicacoes_financeiras_lp": "descricao",
+     "passivo_total": "descricao",
+     "passivo_circulante": "descricao",
+     "passivo_nao_circulante": "descricao",
+     "patrimonio_liquido": "descricao",
+     "provisoes_tecnicas_cp": "descricao",
+     "provisoes_tecnicas_lp": "descricao"
+    },
+    "avisos": [
+     "receita_contraprestacoes: descrição da conta 31 ('RECEITAS COM OPERACOES DE ASSISTENCIA A SAUDE') não confere; usado o código padrão"
+    ]
+   },
+   "validacao": {
+    "classe_3_confere": 1.0,
+    "classe_4_confere": 1.0
+   }
+  },
+  "2023T3": {
+   "sinais": {
+    "classes_invertidas": [],
+    "redutoras_invertidas": []
+   },
+   "resolucao": {
+    "contas": {
+     "tributos_diretos_operacoes": [
+      "32"
+     ],
+     "tributos_diretos_outras": [
+      "34"
+     ],
+     "receita_contraprestacoes": [
+      "31"
+     ],
+     "outras_receitas_operacionais": [
+      "33"
+     ],
+     "receitas_financeiras": [
+      "35"
+     ],
+     "receitas_patrimoniais": [
+      "36"
+     ],
+     "despesa_assistencial": [
+      "41"
+     ],
+     "despesa_comercializacao": [
+      "43"
+     ],
+     "outras_despesas_operacionais": [
+      "44"
+     ],
+     "despesas_financeiras": [
+      "45"
+     ],
+     "despesa_administrativa": [
+      "46"
+     ],
+     "despesas_patrimoniais": [
+      "47"
+     ],
+     "impostos_participacoes": [
+      "61"
+     ],
+     "ativo_total": [
+      "1"
+     ],
+     "ativo_circulante": [
+      "12"
+     ],
+     "ativo_nao_circulante": [
+      "13"
+     ],
+     "disponivel": [
+      "121"
+     ],
+     "aplicacoes_financeiras_cp": [
+      "122"
+     ],
+     "creditos_operacoes_planos": [
+      "123"
+     ],
+     "realizavel_longo_prazo": [
+      "131"
+     ],
+     "aplicacoes_financeiras_lp": [
+      "1311",
+      "1312"
+     ],
+     "passivo_total": [
+      "2"
+     ],
+     "passivo_circulante": [
+      "21"
+     ],
+     "passivo_nao_circulante": [
+      "23"
+     ],
+     "patrimonio_liquido": [
+      "25"
+     ],
+     "provisoes_tecnicas_cp": [
+      "211"
+     ],
+     "provisoes_tecnicas_lp": [
+      "231"
+     ]
+    },
+    "origem": {
+     "tributos_diretos_operacoes": "descricao",
+     "tributos_diretos_outras": "descricao",
+     "receita_contraprestacoes": "codigo_padrao",
+     "outras_receitas_operacionais": "descricao",
+     "receitas_financeiras": "descricao",
+     "receitas_patrimoniais": "descricao",
+     "despesa_assistencial": "descricao",
+     "despesa_comercializacao": "descricao",
+     "outras_despesas_operacionais": "descricao",
+     "despesas_financeiras": "descricao",
+     "despesa_administrativa": "descricao",
+     "despesas_patrimoniais": "descricao",
+     "impostos_participacoes": "descricao",
+     "ativo_total": "descricao",
+     "ativo_circulante": "descricao",
+     "ativo_nao_circulante": "descricao",
+     "disponivel": "descricao",
+     "aplicacoes_financeiras_cp": "descricao",
+     "creditos_operacoes_planos": "descricao",
+     "realizavel_longo_prazo": "descricao",
+     "aplicacoes_financeiras_lp": "descricao",
+     "passivo_total": "descricao",
+     "passivo_circulante": "descricao",
+     "passivo_nao_circulante": "descricao",
+     "patrimonio_liquido": "descricao",
+     "provisoes_tecnicas_cp": "descricao",
+     "provisoes_tecnicas_lp": "descricao"
+    },
+    "avisos": [
+     "receita_contraprestacoes: descrição da conta 31 ('RECEITAS COM OPERACOES DE ASSISTENCIA A SAUDE') não confere; usado o código padrão"
+    ]
+   },
+   "validacao": {
+    "classe_3_confere": 1.0,
+    "classe_4_confere": 1.0
+   }
+  },
+  "2023T4": {
+   "sinais": {
+    "classes_invertidas": [],
+    "redutoras_invertidas": []
+   },
+   "resolucao": {
+    "contas": {
+     "tributos_diretos_operacoes": [
+      "32"
+     ],
+     "tributos_diretos_outras": [
+      "34"
+     ],
+     "receita_contraprestacoes": [
+      "31"
+     ],
+     "outras_receitas_operacionais": [
+      "33"
+     ],
+     "receitas_financeiras": [
+      "35"
+     ],
+     "receitas_patrimoniais": [
+      "36"
+     ],
+     "despesa_assistencial": [
+      "41"
+     ],
+     "despesa_comercializacao": [
+      "43"
+     ],
+     "outras_despesas_operacionais": [
+      "44"
+     ],
+     "despesas_financeiras": [
+      "45"
+     ],
+     "despesa_administrativa": [
+      "46"
+     ],
+     "despesas_patrimoniais": [
+      "47"
+     ],
+     "impostos_participacoes": [
+      "61"
+     ],
+     "ativo_total": [
+      "1"
+     ],
+     "ativo_circulante": [
+      "12"
+     ],
+     "ativo_nao_circulante": [
+      "13"
+     ],
+     "disponivel": [
+      "121"
+     ],
+     "aplicacoes_financeiras_cp": [
+      "122"
+     ],
+     "creditos_operacoes_planos": [
+      "123"
+     ],
+     "realizavel_longo_prazo": [
+      "131"
+     ],
+     "aplicacoes_financeiras_lp": [
+      "1311",
+      "1312"
+     ],
+     "passivo_total": [
+      "2"
+     ],
+     "passivo_circulante": [
+      "21"
+     ],
+     "passivo_nao_circulante": [
+      "23"
+     ],
+     "patrimonio_liquido": [
+      "25"
+     ],
+     "provisoes_tecnicas_cp": [
+      "211"
+     ],
+     "provisoes_tecnicas_lp": [
+      "231"
+     ]
+    },
+    "origem": {
+     "tributos_diretos_operacoes": "descricao",
+     "tributos_diretos_outras": "descricao",
+     "receita_contraprestacoes": "codigo_padrao",
+     "outras_receitas_operacionais": "descricao",
+     "receitas_financeiras": "descricao",
+     "receitas_patrimoniais": "descricao",
+     "despesa_assistencial": "descricao",
+     "despesa_comercializacao": "descricao",
+     "outras_despesas_operacionais": "descricao",
+     "despesas_financeiras": "descricao",
+     "despesa_administrativa": "descricao",
+     "despesas_patrimoniais": "descricao",
+     "impostos_participacoes": "descricao",
+     "ativo_total": "descricao",
+     "ativo_circulante": "descricao",
+     "ativo_nao_circulante": "descricao",
+     "disponivel": "descricao",
+     "aplicacoes_financeiras_cp": "descricao",
+     "creditos_operacoes_planos": "descricao",
+     "realizavel_longo_prazo": "descricao",
+     "aplicacoes_financeiras_lp": "descricao",
+     "passivo_total": "descricao",
+     "passivo_circulante": "descricao",
+     "passivo_nao_circulante": "descricao",
+     "patrimonio_liquido": "descricao",
+     "provisoes_tecnicas_cp": "descricao",
+     "provisoes_tecnicas_lp": "descricao"
+    },
+    "avisos": [
+     "receita_contraprestacoes: descrição da conta 31 ('RECEITAS COM OPERACOES DE ASSISTENCIA A SAUDE') não confere; usado o código padrão"
+    ]
+   },
+   "validacao": {
+    "classe_3_confere": 1.0,
+    "classe_4_confere": 1.0
+   }
+  },
+  "2024T1": {
+   "sinais": {
+    "classes_invertidas": [],
+    "redutoras_invertidas": []
+   },
+   "resolucao": {
+    "contas": {
+     "tributos_diretos_operacoes": [
+      "32"
+     ],
+     "tributos_diretos_outras": [
+      "34"
+     ],
+     "receita_contraprestacoes": [
+      "31"
+     ],
+     "outras_receitas_operacionais": [
+      "33"
+     ],
+     "receitas_financeiras": [
+      "35"
+     ],
+     "receitas_patrimoniais": [
+      "36"
+     ],
+     "despesa_assistencial": [
+      "41"
+     ],
+     "despesa_comercializacao": [
+      "43"
+     ],
+     "outras_despesas_operacionais": [
+      "44"
+     ],
+     "despesas_financeiras": [
+      "45"
+     ],
+     "despesa_administrativa": [
+      "46"
+     ],
+     "despesas_patrimoniais": [
+      "47"
+     ],
+     "impostos_participacoes": [
+      "61"
+     ],
+     "ativo_total": [
+      "1"
+     ],
+     "ativo_circulante": [
+      "12"
+     ],
+     "ativo_nao_circulante": [
+      "13"
+     ],
+     "disponivel": [
+      "121"
+     ],
+     "aplicacoes_financeiras_cp": [
+      "122"
+     ],
+     "creditos_operacoes_planos": [
+      "123"
+     ],
+     "realizavel_longo_prazo": [
+      "131"
+     ],
+     "aplicacoes_financeiras_lp": [
+      "1311",
+      "1312"
+     ],
+     "passivo_total": [
+      "2"
+     ],
+     "passivo_circulante": [
+      "21"
+     ],
+     "passivo_nao_circulante": [
+      "23"
+     ],
+     "patrimonio_liquido": [
+      "25"
+     ],
+     "provisoes_tecnicas_cp": [
+      "211"
+     ],
+     "provisoes_tecnicas_lp": [
+      "231"
+     ]
+    },
+    "origem": {
+     "tributos_diretos_operacoes": "descricao",
+     "tributos_diretos_outras": "descricao",
+     "receita_contraprestacoes": "codigo_padrao",
+     "outras_receitas_operacionais": "descricao",
+     "receitas_financeiras": "descricao",
+     "receitas_patrimoniais": "descricao",
+     "despesa_assistencial": "descricao",
+     "despesa_comercializacao": "descricao",
+     "outras_despesas_operacionais": "descricao",
+     "despesas_financeiras": "descricao",
+     "despesa_administrativa": "descricao",
+     "despesas_patrimoniais": "descricao",
+     "impostos_participacoes": "descricao",
+     "ativo_total": "descricao",
+     "ativo_circulante": "descricao",
+     "ativo_nao_circulante": "descricao",
+     "disponivel": "descricao",
+     "aplicacoes_financeiras_cp": "descricao",
+     "creditos_operacoes_planos": "descricao",
+     "realizavel_longo_prazo": "descricao",
+     "aplicacoes_financeiras_lp": "descricao",
+     "passivo_total": "descricao",
+     "passivo_circulante": "descricao",
+     "passivo_nao_circulante": "descricao",
+     "patrimonio_liquido": "descricao",
+     "provisoes_tecnicas_cp": "descricao",
+     "provisoes_tecnicas_lp": "descricao"
+    },
+    "avisos": [
+     "receita_contraprestacoes: descrição da conta 31 ('RECEITAS COM OPERACOES DE ASSISTENCIA A SAUDE') não confere; usado o código padrão"
+    ]
+   },
+   "validacao": {
+    "classe_3_confere": 1.0,
+    "classe_4_confere": 1.0
+   }
+  },
+  "2024T2": {
+   "sinais": {
+    "classes_invertidas": [],
+    "redutoras_invertidas": []
+   },
+   "resolucao": {
+    "contas": {
+     "tributos_diretos_operacoes": [
+      "32"
+     ],
+     "tributos_diretos_outras": [
+      "34"
+     ],
+     "receita_contraprestacoes": [
+      "31"
+     ],
+     "outras_receitas_operacionais": [
+      "33"
+     ],
+     "receitas_financeiras": [
+      "35"
+     ],
+     "receitas_patrimoniais": [
+      "36"
+     ],
+     "despesa_assistencial": [
+      "41"
+     ],
+     "despesa_comercializacao": [
+      "43"
+     ],
+     "outras_despesas_operacionais": [
+      "44"
+     ],
+     "despesas_financeiras": [
+      "45"
+     ],
+     "despesa_administrativa": [
+      "46"
+     ],
+     "despesas_patrimoniais": [
+      "47"
+     ],
+     "impostos_participacoes": [
+      "61"
+     ],
+     "ativo_total": [
+      "1"
+     ],
+     "ativo_circulante": [
+      "12"
+     ],
+     "ativo_nao_circulante": [
+      "13"
+     ],
+     "disponivel": [
+      "121"
+     ],
+     "aplicacoes_financeiras_cp": [
+      "122"
+     ],
+     "creditos_operacoes_planos": [
+      "123"
+     ],
+     "realizavel_longo_prazo": [
+      "131"
+     ],
+     "aplicacoes_financeiras_lp": [
+      "1311",
+      "1312"
+     ],
+     "passivo_total": [
+      "2"
+     ],
+     "passivo_circulante": [
+      "21"
+     ],
+     "passivo_nao_circulante": [
+      "23"
+     ],
+     "patrimonio_liquido": [
+      "25"
+     ],
+     "provisoes_tecnicas_cp": [
+      "211"
+     ],
+     "provisoes_tecnicas_lp": [
+      "231"
+     ]
+    },
+    "origem": {
+     "tributos_diretos_operacoes": "descricao",
+     "tributos_diretos_outras": "descricao",
+     "receita_contraprestacoes": "codigo_padrao",
+     "outras_receitas_operacionais": "descricao",
+     "receitas_financeiras": "descricao",
+     "receitas_patrimoniais": "descricao",
+     "despesa_assistencial": "descricao",
+     "despesa_comercializacao": "descricao",
+     "outras_despesas_operacionais": "descricao",
+     "despesas_financeiras": "descricao",
+     "despesa_administrativa": "descricao",
+     "despesas_patrimoniais": "descricao",
+     "impostos_participacoes": "descricao",
+     "ativo_total": "descricao",
+     "ativo_circulante": "descricao",
+     "ativo_nao_circulante": "descricao",
+     "disponivel": "descricao",
+     "aplicacoes_financeiras_cp": "descricao",
+     "creditos_operacoes_planos": "descricao",
+     "realizavel_longo_prazo": "descricao",
+     "aplicacoes_financeiras_lp": "descricao",
+     "passivo_total": "descricao",
+     "passivo_circulante": "descricao",
+     "passivo_nao_circulante": "descricao",
+     "patrimonio_liquido": "descricao",
+     "provisoes_tecnicas_cp": "descricao",
+     "provisoes_tecnicas_lp": "descricao"
+    },
+    "avisos": [
+     "receita_contraprestacoes: descrição da conta 31 ('RECEITAS COM OPERACOES DE ASSISTENCIA A SAUDE') não confere; usado o código padrão"
+    ]
+   },
+   "validacao": {
+    "classe_3_confere": 1.0,
+    "classe_4_confere": 1.0
+   }
+  },
+  "2024T3": {
+   "sinais": {
+    "classes_invertidas": [],
+    "redutoras_invertidas": []
+   },
+   "resolucao": {
+    "contas": {
+     "tributos_diretos_operacoes": [
+      "32"
+     ],
+     "tributos_diretos_outras": [
+      "34"
+     ],
+     "receita_contraprestacoes": [
+      "31"
+     ],
+     "outras_receitas_operacionais": [
+      "33"
+     ],
+     "receitas_financeiras": [
+      "35"
+     ],
+     "receitas_patrimoniais": [
+      "36"
+     ],
+     "despesa_assistencial": [
+      "41"
+     ],
+     "despesa_comercializacao": [
+      "43"
+     ],
+     "outras_despesas_operacionais": [
+      "44"
+     ],
+     "despesas_financeiras": [
+      "45"
+     ],
+     "despesa_administrativa": [
+      "46"
+     ],
+     "despesas_patrimoniais": [
+      "47"
+     ],
+     "impostos_participacoes": [
+      "61"
+     ],
+     "ativo_total": [
+      "1"
+     ],
+     "ativo_circulante": [
+      "12"
+     ],
+     "ativo_nao_circulante": [
+      "13"
+     ],
+     "disponivel": [
+      "121"
+     ],
+     "aplicacoes_financeiras_cp": [
+      "122"
+     ],
+     "creditos_operacoes_planos": [
+      "123"
+     ],
+     "realizavel_longo_prazo": [
+      "131"
+     ],
+     "aplicacoes_financeiras_lp": [
+      "1311",
+      "1312"
+     ],
+     "passivo_total": [
+      "2"
+     ],
+     "passivo_circulante": [
+      "21"
+     ],
+     "passivo_nao_circulante": [
+      "23"
+     ],
+     "patrimonio_liquido": [
+      "25"
+     ],
+     "provisoes_tecnicas_cp": [
+      "211"
+     ],
+     "provisoes_tecnicas_lp": [
+      "231"
+     ]
+    },
+    "origem": {
+     "tributos_diretos_operacoes": "descricao",
+     "tributos_diretos_outras": "descricao",
+     "receita_contraprestacoes": "codigo_padrao",
+     "outras_receitas_operacionais": "descricao",
+     "receitas_financeiras": "descricao",
+     "receitas_patrimoniais": "descricao",
+     "despesa_assistencial": "descricao",
+     "despesa_comercializacao": "descricao",
+     "outras_despesas_operacionais": "descricao",
+     "despesas_financeiras": "descricao",
+     "despesa_administrativa": "descricao",
+     "despesas_patrimoniais": "descricao",
+     "impostos_participacoes": "descricao",
+     "ativo_total": "descricao",
+     "ativo_circulante": "descricao",
+     "ativo_nao_circulante": "descricao",
+     "disponivel": "descricao",
+     "aplicacoes_financeiras_cp": "descricao",
+     "creditos_operacoes_planos": "descricao",
+     "realizavel_longo_prazo": "descricao",
+     "aplicacoes_financeiras_lp": "descricao",
+     "passivo_total": "descricao",
+     "passivo_circulante": "descricao",
+     "passivo_nao_circulante": "descricao",
+     "patrimonio_liquido": "descricao",
+     "provisoes_tecnicas_cp": "descricao",
+     "provisoes_tecnicas_lp": "descricao"
+    },
+    "avisos": [
+     "receita_contraprestacoes: descrição da conta 31 ('RECEITAS COM OPERACOES DE ASSISTENCIA A SAUDE') não confere; usado o código padrão"
+    ]
+   },
+   "validacao": {
+    "classe_3_confere": 1.0,
+    "classe_4_confere": 1.0
+   }
+  },
+  "2024T4": {
+   "sinais": {
+    "classes_invertidas": [],
+    "redutoras_invertidas": []
+   },
+   "resolucao": {
+    "contas": {
+     "tributos_diretos_operacoes": [
+      "32"
+     ],
+     "tributos_diretos_outras": [
+      "34"
+     ],
+     "receita_contraprestacoes": [
+      "31"
+     ],
+     "outras_receitas_operacionais": [
+      "33"
+     ],
+     "receitas_financeiras": [
+      "35"
+     ],
+     "receitas_patrimoniais": [
+      "36"
+     ],
+     "despesa_assistencial": [
+      "41"
+     ],
+     "despesa_comercializacao": [
+      "43"
+     ],
+     "outras_despesas_operacionais": [
+      "44"
+     ],
+     "despesas_financeiras": [
+      "45"
+     ],
+     "despesa_administrativa": [
+      "46"
+     ],
+     "despesas_patrimoniais": [
+      "47"
+     ],
+     "impostos_participacoes": [
+      "61"
+     ],
+     "ativo_total": [
+      "1"
+     ],
+     "ativo_circulante": [
+      "12"
+     ],
+     "ativo_nao_circulante": [
+      "13"
+     ],
+     "disponivel": [
+      "121"
+     ],
+     "aplicacoes_financeiras_cp": [
+      "122"
+     ],
+     "creditos_operacoes_planos": [
+      "123"
+     ],
+     "realizavel_longo_prazo": [
+      "131"
+     ],
+     "aplicacoes_financeiras_lp": [
+      "1311",
+      "1312"
+     ],
+     "passivo_total": [
+      "2"
+     ],
+     "passivo_circulante": [
+      "21"
+     ],
+     "passivo_nao_circulante": [
+      "23"
+     ],
+     "patrimonio_liquido": [
+      "25"
+     ],
+     "provisoes_tecnicas_cp": [
+      "211"
+     ],
+     "provisoes_tecnicas_lp": [
+      "231"
+     ]
+    },
+    "origem": {
+     "tributos_diretos_operacoes": "descricao",
+     "tributos_diretos_outras": "descricao",
+     "receita_contraprestacoes": "codigo_padrao",
+     "outras_receitas_operacionais": "descricao",
+     "receitas_financeiras": "descricao",
+     "receitas_patrimoniais": "descricao",
+     "despesa_assistencial": "descricao",
+     "despesa_comercializacao": "descricao",
+     "outras_despesas_operacionais": "descricao",
+     "despesas_financeiras": "descricao",
+     "despesa_administrativa": "descricao",
+     "despesas_patrimoniais": "descricao",
+     "impostos_participacoes": "descricao",
+     "ativo_total": "descricao",
+     "ativo_circulante": "descricao",
+     "ativo_nao_circulante": "descricao",
+     "disponivel": "descricao",
+     "aplicacoes_financeiras_cp": "descricao",
+     "creditos_operacoes_planos": "descricao",
+     "realizavel_longo_prazo": "descricao",
+     "aplicacoes_financeiras_lp": "descricao",
+     "passivo_total": "descricao",
+     "passivo_circulante": "descricao",
+     "passivo_nao_circulante": "descricao",
+     "patrimonio_liquido": "descricao",
+     "provisoes_tecnicas_cp": "descricao",
+     "provisoes_tecnicas_lp": "descricao"
+    },
+    "avisos": [
+     "receita_contraprestacoes: descrição da conta 31 ('RECEITAS COM OPERACOES DE ASSISTENCIA A SAUDE') não confere; usado o código padrão"
+    ]
+   },
+   "validacao": {
+    "classe_3_confere": 1.0,
+    "classe_4_confere": 1.0
+   }
+  },
+  "2025T1": {
+   "sinais": {
+    "classes_invertidas": [],
+    "redutoras_invertidas": []
+   },
+   "resolucao": {
+    "contas": {
+     "tributos_diretos_operacoes": [
+      "32"
+     ],
+     "tributos_diretos_outras": [
+      "34"
+     ],
+     "receita_contraprestacoes": [
+      "31"
+     ],
+     "outras_receitas_operacionais": [
+      "33"
+     ],
+     "receitas_financeiras": [
+      "35"
+     ],
+     "receitas_patrimoniais": [
+      "36"
+     ],
+     "despesa_assistencial": [
+      "41"
+     ],
+     "despesa_comercializacao": [
+      "43"
+     ],
+     "outras_despesas_operacionais": [
+      "44"
+     ],
+     "despesas_financeiras": [
+      "45"
+     ],
+     "despesa_administrativa": [
+      "46"
+     ],
+     "despesas_patrimoniais": [
+      "47"
+     ],
+     "impostos_participacoes": [
+      "61"
+     ],
+     "ativo_total": [
+      "1"
+     ],
+     "ativo_circulante": [
+      "12"
+     ],
+     "ativo_nao_circulante": [
+      "13"
+     ],
+     "disponivel": [
+      "121"
+     ],
+     "aplicacoes_financeiras_cp": [
+      "122"
+     ],
+     "creditos_operacoes_planos": [
+      "123"
+     ],
+     "realizavel_longo_prazo": [
+      "131"
+     ],
+     "aplicacoes_financeiras_lp": [
+      "1311",
+      "1312"
+     ],
+     "passivo_total": [
+      "2"
+     ],
+     "passivo_circulante": [
+      "21"
+     ],
+     "passivo_nao_circulante": [
+      "23"
+     ],
+     "patrimonio_liquido": [
+      "25"
+     ],
+     "provisoes_tecnicas_cp": [
+      "211"
+     ],
+     "provisoes_tecnicas_lp": [
+      "231"
+     ]
+    },
+    "origem": {
+     "tributos_diretos_operacoes": "descricao",
+     "tributos_diretos_outras": "descricao",
+     "receita_contraprestacoes": "codigo_padrao",
+     "outras_receitas_operacionais": "descricao",
+     "receitas_financeiras": "descricao",
+     "receitas_patrimoniais": "descricao",
+     "despesa_assistencial": "descricao",
+     "despesa_comercializacao": "descricao",
+     "outras_despesas_operacionais": "descricao",
+     "despesas_financeiras": "descricao",
+     "despesa_administrativa": "descricao",
+     "despesas_patrimoniais": "descricao",
+     "impostos_participacoes": "descricao",
+     "ativo_total": "descricao",
+     "ativo_circulante": "descricao",
+     "ativo_nao_circulante": "descricao",
+     "disponivel": "descricao",
+     "aplicacoes_financeiras_cp": "descricao",
+     "creditos_operacoes_planos": "descricao",
+     "realizavel_longo_prazo": "descricao",
+     "aplicacoes_financeiras_lp": "descricao",
+     "passivo_total": "descricao",
+     "passivo_circulante": "descricao",
+     "passivo_nao_circulante": "descricao",
+     "patrimonio_liquido": "descricao",
+     "provisoes_tecnicas_cp": "descricao",
+     "provisoes_tecnicas_lp": "descricao"
+    },
+    "avisos": [
+     "receita_contraprestacoes: descrição da conta 31 ('RECEITAS COM OPERACOES DE ASSISTENCIA A SAUDE') não confere; usado o código padrão"
+    ]
+   },
+   "validacao": {
+    "classe_3_confere": 1.0,
+    "classe_4_confere": 1.0
+   }
+  },
+  "2025T2": {
+   "sinais": {
+    "classes_invertidas": [],
+    "redutoras_invertidas": []
+   },
+   "resolucao": {
+    "contas": {
+     "tributos_diretos_operacoes": [
+      "32"
+     ],
+     "tributos_diretos_outras": [
+      "34"
+     ],
+     "receita_contraprestacoes": [
+      "31"
+     ],
+     "outras_receitas_operacionais": [
+      "33"
+     ],
+     "receitas_financeiras": [
+      "35"
+     ],
+     "receitas_patrimoniais": [
+      "36"
+     ],
+     "despesa_assistencial": [
+      "41"
+     ],
+     "despesa_comercializacao": [
+      "43"
+     ],
+     "outras_despesas_operacionais": [
+      "44"
+     ],
+     "despesas_financeiras": [
+      "45"
+     ],
+     "despesa_administrativa": [
+      "46"
+     ],
+     "despesas_patrimoniais": [
+      "47"
+     ],
+     "impostos_participacoes": [
+      "61"
+     ],
+     "ativo_total": [
+      "1"
+     ],
+     "ativo_circulante": [
+      "12"
+     ],
+     "ativo_nao_circulante": [
+      "13"
+     ],
+     "disponivel": [
+      "121"
+     ],
+     "aplicacoes_financeiras_cp": [
+      "122"
+     ],
+     "creditos_operacoes_planos": [
+      "123"
+     ],
+     "realizavel_longo_prazo": [
+      "131"
+     ],
+     "aplicacoes_financeiras_lp": [
+      "1311",
+      "1312"
+     ],
+     "passivo_total": [
+      "2"
+     ],
+     "passivo_circulante": [
+      "21"
+     ],
+     "passivo_nao_circulante": [
+      "23"
+     ],
+     "patrimonio_liquido": [
+      "25"
+     ],
+     "provisoes_tecnicas_cp": [
+      "211"
+     ],
+     "provisoes_tecnicas_lp": [
+      "231"
+     ]
+    },
+    "origem": {
+     "tributos_diretos_operacoes": "descricao",
+     "tributos_diretos_outras": "descricao",
+     "receita_contraprestacoes": "codigo_padrao",
+     "outras_receitas_operacionais": "descricao",
+     "receitas_financeiras": "descricao",
+     "receitas_patrimoniais": "descricao",
+     "despesa_assistencial": "descricao",
+     "despesa_comercializacao": "descricao",
+     "outras_despesas_operacionais": "descricao",
+     "despesas_financeiras": "descricao",
+     "despesa_administrativa": "descricao",
+     "despesas_patrimoniais": "descricao",
+     "impostos_participacoes": "descricao",
+     "ativo_total": "descricao",
+     "ativo_circulante": "descricao",
+     "ativo_nao_circulante": "descricao",
+     "disponivel": "descricao",
+     "aplicacoes_financeiras_cp": "descricao",
+     "creditos_operacoes_planos": "descricao",
+     "realizavel_longo_prazo": "descricao",
+     "aplicacoes_financeiras_lp": "descricao",
+     "passivo_total": "descricao",
+     "passivo_circulante": "descricao",
+     "passivo_nao_circulante": "descricao",
+     "patrimonio_liquido": "descricao",
+     "provisoes_tecnicas_cp": "descricao",
+     "provisoes_tecnicas_lp": "descricao"
+    },
+    "avisos": [
+     "receita_contraprestacoes: descrição da conta 31 ('RECEITAS COM OPERACOES DE ASSISTENCIA A SAUDE') não confere; usado o código padrão"
+    ]
+   },
+   "validacao": {
+    "classe_3_confere": 1.0,
+    "classe_4_confere": 1.0
+   }
+  },
+  "2025T3": {
+   "sinais": {
+    "classes_invertidas": [],
+    "redutoras_invertidas": []
+   },
+   "resolucao": {
+    "contas": {
+     "tributos_diretos_operacoes": [
+      "32"
+     ],
+     "tributos_diretos_outras": [
+      "34"
+     ],
+     "receita_contraprestacoes": [
+      "31"
+     ],
+     "outras_receitas_operacionais": [
+      "33"
+     ],
+     "receitas_financeiras": [
+      "35"
+     ],
+     "receitas_patrimoniais": [
+      "36"
+     ],
+     "despesa_assistencial": [
+      "41"
+     ],
+     "despesa_comercializacao": [
+      "43"
+     ],
+     "outras_despesas_operacionais": [
+      "44"
+     ],
+     "despesas_financeiras": [
+      "45"
+     ],
+     "despesa_administrativa": [
+      "46"
+     ],
+     "despesas_patrimoniais": [
+      "47"
+     ],
+     "impostos_participacoes": [
+      "61"
+     ],
+     "ativo_total": [
+      "1"
+     ],
+     "ativo_circulante": [
+      "12"
+     ],
+     "ativo_nao_circulante": [
+      "13"
+     ],
+     "disponivel": [
+      "121"
+     ],
+     "aplicacoes_financeiras_cp": [
+      "122"
+     ],
+     "creditos_operacoes_planos": [
+      "123"
+     ],
+     "realizavel_longo_prazo": [
+      "131"
+     ],
+     "aplicacoes_financeiras_lp": [
+      "1311",
+      "1312"
+     ],
+     "passivo_total": [
+      "2"
+     ],
+     "passivo_circulante": [
+      "21"
+     ],
+     "passivo_nao_circulante": [
+      "23"
+     ],
+     "patrimonio_liquido": [
+      "25"
+     ],
+     "provisoes_tecnicas_cp": [
+      "211"
+     ],
+     "provisoes_tecnicas_lp": [
+      "231"
+     ]
+    },
+    "origem": {
+     "tributos_diretos_operacoes": "descricao",
+     "tributos_diretos_outras": "descricao",
+     "receita_contraprestacoes": "codigo_padrao",
+     "outras_receitas_operacionais": "descricao",
+     "receitas_financeiras": "descricao",
+     "receitas_patrimoniais": "descricao",
+     "despesa_assistencial": "descricao",
+     "despesa_comercializacao": "descricao",
+     "outras_despesas_operacionais": "descricao",
+     "despesas_financeiras": "descricao",
+     "despesa_administrativa": "descricao",
+     "despesas_patrimoniais": "descricao",
+     "impostos_participacoes": "descricao",
+     "ativo_total": "descricao",
+     "ativo_circulante": "descricao",
+     "ativo_nao_circulante": "descricao",
+     "disponivel": "descricao",
+     "aplicacoes_financeiras_cp": "descricao",
+     "creditos_operacoes_planos": "descricao",
+     "realizavel_longo_prazo": "descricao",
+     "aplicacoes_financeiras_lp": "descricao",
+     "passivo_total": "descricao",
+     "passivo_circulante": "descricao",
+     "passivo_nao_circulante": "descricao",
+     "patrimonio_liquido": "descricao",
+     "provisoes_tecnicas_cp": "descricao",
+     "provisoes_tecnicas_lp": "descricao"
+    },
+    "avisos": [
+     "receita_contraprestacoes: descrição da conta 31 ('RECEITAS COM OPERACOES DE ASSISTENCIA A SAUDE') não confere; usado o código padrão"
+    ]
+   },
+   "validacao": {
+    "classe_3_confere": 1.0,
+    "classe_4_confere": 1.0
+   }
+  },
+  "2025T4": {
+   "sinais": {
+    "classes_invertidas": [],
+    "redutoras_invertidas": []
+   },
+   "resolucao": {
+    "contas": {
+     "tributos_diretos_operacoes": [
+      "32"
+     ],
+     "tributos_diretos_outras": [
+      "34"
+     ],
+     "receita_contraprestacoes": [
+      "31"
+     ],
+     "outras_receitas_operacionais": [
+      "33"
+     ],
+     "receitas_financeiras": [
+      "35"
+     ],
+     "receitas_patrimoniais": [
+      "36"
+     ],
+     "despesa_assistencial": [
+      "41"
+     ],
+     "despesa_comercializacao": [
+      "43"
+     ],
+     "outras_despesas_operacionais": [
+      "44"
+     ],
+     "despesas_financeiras": [
+      "45"
+     ],
+     "despesa_administrativa": [
+      "46"
+     ],
+     "despesas_patrimoniais": [
+      "47"
+     ],
+     "impostos_participacoes": [
+      "61"
+     ],
+     "ativo_total": [
+      "1"
+     ],
+     "ativo_circulante": [
+      "12"
+     ],
+     "ativo_nao_circulante": [
+      "13"
+     ],
+     "disponivel": [
+      "121"
+     ],
+     "aplicacoes_financeiras_cp": [
+      "122"
+     ],
+     "creditos_operacoes_planos": [
+      "123"
+     ],
+     "realizavel_longo_prazo": [
+      "131"
+     ],
+     "aplicacoes_financeiras_lp": [
+      "1311",
+      "1312"
+     ],
+     "passivo_total": [
+      "2"
+     ],
+     "passivo_circulante": [
+      "21"
+     ],
+     "passivo_nao_circulante": [
+      "23"
+     ],
+     "patrimonio_liquido": [
+      "25"
+     ],
+     "provisoes_tecnicas_cp": [
+      "211"
+     ],
+     "provisoes_tecnicas_lp": [
+      "231"
+     ]
+    },
+    "origem": {
+     "tributos_diretos_operacoes": "descricao",
+     "tributos_diretos_outras": "descricao",
+     "receita_contraprestacoes": "codigo_padrao",
+     "outras_receitas_operacionais": "descricao",
+     "receitas_financeiras": "descricao",
+     "receitas_patrimoniais": "descricao",
+     "despesa_assistencial": "descricao",
+     "despesa_comercializacao": "descricao",
+     "outras_despesas_operacionais": "descricao",
+     "despesas_financeiras": "descricao",
+     "despesa_administrativa": "descricao",
+     "despesas_patrimoniais": "descricao",
+     "impostos_participacoes": "descricao",
+     "ativo_total": "descricao",
+     "ativo_circulante": "descricao",
+     "ativo_nao_circulante": "descricao",
+     "disponivel": "descricao",
+     "aplicacoes_financeiras_cp": "descricao",
+     "creditos_operacoes_planos": "descricao",
+     "realizavel_longo_prazo": "descricao",
+     "aplicacoes_financeiras_lp": "descricao",
+     "passivo_total": "descricao",
+     "passivo_circulante": "descricao",
+     "passivo_nao_circulante": "descricao",
+     "patrimonio_liquido": "descricao",
+     "provisoes_tecnicas_cp": "descricao",
+     "provisoes_tecnicas_lp": "descricao"
+    },
+    "avisos": [
+     "receita_contraprestacoes: descrição da conta 31 ('RECEITAS COM OPERACOES DE ASSISTENCIA A SAUDE') não confere; usado o código padrão"
+    ]
+   },
+   "validacao": {
+    "classe_3_confere": 1.0,
+    "classe_4_confere": 1.0
+   }
+  },
+  "2026T1": {
+   "sinais": {
+    "classes_invertidas": [],
+    "redutoras_invertidas": []
+   },
+   "resolucao": {
+    "contas": {
+     "tributos_diretos_operacoes": [
+      "32"
+     ],
+     "tributos_diretos_outras": [
+      "34"
+     ],
+     "receita_contraprestacoes": [
+      "31"
+     ],
+     "outras_receitas_operacionais": [
+      "33"
+     ],
+     "receitas_financeiras": [
+      "35"
+     ],
+     "receitas_patrimoniais": [
+      "36"
+     ],
+     "despesa_assistencial": [
+      "41"
+     ],
+     "despesa_comercializacao": [
+      "43"
+     ],
+     "outras_despesas_operacionais": [
+      "44"
+     ],
+     "despesas_financeiras": [
+      "45"
+     ],
+     "despesa_administrativa": [
+      "46"
+     ],
+     "despesas_patrimoniais": [
+      "47"
+     ],
+     "impostos_participacoes": [
+      "61"
+     ],
+     "ativo_total": [
+      "1"
+     ],
+     "ativo_circulante": [
+      "12"
+     ],
+     "ativo_nao_circulante": [
+      "13"
+     ],
+     "disponivel": [
+      "121"
+     ],
+     "aplicacoes_financeiras_cp": [
+      "122"
+     ],
+     "creditos_operacoes_planos": [
+      "123"
+     ],
+     "realizavel_longo_prazo": [
+      "131"
+     ],
+     "aplicacoes_financeiras_lp": [
+      "1311",
+      "1312"
+     ],
+     "passivo_total": [
+      "2"
+     ],
+     "passivo_circulante": [
+      "21"
+     ],
+     "passivo_nao_circulante": [
+      "23"
+     ],
+     "patrimonio_liquido": [
+      "25"
+     ],
+     "provisoes_tecnicas_cp": [
+      "211"
+     ],
+     "provisoes_tecnicas_lp": [
+      "231"
+     ]
+    },
+    "origem": {
+     "tributos_diretos_operacoes": "descricao",
+     "tributos_diretos_outras": "descricao",
+     "receita_contraprestacoes": "codigo_padrao",
+     "outras_receitas_operacionais": "descricao",
+     "receitas_financeiras": "descricao",
+     "receitas_patrimoniais": "descricao",
+     "despesa_assistencial": "descricao",
+     "despesa_comercializacao": "descricao",
+     "outras_despesas_operacionais": "descricao",
+     "despesas_financeiras": "descricao",
+     "despesa_administrativa": "descricao",
+     "despesas_patrimoniais": "descricao",
+     "impostos_participacoes": "descricao",
+     "ativo_total": "descricao",
+     "ativo_circulante": "descricao",
+     "ativo_nao_circulante": "descricao",
+     "disponivel": "descricao",
+     "aplicacoes_financeiras_cp": "descricao",
+     "creditos_operacoes_planos": "descricao",
+     "realizavel_longo_prazo": "descricao",
+     "aplicacoes_financeiras_lp": "descricao",
+     "passivo_total": "descricao",
+     "passivo_circulante": "descricao",
+     "passivo_nao_circulante": "descricao",
+     "patrimonio_liquido": "descricao",
+     "provisoes_tecnicas_cp": "descricao",
+     "provisoes_tecnicas_lp": "descricao"
+    },
+    "avisos": [
+     "receita_contraprestacoes: descrição da conta 31 ('RECEITAS COM OPERACOES DE ASSISTENCIA A SAUDE') não confere; usado o código padrão"
+    ]
+   },
+   "validacao": {
+    "classe_3_confere": 1.0,
+    "classe_4_confere": 1.0
+   }
+  },
+  "2026T2": {
+   "sinais": {
+    "classes_invertidas": [],
+    "redutoras_invertidas": []
+   },
+   "resolucao": {
+    "contas": {
+     "tributos_diretos_operacoes": [
+      "32"
+     ],
+     "tributos_diretos_outras": [
+      "34"
+     ],
+     "receita_contraprestacoes": [
+      "31"
+     ],
+     "outras_receitas_operacionais": [
+      "33"
+     ],
+     "receitas_financeiras": [
+      "35"
+     ],
+     "receitas_patrimoniais": [
+      "36"
+     ],
+     "despesa_assistencial": [
+      "41"
+     ],
+     "despesa_comercializacao": [
+      "43"
+     ],
+     "outras_despesas_operacionais": [
+      "44"
+     ],
+     "despesas_financeiras": [
+      "45"
+     ],
+     "despesa_administrativa": [
+      "46"
+     ],
+     "despesas_patrimoniais": [
+      "47"
+     ],
+     "impostos_participacoes": [
+      "61"
+     ],
+     "ativo_total": [
+      "1"
+     ],
+     "ativo_circulante": [
+      "12"
+     ],
+     "ativo_nao_circulante": [
+      "13"
+     ],
+     "disponivel": [
+      "121"
+     ],
+     "aplicacoes_financeiras_cp": [
+      "122"
+     ],
+     "creditos_operacoes_planos": [
+      "123"
+     ],
+     "realizavel_longo_prazo": [
+      "131"
+     ],
+     "aplicacoes_financeiras_lp": [
+      "1311",
+      "1312"
+     ],
+     "passivo_total": [
+      "2"
+     ],
+     "passivo_circulante": [
+      "21"
+     ],
+     "passivo_nao_circulante": [
+      "23"
+     ],
+     "patrimonio_liquido": [
+      "25"
+     ],
+     "provisoes_tecnicas_cp": [
+      "211"
+     ],
+     "provisoes_tecnicas_lp": [
+      "231"
+     ]
+    },
+    "origem": {
+     "tributos_diretos_operacoes": "descricao",
+     "tributos_diretos_outras": "descricao",
+     "receita_contraprestacoes": "codigo_padrao",
+     "outras_receitas_operacionais": "descricao",
+     "receitas_financeiras": "descricao",
+     "receitas_patrimoniais": "descricao",
+     "despesa_assistencial": "descricao",
+     "despesa_comercializacao": "descricao",
+     "outras_despesas_operacionais": "descricao",
+     "despesas_financeiras": "descricao",
+     "despesa_administrativa": "descricao",
+     "despesas_patrimoniais": "descricao",
+     "impostos_participacoes": "descricao",
+     "ativo_total": "descricao",
+     "ativo_circulante": "descricao",
+     "ativo_nao_circulante": "descricao",
+     "disponivel": "descricao",
+     "aplicacoes_financeiras_cp": "descricao",
+     "creditos_operacoes_planos": "descricao",
+     "realizavel_longo_prazo": "descricao",
+     "aplicacoes_financeiras_lp": "descricao",
+     "passivo_total": "descricao",
+     "passivo_circulante": "descricao",
+     "passivo_nao_circulante": "descricao",
+     "patrimonio_liquido": "descricao",
+     "provisoes_tecnicas_cp": "descricao",
+     "provisoes_tecnicas_lp": "descricao"
+    },
+    "avisos": [
+     "receita_contraprestacoes: descrição da conta 31 ('RECEITAS COM OPERACOES DE ASSISTENCIA A SAUDE') não confere; usado o código padrão"
+    ]
+   },
+   "validacao": {
+    "classe_3_confere": 1.0,
+    "classe_4_confere": 1.0
+   }
+  }
+ },
+ "acumulacao": {
+  "2018": {
+   "modo": "acumulado",
+   "evidencia": "assumido (poucos pares para testar)",
+   "pares": 0
+  },
+  "2019": {
+   "modo": "acumulado",
+   "evidencia": "assumido (poucos pares para testar)",
+   "pares": 0
+  },
+  "2020": {
+   "modo": "acumulado",
+   "evidencia": "assumido (poucos pares para testar)",
+   "pares": 0
+  },
+  "2021": {
+   "modo": "acumulado",
+   "evidencia": "96% dos saldos iniciais = saldo final anterior",
+   "pares": 1543
+  },
+  "2022": {
+   "modo": "acumulado",
+   "evidencia": "95% dos saldos iniciais = saldo final anterior",
+   "pares": 4537
+  },
+  "2023": {
+   "modo": "acumulado",
+   "evidencia": "97% dos saldos iniciais = saldo final anterior",
+   "pares": 4500
+  },
+  "2024": {
+   "modo": "acumulado",
+   "evidencia": "98% dos saldos iniciais = saldo final anterior",
+   "pares": 4307
+  },
+  "2025": {
+   "modo": "acumulado",
+   "evidencia": "98% dos saldos iniciais = saldo final anterior",
+   "pares": 4285
+  },
+  "2026": {
+   "modo": "acumulado",
+   "evidencia": "97% dos saldos iniciais = saldo final anterior",
+   "pares": 1433
+  }
+ },
+ "sinistralidade": {
+  "variante": "liquida",
+  "erro_medio": {
+   "bruta": 0.01183292669513166,
+   "liquida": 0.0020094656274490807
+  },
+  "comparacoes": {
+   "bruta": 15,
+   "liquida": 15
+  },
+  "motivo": "menor erro médio contra a ANS"
+ },
+ "operadoras_sem_cadastro": {
+  "periodo": "2026T2",
+  "quantidade": 0,
+  "participacao_receita": 0.0,
+  "registros": []
+ },
+ "conciliacao": {
+  "confere": 67,
+  "diverge": 2
+ },
+ "periodo_mais_recente": "2026T2",
+ "variante_sinistralidade": "liquida",
+ "n_trimestres": 34,
+ "primeiro_periodo": "2018T1",
+ "duracao_segundos": 41.6
+}
