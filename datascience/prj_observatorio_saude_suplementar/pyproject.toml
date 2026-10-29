@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "observatorio-ans"
+version = "0.1.0"
+description = "Sinistralidade e indicadores econômico-financeiros das operadoras de planos de saúde, a partir dos dados abertos da ANS"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Jefferson Marques da Silva" }]
+keywords = ["ANS", "saúde suplementar", "sinistralidade", "planos de saúde", "dados abertos", "DIOPS"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: Portuguese (Brazilian)",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+dependencies = [
+    "pandas>=2.1",
+    "numpy>=1.26",
+    "requests>=2.31",
+]
+
+[project.optional-dependencies]
+# Exporta as tabelas finais também em Parquet (além de CSV)
+parquet = ["pyarrow>=15"]
+dev = ["pytest>=8", "ruff>=0.5"]
+
+[project.scripts]
+observatorio-ans = "observatorio_ans.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+observatorio_ans = ["templates/*", "referencias/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["E501"]

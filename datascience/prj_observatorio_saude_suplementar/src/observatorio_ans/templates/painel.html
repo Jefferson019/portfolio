@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>__TITULO__</title>
+<meta name="description" content="Sinistralidade e indicadores econômico-financeiros das operadoras de planos de saúde, calculados a partir dos dados abertos da ANS.">
+<style>
+:root {
+  color-scheme: light;
+  --pagina: #f9f9f7; --superficie: #fcfcfb; --tinta: #0b0b0b; --tinta-2: #52514e; --apagado: #898781;
+  --grade: #e1e0d9; --eixo: #c3c2b7; --borda: rgba(11,11,11,0.10); --lavagem: rgba(11,11,11,0.04);
+  --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --contexto: #a9a79f;
+  --bom: #0ca30c; --bom-texto: #006300; --critico: #d03b3b; --critico-texto: #b42e2e; --alerta: #fab219;
+  --raio: 10px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    color-scheme: dark;
+    --pagina: #0d0d0d; --superficie: #1a1a19; --tinta: #f0efec; --tinta-2: #c3c2b7; --apagado: #898781;
+    --grade: #2c2c2a; --eixo: #383835; --borda: rgba(255,255,255,0.10); --lavagem: rgba(255,255,255,0.05);
+    --s1: #3987e5; --s2: #d95926; --s3: #199e70; --contexto: #6b6a65;
+    --bom-texto: #0ca30c; --critico-texto: #e66767;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --pagina: #0d0d0d; --superficie: #1a1a19; --tinta: #f0efec; --tinta-2: #c3c2b7; --apagado: #898781;
+  --grade: #2c2c2a; --eixo: #383835; --borda: rgba(255,255,255,0.10); --lavagem: rgba(255,255,255,0.05);
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70; --contexto: #6b6a65;
+  --bom-texto: #0ca30c; --critico-texto: #e66767;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--pagina); color: var(--tinta); }
+body { font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+a { color: var(--s1); }
+.conteudo { max-width: 1200px; margin: 0 auto; padding: 0 20px 48px; }
+header.topo { display: flex; gap: 16px; align-items: flex-start; justify-content: space-between; padding: 28px 0 16px; }
+header.topo h1 { font-size: 26px; line-height: 1.2; margin: 0 0 6px; letter-spacing: -0.01em; }
+header.topo p { margin: 0; color: var(--tinta-2); max-width: 760px; }
+.selo { font-size: 12px; color: var(--apagado); margin-top: 8px; }
+.botao { font: inherit; font-size: 13px; color: var(--tinta); background: var(--superficie); border: 1px solid var(--borda);
+  border-radius: 8px; padding: 6px 12px; cursor: pointer; }
+.botao:hover { background: var(--lavagem); }
+.botao:focus-visible, select:focus-visible, input:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--s1); outline-offset: 2px; }
+nav.filtros { position: sticky; top: 0; z-index: 5; display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center;
+  padding: 10px 0; background: var(--pagina); border-bottom: 1px solid var(--borda); margin-bottom: 20px; }
+.filtro { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--tinta-2); }
+select, input[type="search"] { font: inherit; font-size: 13px; color: var(--tinta); background: var(--superficie);
+  border: 1px solid var(--borda); border-radius: 8px; padding: 6px 10px; }
+.segmentado { display: inline-flex; border: 1px solid var(--borda); border-radius: 8px; overflow: hidden; background: var(--superficie); }
+.segmentado button { font: inherit; font-size: 13px; border: 0; background: transparent; color: var(--tinta-2); padding: 6px 12px; cursor: pointer; }
+.segmentado button + button { border-left: 1px solid var(--borda); }
+.segmentado button[aria-pressed="true"] { background: var(--lavagem); color: var(--tinta); font-weight: 600; }
+.destaque { display: grid; grid-template-columns: minmax(280px, 1fr) 2fr; gap: 16px; margin-bottom: 16px; }
+.cartao { background: var(--superficie); border: 1px solid var(--borda); border-radius: var(--raio); padding: 18px 20px; min-width: 0; scroll-margin-top: 72px; }
+.cartao h2 { font-size: 16px; margin: 0 0 2px; }
+.cartao .sub { font-size: 13px; color: var(--tinta-2); margin: 0 0 12px; }
+.cabeca { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
+.heroi .rotulo { font-size: 13px; color: var(--tinta-2); }
+.heroi .valor { font-size: 56px; font-weight: 650; line-height: 1.05; margin: 6px 0; letter-spacing: -0.02em; }
+.heroi .frase { font-size: 14px; color: var(--tinta-2); margin-top: 10px; }
+.delta { font-size: 13px; font-weight: 600; display: inline-flex; gap: 4px; align-items: center; }
+.delta.ruim { color: var(--critico-texto); } .delta.bom { color: var(--bom-texto); } .delta.neutro { color: var(--tinta-2); }
+.kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.kpi { background: var(--superficie); border: 1px solid var(--borda); border-radius: var(--raio); padding: 14px 16px; }
+.kpi .rotulo { font-size: 13px; color: var(--tinta-2); }
+.kpi .valor { font-size: 24px; font-weight: 650; margin: 2px 0; }
+.kpi .nota { font-size: 12px; color: var(--apagado); }
+.grade-cartoes { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.largo { grid-column: 1 / -1; }
+.grafico { position: relative; width: 100%; }
+.grafico svg { display: block; overflow: visible; }
+svg text { font: 11px system-ui, -apple-system, "Segoe UI", sans-serif; fill: var(--tinta-2); }
+svg .eixo { fill: var(--apagado); font-variant-numeric: tabular-nums; }
+svg .linha-grade { stroke: var(--grade); stroke-width: 1; shape-rendering: crispEdges; }
+svg .linha-base { stroke: var(--eixo); stroke-width: 1; shape-rendering: crispEdges; }
+svg .rotulo-dado { fill: var(--tinta); font-weight: 600; paint-order: stroke; stroke: var(--superficie); stroke-width: 3px; stroke-linejoin: round; }
+svg .rotulo-dentro { fill: #ffffff; font-weight: 600; }
+.legenda { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12px; color: var(--tinta-2); margin: 4px 0 8px; }
+.legenda span { display: inline-flex; align-items: center; gap: 6px; }
+.chave-linha { width: 14px; height: 0; border-top: 2px solid; display: inline-block; }
+.chave-caixa { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+.multiplos { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px 24px; }
+.multiplos h3 { font-size: 13px; font-weight: 600; margin: 4px 0 0; }
+.dica { position: fixed; z-index: 20; pointer-events: none; background: var(--superficie); color: var(--tinta);
+  border: 1px solid var(--borda); border-radius: 8px; padding: 8px 10px; font-size: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  min-width: 140px; max-width: 280px; display: none; }
+.dica .titulo { color: var(--tinta-2); margin-bottom: 4px; }
+.dica .linha { display: flex; align-items: center; gap: 8px; justify-content: space-between; }
+.dica .linha b { font-variant-numeric: tabular-nums; }
+.dica .nome { display: inline-flex; align-items: center; gap: 6px; color: var(--tinta-2); }
+.acoes-cartao { display: flex; gap: 8px; flex-shrink: 0; }
+.vista-tabela { margin-top: 10px; max-height: 320px; overflow: auto; border-top: 1px solid var(--borda); }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+th, td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--grade); vertical-align: top; }
+th { font-weight: 600; color: var(--tinta-2); position: sticky; top: 0; background: var(--superficie); }
+td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tabela-ops th.ordenavel { cursor: pointer; user-select: none; }
+.tabela-ops th.ordenavel:hover { color: var(--tinta); }
+.tabela-ops tbody tr { cursor: pointer; }
+.tabela-ops tbody tr:hover, .tabela-ops tbody tr.ativa { background: var(--lavagem); }
+.tabela-ops .reg { color: var(--apagado); font-size: 12px; }
+.tabela-ops { font-size: 12.5px; }
+.tabela-ops th, .tabela-ops td { padding: 7px 6px; }
+.tabela-ops td:first-child { min-width: 220px; }
+.tabela-ops td:nth-child(2) { min-width: 120px; }
+.rolagem { overflow-x: auto; }
+.barra-ferramentas { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 10px; }
+.barra-ferramentas label { font-size: 13px; color: var(--tinta-2); display: inline-flex; gap: 6px; align-items: center; }
+.status { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; white-space: nowrap; }
+.status .icone { width: 16px; height: 16px; border-radius: 50%; display: inline-grid; place-items: center; font-size: 11px; color: #fff; }
+.status.confere .icone { background: var(--bom); } .status.confere { color: var(--bom-texto); }
+.status.diverge .icone { background: var(--critico); } .status.diverge { color: var(--critico-texto); }
+.status.sem_dados .icone { background: var(--apagado); } .status.sem_dados { color: var(--tinta-2); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+.chip { font: inherit; font-size: 12px; border: 1px solid var(--borda); background: var(--superficie); color: var(--tinta-2);
+  border-radius: 999px; padding: 4px 10px; cursor: pointer; }
+.chip[aria-pressed="true"] { color: var(--tinta); border-color: var(--s1); box-shadow: inset 0 0 0 1px var(--s1); font-weight: 600; }
+.detalhe { border: 1px solid var(--borda); border-radius: var(--raio); padding: 14px 16px; margin-bottom: 14px; background: var(--pagina); }
+.detalhe h3 { margin: 0; font-size: 17px; }
+.detalhe .kpis { grid-template-columns: repeat(4, 1fr); margin: 12px 0; }
+.detalhe .kpi .valor { font-size: 20px; }
+.texto p, .texto li { color: var(--tinta-2); font-size: 14px; }
+.texto h3 { font-size: 14px; margin: 14px 0 4px; }
+footer { margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--borda); font-size: 13px; color: var(--tinta-2);
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+.vazio { color: var(--apagado); font-size: 13px; padding: 24px 0; text-align: center; }
+.resumo-conc { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 10px; font-size: 13px; color: var(--tinta-2); }
+@media (max-width: 900px) {
+  nav.filtros { position: static; }
+  .destaque, .grade-cartoes { grid-template-columns: 1fr; }
+  .kpis { grid-template-columns: repeat(2, 1fr); }
+  .detalhe .kpis { grid-template-columns: repeat(2, 1fr); }
+  .heroi .valor { font-size: 48px; }
+}
+@media print { nav.filtros { position: static; } .acoes-cartao, #tema { display: none; } }
+</style>
+</head>
+<body>
+<div class="conteudo">
+  <header class="topo">
+    <div>
+      <h1 id="titulo"></h1>
+      <p id="subtitulo"></p>
+      <div class="selo" id="selo"></div>
+    </div>
+    <button class="botao" id="tema" type="button" aria-label="Alternar tema claro/escuro">Tema</button>
+  </header>
+
+  <nav class="filtros" aria-label="Filtros do painel">
+    <label class="filtro">Período <select id="f-periodo"></select></label>
+    <div class="filtro">Janela <div class="segmentado" id="f-janela" role="group" aria-label="Janela de tempo"></div></div>
+    <div class="filtro">Segmento <div class="segmentado" id="f-segmento" role="group" aria-label="Segmento"></div></div>
+  </nav>
+
+  <section class="destaque" aria-label="Indicadores principais">
+    <div class="cartao heroi" id="heroi"></div>
+    <div class="kpis" id="kpis"></div>
+  </section>
+
+  <section class="grade-cartoes">
+    <article class="cartao largo" id="c-serie">
+      <div class="cabeca"><div><h2>Sinistralidade ao longo do tempo</h2><p class="sub" id="sub-serie"></p></div>
+        <div class="acoes-cartao"><button class="botao" data-tabela="serie" type="button">Ver dados</button></div></div>
+      <div class="grafico" id="g-serie"></div>
+      <div class="vista-tabela" id="t-serie" hidden></div>
+    </article>
+
+    <article class="cartao largo" id="c-multiplos">
+      <div class="cabeca"><div><h2>Sinistralidade por modalidade</h2><p class="sub" id="sub-multiplos"></p></div>
+        <div class="acoes-cartao"><button class="botao" data-tabela="multiplos" type="button">Ver dados</button></div></div>
+      <div class="legenda" id="leg-multiplos"></div>
+      <div class="multiplos" id="g-multiplos"></div>
+      <div class="vista-tabela" id="t-multiplos" hidden></div>
+    </article>
+
+    <article class="cartao" id="c-decomp">
+      <div class="cabeca"><div><h2>Para onde vão R$ 100 de mensalidade</h2><p class="sub" id="sub-decomp"></p></div>
+        <div class="acoes-cartao"><button class="botao" data-tabela="decomp" type="button">Ver dados</button></div></div>
+      <div class="legenda" id="leg-decomp"></div>
+      <div class="grafico" id="g-decomp"></div>
+      <div class="vista-tabela" id="t-decomp" hidden></div>
+    </article>
+
+    <article class="cartao" id="c-resultado">
+      <div class="cabeca"><div><h2>Resultado operacional e resultado financeiro</h2><p class="sub" id="sub-resultado"></p></div>
+        <div class="acoes-cartao"><button class="botao" data-tabela="resultado" type="button">Ver dados</button></div></div>
+      <div class="legenda" id="leg-resultado"></div>
+      <div class="grafico" id="g-resultado"></div>
+      <div class="vista-tabela" id="t-resultado" hidden></div>
+    </article>
+
+    <article class="cartao largo" id="c-dispersao">
+      <div class="cabeca"><div><h2>Cada ponto é uma operadora</h2><p class="sub" id="sub-dispersao"></p></div>
+        <div class="acoes-cartao"><button class="botao" data-tabela="dispersao" type="button">Ver dados</button></div></div>
+      <div class="chips" id="chips-modalidade" role="group" aria-label="Destacar modalidade"></div>
+      <div class="grafico" id="g-dispersao"></div>
+      <div class="vista-tabela" id="t-dispersao" hidden></div>
+    </article>
+
+    <article class="cartao" id="c-concentracao">
+      <div class="cabeca"><div><h2>Concentração de mercado</h2><p class="sub" id="sub-concentracao"></p></div>
+        <div class="acoes-cartao"><button class="botao" data-tabela="concentracao" type="button">Ver dados</button></div></div>
+      <div class="kpis" id="kpis-concentracao" style="grid-template-columns: repeat(2, 1fr); margin-bottom: 12px"></div>
+      <div class="grafico" id="g-concentracao"></div>
+      <div class="vista-tabela" id="t-concentracao" hidden></div>
+    </article>
+
+    <article class="cartao" id="c-beneficiarios">
+      <div class="cabeca"><div><h2>Beneficiários</h2><p class="sub" id="sub-beneficiarios"></p></div>
+        <div class="acoes-cartao"><button class="botao" data-tabela="beneficiarios" type="button">Ver dados</button></div></div>
+      <div id="g-beneficiarios"></div>
+      <div class="vista-tabela" id="t-beneficiarios" hidden></div>
+    </article>
+
+    <article class="cartao largo" id="c-operadoras">
+      <div class="cabeca"><div><h2>Operadoras</h2><p class="sub" id="sub-operadoras"></p></div></div>
+      <div id="detalhe"></div>
+      <div class="barra-ferramentas">
+        <input type="search" id="busca" placeholder="Buscar por nome ou registro ANS" aria-label="Buscar operadora" size="32">
+        <label>Modalidade <select id="f-modalidade"></select></label>
+        <label>Porte <select id="f-porte"></select></label>
+        <label>UF <select id="f-uf"></select></label>
+        <label><input type="checkbox" id="f-amostra" checked> Só receita ≥ R$ 1 milhão</label>
+      </div>
+      <div class="rolagem"><table class="tabela-ops" id="tabela-ops"></table></div>
+      <div style="margin-top:10px; display:flex; gap:10px; align-items:center">
+        <button class="botao" id="mais" type="button">Mostrar mais</button>
+        <span class="selo" id="contagem"></span>
+      </div>
+    </article>
+
+    <article class="cartao largo" id="c-conciliacao">
+      <div class="cabeca"><div><h2>Conferência com os números oficiais da ANS</h2>
+        <p class="sub">Cada linha é um número divulgado pela ANS. O pipeline recalcula o mesmo número a partir dos dados brutos e indica se ficou dentro da tolerância.</p></div></div>
+      <div class="resumo-conc" id="resumo-conc"></div>
+      <div class="rolagem" style="max-height: 420px; overflow-y: auto"><table id="tabela-conc"></table></div>
+    </article>
+
+    <article class="cartao largo texto" id="c-metodologia">
+      <h2>Metodologia e fontes</h2>
+      <div id="metodologia"></div>
+    </article>
+  </section>
+
+  <footer>
+    <div id="autoria"></div>
+    <div>Projeto independente, sem vínculo com a ANS. Fonte dos dados: <a id="link-fonte" href="#" rel="noopener">Portal de Dados Abertos da ANS</a>.</div>
+  </footer>
+</div>
+<div class="dica" id="dica" role="status" aria-live="polite"></div>
+
+<script id="dados" type="application/json">/*__DADOS__*/{}</script>
+<script>
+(() => {
+"use strict";
+const D = JSON.parse(document.getElementById("dados").textContent);
+const objetos = (t) => (t ? t.rows.map((r) => Object.fromEntries(t.cols.map((c, i) => [c, r[i]]))) : []);
+const MERC = objetos(D.mercado), CAD = objetos(D.cadastro), OPS = objetos(D.operadoras);
+const SER = objetos(D.series), CONC = objetos(D.conciliacao);
+const PER = D.periodos || [], PER_OPS = D.periodos_operadoras || [];
+const META = D.meta || {};
+const idxMerc = new Map(MERC.map((r) => [`${r.periodo}|${r.janela}|${r.recorte}|${r.valor}`, r]));
+const merc = (p, j, rec, val) => idxMerc.get(`${p}|${j}|${rec}|${val}`);
+
+const MODALIDADES = {
+  medico_hospitalar: ["Autogestão", "Cooperativa Médica", "Filantropia", "Medicina de Grupo", "Seguradora Especializada em Saúde"],
+  odontologico: ["Cooperativa Odontológica", "Odontologia de Grupo"],
+};
+const CURTO = { "Seguradora Especializada em Saúde": "Seguradoras", "Cooperativa Médica": "Cooperativas médicas",
+  "Medicina de Grupo": "Medicinas de grupo", "Autogestão": "Autogestões", "Filantropia": "Filantropias",
+  "Cooperativa Odontológica": "Cooperativas odontológicas", "Odontologia de Grupo": "Odontologias de grupo" };
+const SEG_NOME = { medico_hospitalar: "médico-hospitalares", odontologico: "exclusivamente odontológicas" };
+const PORTE = { grande: "Grande", medio: "Médio", pequeno: "Pequeno", sem_beneficiarios: "Sem beneficiários",
+  sem_informacao: "Sem informação", nao_se_aplica: "–" };
+const CONTRATACAO = { coletivo_empresarial: "Coletivo empresarial", coletivo_adesao: "Coletivo por adesão",
+  individual: "Individual ou familiar", outros: "Outros / não identificado" };
+const INDICADOR = { sinistralidade: "Sinistralidade", resultado_liquido: "Resultado líquido",
+  resultado_operacional: "Resultado operacional", resultado_financeiro: "Resultado financeiro",
+  receita_total: "Receita total", aplicacoes_financeiras: "Aplicações financeiras",
+  pct_resultado_liquido_positivo: "Operadoras com lucro", roe: "ROE", receita_contraprestacoes: "Receita de contraprestações",
+  despesa_assistencial: "Despesa assistencial", despesa_administrativa: "Despesa administrativa",
+  despesa_comercializacao: "Despesa de comercialização" };
+const MESES = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
+
+// ------------------------------------------------------------------ formatação (pt-BR)
+const nf = {};
+const fmt = (v, d) => (nf[d] ||= new Intl.NumberFormat("pt-BR", { minimumFractionDigits: d, maximumFractionDigits: d })).format(v);
+const ok = (v) => v !== null && v !== undefined && Number.isFinite(v);
+const pct = (v, d = 1) => (ok(v) ? fmt(v * 100, d) + "%" : "–");
+const pp = (v, d = 1) => (ok(v) ? (v > 0 ? "+" : v < 0 ? "−" : "") + fmt(Math.abs(v * 100), d) + " p.p." : "–");
+const reais = (v, d = 1) => {
+  if (!ok(v)) return "–";
+  const a = Math.abs(v), s = v < 0 ? "−" : "";
+  if (a >= 1e9) return `${s}R$ ${fmt(a / 1e9, d)} bi`;
+  if (a >= 1e6) return `${s}R$ ${fmt(a / 1e6, d)} mi`;
+  if (a >= 1e3) return `${s}R$ ${fmt(a / 1e3, 0)} mil`;
+  return `${s}R$ ${fmt(a, 0)}`;
+};
+const pessoas = (v) => {
+  if (!ok(v)) return "–";
+  if (Math.abs(v) >= 1e6) return fmt(v / 1e6, 1) + " mi";
+  if (Math.abs(v) >= 1e3) return fmt(v / 1e3, 1) + " mil";
+  return fmt(v, 0);
+};
+const num = (v, d = 2) => (ok(v) ? fmt(v, d) : "–");
+const rotPer = (p) => `${p.slice(5)}º tri/${p.slice(0, 4)}`;
+const curtoPer = (p) => `${p.slice(5)}T${p.slice(2, 4)}`;
+const perAnterior = (p) => `${+p.slice(0, 4) - 1}T${p.slice(5)}`;
+function rotJanela(p, j) {
+  const a = +p.slice(0, 4), t = +p.slice(5), fim = MESES[t * 3 - 1];
+  if (j === "12_meses") return `12 meses até ${fim}/${a}`;
+  if (j === "acumulado_ano") return t === 4 ? `ano de ${a}` : `jan–${fim}/${a}`;
+  return `${MESES[t * 3 - 3]}–${fim}/${a}`;
+}
+const rotComp = (c) => (c ? `${MESES[+c.slice(4) - 1]}/${c.slice(0, 4)}` : "");
+
+// ------------------------------------------------------------------ DOM / SVG
+const NS = "http://www.w3.org/2000/svg";
+function svg(tag, attrs = {}, pai) {
+  const e = document.createElementNS(NS, tag);
+  for (const [k, v] of Object.entries(attrs)) if (v !== null && v !== undefined) e.setAttribute(k, v);
+  if (pai) pai.appendChild(e);
+  return e;
+}
+function el(tag, attrs = {}, ...filhos) {
+  const e = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (v === null || v === undefined) continue;
+    if (k === "class") e.className = v;
+    else if (k === "texto") e.textContent = v;
+    else if (k === "estilo") e.style.cssText = v;
+    else e.setAttribute(k, v);
+  }
+  for (const f of filhos) if (f !== null && f !== undefined) e.append(f);
+  return e;
+}
+const $ = (id) => document.getElementById(id);
+const limpar = (n) => { while (n.firstChild) n.removeChild(n.firstChild); return n; };
+
+// ------------------------------------------------------------------ dica (tooltip)
+const dica = $("dica");
+function mostrarDica(evento, titulo, linhas) {
+  limpar(dica);
+  if (titulo) dica.append(el("div", { class: "titulo", texto: titulo }));
+  for (const l of linhas) {
+    const nome = el("span", { class: "nome" });
+    if (l.cor) nome.append(el("span", { class: l.caixa ? "chave-caixa" : "chave-linha", estilo: l.caixa ? `background:${l.cor}` : `border-color:${l.cor}` }));
+    nome.append(document.createTextNode(l.nome));
+    dica.append(el("div", { class: "linha" }, nome, el("b", { texto: l.valor })));
+  }
+  dica.style.display = "block";
+  const r = dica.getBoundingClientRect();
+  let x, y;
+  if (evento.clientX !== undefined && evento.type !== "focus") { x = evento.clientX + 14; y = evento.clientY + 14; }
+  else { const b = evento.target.getBoundingClientRect(); x = b.right + 8; y = b.top; }
+  if (x + r.width > window.innerWidth - 8) x = Math.max(8, x - r.width - 28);
+  if (y + r.height > window.innerHeight - 8) y = Math.max(8, window.innerHeight - r.height - 8);
+  dica.style.left = x + "px"; dica.style.top = y + "px";
+}
+const esconderDica = () => { dica.style.display = "none"; };
+
+// ------------------------------------------------------------------ escalas
+function ticksBonitos(min, max, n = 5) {
+  if (!(max > min)) { max = min + 1; }
+  const passoBruto = (max - min) / n, mag = Math.pow(10, Math.floor(Math.log10(passoBruto)));
+  const passo = [1, 2, 2.5, 5, 10].map((m) => m * mag).find((s) => (max - min) / s <= n) || 10 * mag;
+  const ini = Math.floor(min / passo) * passo, fim = Math.ceil(max / passo) * passo, out = [];
+  for (let v = ini; v <= fim + passo / 2; v += passo) out.push(Math.round(v / passo) * passo);
+  return out;
+}
+const linear = (d0, d1, r0, r1) => (v) => r0 + ((v - d0) / (d1 - d0 || 1)) * (r1 - r0);
+
+// ------------------------------------------------------------------ gráfico de linhas
+/* opts: periodos, series [{nome, cor, valores: {periodo: v}, contexto}], fmtEixo, fmtValor, altura,
+   dominio [min,max], incluirZero, marcar (periodo), rotulosFim, compacto */
+function graficoLinhas(alvo, opts) {
+  limpar(alvo);
+  const W = Math.max(240, alvo.clientWidth || 600), H = opts.altura || 260;
+  const ps = opts.periodos;
+  const m = { t: 10, r: opts.rotulosFim ? (W < 520 ? 92 : 132) : 12, b: 24, l: opts.semEixoY ? 6 : opts.compacto ? 40 : 52 };
+  const todos = opts.series.flatMap((s) => ps.map((p) => s.valores[p]).filter(ok));
+  if (!todos.length) { alvo.append(el("div", { class: "vazio", texto: "Sem dados para este recorte." })); return; }
+  let [lo, hi] = opts.dominio || [Math.min(...todos), Math.max(...todos)];
+  if (opts.incluirZero) { lo = Math.min(lo, 0); hi = Math.max(hi, 0); }
+  const folga = (hi - lo || Math.abs(hi) || 1) * 0.08;
+  const ticks = ticksBonitos(lo - (opts.dominio ? 0 : folga), hi + (opts.dominio ? 0 : folga), opts.compacto ? 3 : 5);
+  const y = linear(ticks[0], ticks[ticks.length - 1], H - m.b, m.t);
+  const x = (i) => m.l + (ps.length === 1 ? (W - m.l - m.r) / 2 : (i * (W - m.l - m.r)) / (ps.length - 1));
+  const raiz = svg("svg", { width: W, height: H, viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": opts.rotuloAria || "" }, alvo);
+  for (const t of ticks) {
+    svg("line", { x1: m.l, x2: W - m.r, y1: y(t), y2: y(t), class: t === 0 && opts.incluirZero ? "linha-base" : "linha-grade" }, raiz);
+    if (!opts.semEixoY) svg("text", { x: m.l - 8, y: y(t), dy: "0.32em", "text-anchor": "end", class: "eixo" }, raiz).textContent = opts.fmtEixo(t);
+  }
+  // eixo x: rótulo de ano em cada 1º trimestre (ou a cada n se compacto)
+  let ultimoRotuloX = -Infinity;
+  ps.forEach((p, i) => {
+    const candidato = ps.length <= 6 ? true : p.endsWith("T1");
+    if (!candidato || x(i) - ultimoRotuloX < (ps.length <= 6 ? 34 : 44)) return;
+    ultimoRotuloX = x(i);
+    svg("text", { x: x(i), y: H - 6, "text-anchor": "middle", class: "eixo" }, raiz).textContent = ps.length <= 6 ? curtoPer(p) : p.slice(0, 4);
+  });
+  if (opts.marcar && ps.includes(opts.marcar)) {
+    const xi = x(ps.indexOf(opts.marcar));
+    svg("line", { x1: xi, x2: xi, y1: m.t, y2: H - m.b, class: "linha-base" }, raiz);
+  }
+  // séries (contexto primeiro, para ficar por baixo)
+  const ordenadas = [...opts.series].sort((a, b) => (b.contexto ? 1 : 0) - (a.contexto ? 1 : 0));
+  for (const s of ordenadas) {
+    let d = "", aberto = false;
+    ps.forEach((p, i) => {
+      const v = s.valores[p];
+      if (ok(v)) { d += `${aberto ? "L" : "M"}${x(i).toFixed(1)},${y(v).toFixed(1)}`; aberto = true; } else aberto = false;
+    });
+    if (s.area && d) {
+      const pts = ps.map((p, i) => [i, s.valores[p]]).filter(([, v]) => ok(v));
+      const base = y(Math.max(ticks[0], Math.min(0, ticks[ticks.length - 1])));
+      const dArea = `M${x(pts[0][0])},${base}` + pts.map(([i, v]) => `L${x(i)},${y(v)}`).join("") + `L${x(pts[pts.length - 1][0])},${base}Z`;
+      svg("path", { d: dArea, style: `fill:${s.cor};opacity:0.1;stroke:none` }, raiz);
+    }
+    svg("path", { d, style: `fill:none;stroke:${s.cor};stroke-width:${s.contexto ? 1.5 : 2};stroke-linejoin:round;stroke-linecap:round` }, raiz);
+  }
+  // ponto final + rótulos no fim (com linhas-guia quando colidem)
+  const finais = [];
+  for (const s of opts.series) {
+    let iFim = -1;
+    ps.forEach((p, i) => { if (ok(s.valores[p])) iFim = i; });
+    if (iFim < 0) continue;
+    const v = s.valores[ps[iFim]];
+    if (!s.contexto) svg("circle", { cx: x(iFim), cy: y(v), r: 4, style: `fill:${s.cor};stroke:var(--superficie);stroke-width:2` }, raiz);
+    finais.push({ s, x: x(iFim), y: y(v), v });
+  }
+  if (opts.rotulosFim) {
+    const ordem = [...finais].sort((a, b) => a.y - b.y), espaco = 26;
+    ordem.forEach((f, i) => { f.ly = Math.max(f.y, i ? ordem[i - 1].ly + espaco : m.t + 6); });
+    for (let i = ordem.length - 1; i >= 0; i--) {
+      const limite = i === ordem.length - 1 ? H - m.b : ordem[i + 1].ly - espaco;
+      ordem[i].ly = Math.min(ordem[i].ly, limite);
+    }
+    for (const f of ordem) {
+      const xl = W - m.r + 10;
+      if (Math.abs(f.ly - f.y) > 3) svg("path", { d: `M${f.x + 6},${f.y}L${xl - 4},${f.ly}`, style: "stroke:var(--eixo);fill:none;stroke-width:1" }, raiz);
+      svg("text", { x: xl, y: f.ly - 3, class: "rotulo-dado" }, raiz).textContent = opts.fmtValor(f.v);
+      svg("text", { x: xl, y: f.ly + 10 }, raiz).textContent = f.s.nome;
+    }
+  }
+  // camada de interação: a mira encontra o X mais próximo
+  const mira = svg("line", { y1: m.t, y2: H - m.b, class: "linha-base", style: "display:none" }, raiz);
+  const pontos = opts.series.filter((s) => !s.contexto || opts.dicaContexto).map((s) => svg("circle", { r: 4, style: `display:none;fill:${s.cor};stroke:var(--superficie);stroke-width:2` }, raiz));
+  const capa = svg("rect", { x: m.l, y: m.t, width: W - m.l - m.r, height: H - m.t - m.b, fill: "transparent", tabindex: 0, "aria-label": "Explorar valores do gráfico" }, raiz);
+  let atual = ps.length - 1;
+  const mover = (i, evento) => {
+    atual = Math.max(0, Math.min(ps.length - 1, i));
+    const p = ps[atual];
+    mira.setAttribute("x1", x(atual)); mira.setAttribute("x2", x(atual)); mira.style.display = "";
+    opts.series.filter((s) => !s.contexto || opts.dicaContexto).forEach((s, k) => {
+      const v = s.valores[p];
+      if (ok(v)) { pontos[k].setAttribute("cx", x(atual)); pontos[k].setAttribute("cy", y(v)); pontos[k].style.display = ""; }
+      else pontos[k].style.display = "none";
+    });
+    mostrarDica(evento, opts.tituloDica ? opts.tituloDica(p) : rotPer(p),
+      opts.series.map((s) => ({ nome: s.nome, cor: s.cor, valor: opts.fmtValor(s.valores[p]) })));
+  };
+  capa.addEventListener("pointermove", (e) => {
+    const b = raiz.getBoundingClientRect(), px = e.clientX - b.left;
+    mover(Math.round(((px - m.l) / (W - m.l - m.r)) * (ps.length - 1)), e);
+  });
+  capa.addEventListener("focus", (e) => mover(atual, e));
+  capa.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft" || e.key === "ArrowRight") { e.preventDefault(); mover(atual + (e.key === "ArrowRight" ? 1 : -1), { target: capa, type: "focus" }); }
+  });
+  const sair = () => { mira.style.display = "none"; pontos.forEach((p) => (p.style.display = "none")); esconderDica(); };
+  capa.addEventListener("pointerleave", sair); capa.addEventListener("blur", sair);
+}
+
+// ------------------------------------------------------------------ barras horizontais empilhadas
+/* linhas [{rotulo, partes:[...], total, destaque}], categorias [{nome, cor, claro}], referencia, fmt */
+function barrasEmpilhadas(alvo, opts) {
+  limpar(alvo);
+  const W = Math.max(280, alvo.clientWidth || 500), esp = 24, banda = 40;
+  const maiorRotulo = Math.max(...opts.linhas.map((l) => l.rotulo.length)) * 6.4 + 14;
+  const m = { t: 22, r: 56, b: 22, l: Math.min(maiorRotulo, W * 0.38) };
+  const H = m.t + m.b + banda * opts.linhas.length;
+  const maxV = Math.max(opts.referencia || 0, ...opts.linhas.map((l) => l.partes.reduce((a, b) => a + Math.max(0, b || 0), 0)));
+  const ticks = ticksBonitos(0, maxV, W < 520 ? 3 : 6);
+  const caberRotulo = (t) => { const n = Math.floor((m.l - 12) / 6.4); return t.length > n ? t.slice(0, n - 1) + "…" : t; };
+  const x = linear(0, ticks[ticks.length - 1], m.l, W - m.r);
+  const raiz = svg("svg", { width: W, height: H, viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": opts.rotuloAria || "" }, alvo);
+  for (const t of ticks) {
+    svg("line", { x1: x(t), x2: x(t), y1: m.t, y2: H - m.b, class: t === 0 ? "linha-base" : "linha-grade" }, raiz);
+    svg("text", { x: x(t), y: H - 6, "text-anchor": "middle", class: "eixo" }, raiz).textContent = opts.fmtEixo(t);
+  }
+  if (opts.referencia) {
+    const xr = x(opts.referencia);
+    svg("line", { x1: xr, x2: xr, y1: m.t - 8, y2: H - m.b, style: "stroke:var(--tinta-2);stroke-width:1" }, raiz);
+    svg("text", { x: xr, y: m.t - 10, "text-anchor": "middle" }, raiz).textContent = opts.rotuloReferencia || "";
+  }
+  opts.linhas.forEach((linha, k) => {
+    const yc = m.t + banda * k + banda / 2, y0 = yc - esp / 2;
+    const rot = svg("text", { x: m.l - 10, y: yc, dy: "0.32em", "text-anchor": "end", style: linha.destaque ? "fill:var(--tinta);font-weight:600" : "" }, raiz);
+    rot.textContent = caberRotulo(linha.rotulo);
+    let acum = 0;
+    const ultimoIdx = linha.partes.reduce((u, v, i) => (v > 0 ? i : u), -1);
+    linha.partes.forEach((v, i) => {
+      if (!(v > 0)) return;
+      const x0 = x(acum), x1 = x(acum + v), larg = Math.max(0, x1 - x0 - (i < ultimoIdx ? 2 : 0));
+      acum += v;
+      const cat = opts.categorias[i];
+      let forma;
+      if (i === ultimoIdx && larg > 4) {
+        const r = 4;
+        forma = svg("path", { d: `M${x0},${y0}h${larg - r}a${r},${r} 0 0 1 ${r},${r}v${esp - 2 * r}a${r},${r} 0 0 1 -${r},${r}h-${larg - r}z`, style: `fill:${cat.cor}`, tabindex: 0 }, raiz);
+      } else {
+        forma = svg("rect", { x: x0, y: y0, width: larg, height: esp, style: `fill:${cat.cor}`, tabindex: 0 }, raiz);
+      }
+      const texto = opts.fmt(v);
+      if (larg > texto.length * 6.6 + 10) {
+        svg("text", { x: x0 + larg / 2, y: yc, dy: "0.32em", "text-anchor": "middle", class: "rotulo-dentro", style: cat.claro ? "fill:#0b0b0b" : "" }, raiz).textContent = texto;
+      }
+      const info = (e) => mostrarDica(e, linha.rotulo, [{ nome: cat.nome, cor: cat.cor, caixa: true, valor: opts.fmt(v) },
+        { nome: opts.rotuloTotal || "Total", valor: opts.fmt(linha.total) }]);
+      forma.addEventListener("pointermove", info); forma.addEventListener("focus", info);
+      forma.addEventListener("pointerleave", esconderDica); forma.addEventListener("blur", esconderDica);
+    });
+    svg("text", { x: x(acum) + 6, y: yc, dy: "0.32em", class: "rotulo-dado" }, raiz).textContent = opts.fmt(linha.total);
+  });
+}
+
+// ------------------------------------------------------------------ barras horizontais simples
+function barrasSimples(alvo, itens, opts) {
+  limpar(alvo);
+  if (!itens.length) { alvo.append(el("div", { class: "vazio", texto: "Sem dados." })); return; }
+  const W = Math.max(260, alvo.clientWidth || 480), esp = 14, banda = 26;
+  const m = { t: 4, r: 64, b: 4, l: Math.min(190, W * 0.42) };
+  const H = m.t + m.b + banda * itens.length;
+  const maxV = Math.max(...itens.map((i) => i.valor));
+  const x = linear(0, maxV, m.l, W - m.r);
+  const raiz = svg("svg", { width: W, height: H, viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": opts.rotuloAria || "" }, alvo);
+  svg("line", { x1: m.l, x2: m.l, y1: 0, y2: H, class: "linha-base" }, raiz);
+  itens.forEach((it, k) => {
+    const yc = m.t + banda * k + banda / 2, larg = Math.max(1, x(it.valor) - m.l), r = Math.min(4, larg / 2);
+    let nome = it.rotulo;
+    const maxChars = Math.floor((m.l - 12) / 6.2);
+    if (nome.length > maxChars) nome = nome.slice(0, maxChars - 1) + "…";
+    svg("text", { x: m.l - 8, y: yc, dy: "0.32em", "text-anchor": "end" }, raiz).textContent = nome;
+    const barra = svg("path", { d: `M${m.l},${yc - esp / 2}h${larg - r}a${r},${r} 0 0 1 ${r},${r}v${esp - 2 * r}a${r},${r} 0 0 1 -${r},${r}h-${larg - r}z`, style: `fill:${opts.cor}`, tabindex: 0 }, raiz);
+    svg("text", { x: m.l + larg + 6, y: yc, dy: "0.32em", class: "rotulo-dado" }, raiz).textContent = opts.fmt(it.valor);
+    const info = (e) => mostrarDica(e, it.rotulo, [{ nome: opts.nomeValor, cor: opts.cor, caixa: true, valor: opts.fmt(it.valor) }, ...(it.extra || [])]);
+    barra.addEventListener("pointermove", info); barra.addEventListener("focus", info);
+    barra.addEventListener("pointerleave", esconderDica); barra.addEventListener("blur", esconderDica);
+  });
+}
+
+// ------------------------------------------------------------------ dispersão
+function dispersao(alvo, pontos, opts) {
+  limpar(alvo);
+  if (!pontos.length) { alvo.append(el("div", { class: "vazio", texto: "Sem operadoras para este recorte." })); return; }
+  const W = Math.max(280, alvo.clientWidth || 700), H = 360, m = { t: 12, r: 16, b: 36, l: 52 };
+  const xs = pontos.map((p) => p.x), ys = pontos.map((p) => p.y).sort((a, b) => a - b);
+  const q = (f) => ys[Math.min(ys.length - 1, Math.max(0, Math.floor(f * (ys.length - 1))))];
+  const yLo = Math.min(q(0.01), opts.referencia ?? Infinity) - 0.05, yHi = Math.max(q(0.99), opts.referencia ?? -Infinity) + 0.05;
+  const ticksY = ticksBonitos(Math.max(0, yLo), yHi, 5);
+  const y = linear(ticksY[0], ticksY[ticksY.length - 1], H - m.b, m.t);
+  const lx0 = Math.floor(Math.log10(Math.min(...xs))), lx1 = Math.ceil(Math.log10(Math.max(...xs)));
+  const x = (v) => m.l + ((Math.log10(v) - lx0) / (lx1 - lx0 || 1)) * (W - m.l - m.r);
+  const raiz = svg("svg", { width: W, height: H, viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": opts.rotuloAria || "" }, alvo);
+  for (const t of ticksY) {
+    svg("line", { x1: m.l, x2: W - m.r, y1: y(t), y2: y(t), class: "linha-grade" }, raiz);
+    svg("text", { x: m.l - 8, y: y(t), dy: "0.32em", "text-anchor": "end", class: "eixo" }, raiz).textContent = pct(t, 0);
+  }
+  for (let e = lx0; e <= lx1; e++) {
+    svg("line", { x1: x(10 ** e), x2: x(10 ** e), y1: m.t, y2: H - m.b, class: "linha-grade" }, raiz);
+    svg("text", { x: x(10 ** e), y: H - m.b + 16, "text-anchor": "middle", class: "eixo" }, raiz).textContent = reais(10 ** e, 0).replace(",0", "");
+  }
+  svg("text", { x: W - m.r, y: H - 2, "text-anchor": "end", class: "eixo" }, raiz).textContent = opts.rotuloX;
+  if (ok(opts.referencia)) {
+    svg("line", { x1: m.l, x2: W - m.r, y1: y(opts.referencia), y2: y(opts.referencia), style: "stroke:var(--tinta-2);stroke-width:1" }, raiz);
+    svg("text", { x: m.l + 6, y: y(opts.referencia) - 6 }, raiz).textContent = opts.rotuloReferencia;
+  }
+  const clampY = (v) => Math.max(ticksY[0], Math.min(ticksY[ticksY.length - 1], v));
+  const posicoes = pontos.map((p) => ({ p, px: x(p.x), py: y(clampY(p.y)) }));
+  const camadas = [posicoes.filter((o) => !o.p.destaque && !o.p.selecionado), posicoes.filter((o) => o.p.destaque && !o.p.selecionado), posicoes.filter((o) => o.p.selecionado)];
+  camadas[0].forEach((o) => svg("circle", { cx: o.px, cy: o.py, r: 3.5, style: "fill:var(--contexto);opacity:0.55" }, raiz));
+  camadas[1].forEach((o) => svg("circle", { cx: o.px, cy: o.py, r: 4.5, style: "fill:var(--s1);stroke:var(--superficie);stroke-width:2" }, raiz));
+  camadas[2].forEach((o) => {
+    svg("circle", { cx: o.px, cy: o.py, r: 6, style: "fill:var(--s2);stroke:var(--superficie);stroke-width:2" }, raiz);
+    svg("text", { x: o.px + 10, y: o.py - 8, class: "rotulo-dado" }, raiz).textContent = o.p.rotulo;
+  });
+  const anel = svg("circle", { r: 8, style: "display:none;fill:none;stroke:var(--tinta);stroke-width:1.5" }, raiz);
+  const capa = svg("rect", { x: m.l, y: m.t, width: W - m.l - m.r, height: H - m.t - m.b, fill: "transparent" }, raiz);
+  capa.addEventListener("pointermove", (e) => {
+    const b = raiz.getBoundingClientRect(), mx = e.clientX - b.left, my = e.clientY - b.top;
+    let melhor = null, dist = 24 * 24;
+    for (const o of posicoes) { const d = (o.px - mx) ** 2 + (o.py - my) ** 2; if (d < dist) { dist = d; melhor = o; } }
+    if (!melhor) { anel.style.display = "none"; esconderDica(); capa.style.cursor = ""; return; }
+    anel.setAttribute("cx", melhor.px); anel.setAttribute("cy", melhor.py); anel.style.display = "";
+    capa.style.cursor = "pointer";
+    mostrarDica(e, melhor.p.rotulo, melhor.p.dica);
+    capa.onclick = () => opts.aoClicar && opts.aoClicar(melhor.p);
+  });
+  capa.addEventListener("pointerleave", () => { anel.style.display = "none"; esconderDica(); });
+}
+
+// ------------------------------------------------------------------ componentes
+function kpi(rotulo, valor, delta, nota) {
+  const c = el("div", { class: "kpi" }, el("div", { class: "rotulo", texto: rotulo }), el("div", { class: "valor", texto: valor }));
+  if (delta) c.append(delta);
+  if (nota) c.append(el("div", { class: "nota", texto: nota }));
+  return c;
+}
+/* sentido: +1 quando subir é bom, -1 quando subir é ruim, 0 neutro */
+function delta(atual, anterior, tipo, sentido, rotAnterior, prefixo = "") {
+  if (!ok(atual) || !ok(anterior)) return null;
+  let d, texto;
+  if (tipo === "pp") { d = atual - anterior; texto = pp(d); }
+  else { if (anterior === 0) return null; d = (atual - anterior) / Math.abs(anterior); texto = (d > 0 ? "+" : d < 0 ? "−" : "") + fmt(Math.abs(d * 100), 1) + "%"; }
+  const classe = d === 0 || sentido === 0 ? "neutro" : d * sentido > 0 ? "bom" : "ruim";
+  const seta = d > 0 ? "▲" : d < 0 ? "▼" : "■";
+  return el("div", { class: `delta ${classe}` }, el("span", { "aria-hidden": "true", texto: seta }), document.createTextNode(`${prefixo}${texto} vs. ${rotAnterior}`));
+}
+function tabelaSimples(alvo, cabecalho, linhas, numericas = []) {
+  limpar(alvo);
+  const t = el("table"), th = el("tr");
+  cabecalho.forEach((c, i) => th.append(el("th", { class: numericas.includes(i) ? "n" : null, texto: c })));
+  t.append(el("thead", {}, th));
+  const tb = el("tbody");
+  for (const l of linhas) {
+    const tr = el("tr");
+    l.forEach((v, i) => tr.append(el("td", { class: numericas.includes(i) ? "n" : null, texto: v })));
+    tb.append(tr);
+  }
+  t.append(tb);
+  alvo.append(t);
+}
+
+// ------------------------------------------------------------------ estado e filtros
+const estado = {
+  periodo: PER_OPS[PER_OPS.length - 1] || PER[PER.length - 1], janela: "acumulado_ano", segmento: "medico_hospitalar",
+  destaque: null, busca: "", modalidade: "", porte: "", uf: "", amostra: true,
+  ordem: { col: "receita_contraprestacoes", dir: -1 }, limite: 25, operadora: null, tabelas: {},
+};
+const COR = { s1: "var(--s1)", s2: "var(--s2)", s3: "var(--s3)", ctx: "var(--contexto)" };
+
+function montarFiltros() {
+  const sel = $("f-periodo");
+  [...PER_OPS].reverse().forEach((p) => sel.append(el("option", { value: p, texto: rotPer(p) })));
+  sel.value = estado.periodo;
+  sel.addEventListener("change", () => { estado.periodo = sel.value; renderizar(); });
+  const grupo = (id, opcoes, chave) => {
+    const g = $(id);
+    opcoes.forEach(([v, rot]) => {
+      const b = el("button", { type: "button", "aria-pressed": String(estado[chave] === v), texto: rot });
+      b.addEventListener("click", () => {
+        estado[chave] = v;
+        [...g.children].forEach((c) => c.setAttribute("aria-pressed", String(c === b)));
+        if (chave === "segmento") { estado.destaque = null; estado.modalidade = ""; estado.operadora = null; montarSelecaoTabela(); }
+        renderizar();
+      });
+      g.append(b);
+    });
+  };
+  grupo("f-janela", [["acumulado_ano", "Acumulado no ano"], ["12_meses", "12 meses"], ["trimestre", "Trimestre"]], "janela");
+  grupo("f-segmento", [["medico_hospitalar", "Médico-hospitalar"], ["odontologico", "Odontológico"]], "segmento");
+  document.querySelectorAll("[data-tabela]").forEach((b) => b.addEventListener("click", () => {
+    const nome = b.dataset.tabela, alvo = $(`t-${nome}`);
+    alvo.hidden = !alvo.hidden; b.textContent = alvo.hidden ? "Ver dados" : "Ocultar dados";
+  }));
+  $("tema").addEventListener("click", () => {
+    const raiz = document.documentElement;
+    const escuroAgora = raiz.dataset.theme ? raiz.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    raiz.dataset.theme = escuroAgora ? "light" : "dark";
+    try { localStorage.setItem("tema", raiz.dataset.theme); } catch (e) { /* armazenamento indisponível */ }
+  });
+  try { const t = localStorage.getItem("tema"); if (t) document.documentElement.dataset.theme = t; } catch (e) { /* ignora */ }
+  $("busca").addEventListener("input", (e) => { estado.busca = e.target.value; estado.limite = 25; renderizarTabela(); });
+  ["modalidade", "porte", "uf"].forEach((k) => $(`f-${k}`).addEventListener("change", (e) => { estado[k] = e.target.value; estado.limite = 25; renderizarTabela(); }));
+  $("f-amostra").addEventListener("change", (e) => { estado.amostra = e.target.checked; estado.limite = 25; renderizarTabela(); });
+  $("mais").addEventListener("click", () => { estado.limite += 50; renderizarTabela(); });
+}
+function montarSelecaoTabela() {
+  const doSeg = CAD.filter((c) => c.segmento === estado.segmento);
+  const preencher = (id, valores, rotulo) => {
+    const s = limpar($(id));
+    s.append(el("option", { value: "", texto: "Todas" }));
+    valores.forEach((v) => s.append(el("option", { value: v, texto: rotulo ? rotulo(v) : v })));
+    s.value = "";
+  };
+  preencher("f-modalidade", MODALIDADES[estado.segmento]);
+  preencher("f-porte", ["grande", "medio", "pequeno", "sem_beneficiarios", "sem_informacao"].filter((p) => doSeg.some((c) => c.porte === p)), (p) => PORTE[p]);
+  preencher("f-uf", [...new Set(doSeg.map((c) => c.uf).filter(Boolean))].sort());
+  estado.porte = ""; estado.uf = "";
+}
+
+// ------------------------------------------------------------------ seções
+const segAtual = () => merc(estado.periodo, estado.janela, "segmento", estado.segmento);
+const segAnterior = () => merc(perAnterior(estado.periodo), estado.janela, "segmento", estado.segmento);
+
+function renderizarDestaque() {
+  const a = segAtual(), b = segAnterior(), heroi = limpar($("heroi")), kpis = limpar($("kpis"));
+  const jan = rotJanela(estado.periodo, estado.janela), ant = rotPer(perAnterior(estado.periodo)), antCurto = curtoPer(perAnterior(estado.periodo));
+  heroi.append(el("div", { class: "rotulo", texto: `Sinistralidade das operadoras ${SEG_NOME[estado.segmento]} · ${jan}` }));
+  if (!a) { heroi.append(el("div", { class: "vazio", texto: "Sem dados para este período." })); return; }
+  heroi.append(el("div", { class: "valor", texto: pct(a.sinistralidade) }));
+  const d = delta(a.sinistralidade, b && b.sinistralidade, "pp", -1, ant);
+  if (d) heroi.append(d);
+  if (ok(a.sinistralidade)) {
+    const partes = [`De cada R$ 100 de mensalidades, R$ ${fmt(a.sinistralidade * 100, 2)} pagaram despesas assistenciais`];
+    if (ok(a.indice_despesa_administrativa)) partes.push(`R$ ${fmt(a.indice_despesa_administrativa * 100, 2)} despesas administrativas`);
+    if (ok(a.indice_despesa_comercializacao)) partes.push(`R$ ${fmt(a.indice_despesa_comercializacao * 100, 2)} a comercialização`);
+    heroi.append(el("p", { class: "frase", texto: partes.join(", ").replace(/, ([^,]*)$/, " e $1") + "." }));
+  }
+  heroi.append(el("p", { class: "frase", texto: `${num(a.n_operadoras, 0)} operadoras com dados no período. Mediana entre operadoras: ${pct(a.sinistralidade_mediana)} (metade entre ${pct(a.sinistralidade_p25)} e ${pct(a.sinistralidade_p75)}).` }));
+  kpis.append(
+    kpi("Receita de contraprestações", reais(a.receita_contraprestacoes), delta(a.receita_contraprestacoes, b && b.receita_contraprestacoes, "rel", 0, antCurto)),
+    kpi("Despesa assistencial", reais(a.despesa_assistencial), delta(a.despesa_assistencial, b && b.despesa_assistencial, "rel", 0, antCurto)),
+    kpi("Resultado operacional", reais(a.resultado_operacional), delta(a.margem_operacional, b && b.margem_operacional, "pp", 1, antCurto, "margem "), `Margem operacional ${pct(a.margem_operacional)}`),
+    kpi("Resultado financeiro", reais(a.resultado_financeiro), delta(a.resultado_financeiro, b && b.resultado_financeiro, "rel", 0, antCurto), "Rendimento das aplicações, líquido"),
+    kpi("Resultado líquido", reais(a.resultado_liquido), delta(a.margem_liquida, b && b.margem_liquida, "pp", 1, antCurto, "margem "), `Margem líquida ${pct(a.margem_liquida)}`),
+    kpi("Operadoras com lucro", pct(a.pct_resultado_liquido_positivo, 0), delta(a.pct_resultado_liquido_positivo, b && b.pct_resultado_liquido_positivo, "pp", 1, antCurto), `${pct(a.pct_resultado_operacional_negativo, 0)} com prejuízo operacional`),
+  );
+}
+
+function valoresSerie(recorte, valor, coluna) {
+  const v = {};
+  for (const p of PER) { const r = merc(p, estado.janela, recorte, valor); v[p] = r ? r[coluna] : null; }
+  return v;
+}
+
+function renderizarSerie() {
+  const nome = `Operadoras ${SEG_NOME[estado.segmento]}`;
+  const valores = valoresSerie("segmento", estado.segmento, "sinistralidade");
+  $("sub-serie").textContent = `${nome} · ${JANELA_TEXTO[estado.janela]} · ${rotPer(PER[0])} a ${rotPer(PER[PER.length - 1])}`;
+  graficoLinhas($("g-serie"), {
+    periodos: PER, series: [{ nome: "Sinistralidade", cor: COR.s1, valores }],
+    fmtEixo: (t) => pct(t, 0), fmtValor: (v) => pct(v), altura: 260, marcar: estado.periodo, rotulosFim: true,
+    tituloDica: (p) => `${rotPer(p)} · ${rotJanela(p, estado.janela)}`, rotuloAria: `Sinistralidade das ${nome} ao longo do tempo`,
+  });
+  tabelaSimples($("t-serie"), ["Período", "Sinistralidade"], PER.map((p) => [rotPer(p), pct(valores[p])]), [1]);
+}
+const JANELA_TEXTO = { "12_meses": "janela móvel de 12 meses", acumulado_ano: "acumulado no ano", trimestre: "trimestre isolado" };
+
+function renderizarMultiplos() {
+  const mods = MODALIDADES[estado.segmento], alvo = limpar($("g-multiplos"));
+  const total = valoresSerie("segmento", estado.segmento, "sinistralidade");
+  const porMod = Object.fromEntries(mods.map((mo) => [mo, valoresSerie("modalidade", mo, "sinistralidade")]));
+  const todos = [...Object.values(porMod), total].flatMap((v) => Object.values(v).filter(ok));
+  const dominio = todos.length ? [Math.min(...todos) - 0.02, Math.max(...todos) + 0.02] : null;
+  $("sub-multiplos").textContent = `Mesma escala em todos os painéis · ${JANELA_TEXTO[estado.janela]}`;
+  const leg = limpar($("leg-multiplos"));
+  leg.append(el("span", {}, el("span", { class: "chave-linha", estilo: "border-color:var(--s1)" }), document.createTextNode("Modalidade")),
+    el("span", {}, el("span", { class: "chave-linha", estilo: "border-color:var(--contexto)" }), document.createTextNode(`Total ${SEG_NOME[estado.segmento]}`)));
+  // Primeiro monta todas as caixas (para a grade calcular as larguras), depois desenha
+  const paineis = mods.map((mo) => {
+    const caixa = el("div"), g = el("div", { class: "grafico" });
+    caixa.append(el("h3", { texto: `${CURTO[mo] || mo} · ${pct(porMod[mo][estado.periodo])}` }), g);
+    alvo.append(caixa);
+    return [mo, g];
+  });
+  const xInicio = paineis.length ? paineis[0][1].parentElement.offsetLeft : 0;
+  for (const [mo, g] of paineis) {
+    graficoLinhas(g, {
+      semEixoY: g.parentElement.offsetLeft !== xInicio,
+      periodos: PER, compacto: true, altura: 150, dominio,
+      series: [{ nome: "Total", cor: COR.ctx, valores: total, contexto: true }, { nome: CURTO[mo] || mo, cor: COR.s1, valores: porMod[mo] }],
+      dicaContexto: true, fmtEixo: (t) => pct(t, 0), fmtValor: (v) => pct(v), marcar: estado.periodo,
+      rotuloAria: `Sinistralidade — ${mo}`,
+    });
+  }
+  tabelaSimples($("t-multiplos"), ["Período", ...mods.map((mo) => CURTO[mo] || mo), "Total"],
+    PER.map((p) => [rotPer(p), ...mods.map((mo) => pct(porMod[mo][p])), pct(total[p])]), mods.map((_, i) => i + 1).concat(mods.length + 1));
+}
+
+function renderizarDecomposicao() {
+  const mods = MODALIDADES[estado.segmento];
+  const cats = [{ nome: "Assistencial", cor: COR.s1 }, { nome: "Administrativa", cor: COR.s2 }, { nome: "Comercialização", cor: COR.s3, claro: true }];
+  const linha = (rotulo, r, destaque) => r && {
+    rotulo, destaque, total: r.indice_combinado,
+    partes: [r.sinistralidade, r.indice_despesa_administrativa, r.indice_despesa_comercializacao].map((v) => (ok(v) ? v * 100 : 0)),
+  };
+  const linhas = [linha(`Total ${SEG_NOME[estado.segmento]}`, segAtual(), true),
+    ...mods.map((mo) => linha(CURTO[mo] || mo, merc(estado.periodo, estado.janela, "modalidade", mo)))].filter(Boolean);
+  linhas.forEach((l) => (l.total = ok(l.total) ? l.total * 100 : l.partes.reduce((a, b) => a + b, 0)));
+  $("sub-decomp").textContent = `Despesas como % das contraprestações · ${rotJanela(estado.periodo, estado.janela)}. Barras além da linha de 100 gastam mais do que arrecadam com mensalidades.`;
+  const leg = limpar($("leg-decomp"));
+  cats.forEach((c) => leg.append(el("span", {}, el("span", { class: "chave-caixa", estilo: `background:${c.cor}` }), document.createTextNode(c.nome))));
+  barrasEmpilhadas($("g-decomp"), {
+    linhas, categorias: cats, referencia: 100, rotuloReferencia: "R$ 100 de mensalidade",
+    fmt: (v) => fmt(v, 1), fmtEixo: (t) => fmt(t, 0), rotuloTotal: "Índice combinado (R$)", rotuloAria: "Composição das despesas por modalidade",
+  });
+  tabelaSimples($("t-decomp"), ["Recorte", "Assistencial", "Administrativa", "Comercialização", "Total"],
+    linhas.map((l) => [l.rotulo, ...l.partes.map((v) => fmt(v, 1)), fmt(l.total, 1)]), [1, 2, 3, 4]);
+}
+
+function renderizarResultado() {
+  const ro = valoresSerie("segmento", estado.segmento, "resultado_operacional");
+  const rf = valoresSerie("segmento", estado.segmento, "resultado_financeiro");
+  $("sub-resultado").textContent = `Operadoras ${SEG_NOME[estado.segmento]} · ${JANELA_TEXTO[estado.janela]} · em R$`;
+  const leg = limpar($("leg-resultado"));
+  [["Resultado operacional", COR.s1], ["Resultado financeiro", COR.s2]].forEach(([n, c]) =>
+    leg.append(el("span", {}, el("span", { class: "chave-linha", estilo: `border-color:${c}` }), document.createTextNode(n))));
+  graficoLinhas($("g-resultado"), {
+    periodos: PER, altura: 260, incluirZero: true, marcar: estado.periodo, rotulosFim: true,
+    series: [{ nome: "Operacional", cor: COR.s1, valores: ro }, { nome: "Financeiro", cor: COR.s2, valores: rf }],
+    fmtEixo: (t) => reais(t, 0).replace(",0", ""), fmtValor: (v) => reais(v), rotuloAria: "Resultado operacional e financeiro",
+    tituloDica: (p) => `${rotPer(p)} · ${rotJanela(p, estado.janela)}`,
+  });
+  tabelaSimples($("t-resultado"), ["Período", "Resultado operacional", "Resultado financeiro"], PER.map((p) => [rotPer(p), reais(ro[p]), reais(rf[p])]), [1, 2]);
+}
+
+const cadPorIdx = CAD;
+function linhasOperadoras(periodo, janela) {
+  return OPS.filter((o) => o.periodo === periodo && o.janela === janela).map((o) => ({ ...o, cad: cadPorIdx[o.op] }))
+    .filter((o) => o.cad && o.cad.segmento === estado.segmento);
+}
+
+function renderizarDispersao() {
+  const ops = linhasOperadoras(estado.periodo, estado.janela).filter((o) => o.amostra && ok(o.sinistralidade) && o.receita_contraprestacoes > 0);
+  const chips = limpar($("chips-modalidade"));
+  [["", "Nenhuma"], ...MODALIDADES[estado.segmento].map((m) => [m, CURTO[m] || m])].forEach(([v, r]) => {
+    const b = el("button", { class: "chip", type: "button", "aria-pressed": String((estado.destaque || "") === v), texto: v ? `Destacar ${r.toLowerCase()}` : "Sem destaque" });
+    b.addEventListener("click", () => { estado.destaque = v || null; renderizarDispersao(); });
+    chips.append(b);
+  });
+  const ref = segAtual();
+  $("sub-dispersao").textContent = `Receita de contraprestações (escala log) × sinistralidade · ${rotJanela(estado.periodo, estado.janela)} · operadoras com receita ≥ R$ 1 milhão. Clique em um ponto para ver o detalhe.`;
+  const pontos = ops.map((o) => ({
+    x: o.receita_contraprestacoes, y: o.sinistralidade, rotulo: o.cad.nome,
+    destaque: estado.destaque && o.cad.modalidade === estado.destaque, selecionado: estado.operadora === o.op, op: o.op,
+    dica: [{ nome: "Sinistralidade", valor: pct(o.sinistralidade) }, { nome: "Receita", valor: reais(o.receita_contraprestacoes) },
+      { nome: "Modalidade", valor: CURTO[o.cad.modalidade] || o.cad.modalidade }, { nome: "Beneficiários", valor: pessoas(o.beneficiarios) }],
+  }));
+  dispersao($("g-dispersao"), pontos, {
+    referencia: ref && ref.sinistralidade, rotuloReferencia: `Total do segmento: ${pct(ref && ref.sinistralidade)}`,
+    rotuloX: "Receita de contraprestações", rotuloAria: "Dispersão de operadoras por receita e sinistralidade",
+    aoClicar: (p) => selecionarOperadora(p.op),
+  });
+  tabelaSimples($("t-dispersao"), ["Operadora", "Modalidade", "Receita", "Sinistralidade"],
+    [...ops].sort((a, b) => b.receita_contraprestacoes - a.receita_contraprestacoes).map((o) => [o.cad.nome, o.cad.modalidade, reais(o.receita_contraprestacoes), pct(o.sinistralidade)]), [2, 3]);
+}
+
+function renderizarConcentracao() {
+  const a = segAtual(), ops = linhasOperadoras(estado.periodo, estado.janela).filter((o) => o.receita_contraprestacoes > 0);
+  const total = ops.reduce((s, o) => s + o.receita_contraprestacoes, 0);
+  const top = [...ops].sort((x, y) => y.receita_contraprestacoes - x.receita_contraprestacoes).slice(0, 10);
+  const k = limpar($("kpis-concentracao"));
+  const nivel = (h) => (!ok(h) ? "" : h < 1500 ? "não concentrado" : h <= 2500 ? "moderadamente concentrado" : "altamente concentrado");
+  k.append(kpi("Índice HHI (receita)", a ? num(a.hhi, 0) : "–", null, a ? `Mercado ${nivel(a.hhi)}*` : ""),
+    kpi("10 maiores operadoras", a ? pct(a.cr10, 0) : "–", null, "da receita de contraprestações"));
+  $("sub-concentracao").textContent = `Participação na receita de contraprestações · ${rotJanela(estado.periodo, estado.janela)}. *HHI: < 1.500 não concentrado; 1.500–2.500 moderado; > 2.500 alto (referência usual em defesa da concorrência).`;
+  barrasSimples($("g-concentracao"), top.map((o) => ({ rotulo: o.cad.nome, valor: o.receita_contraprestacoes / total,
+    extra: [{ nome: "Receita", valor: reais(o.receita_contraprestacoes) }, { nome: "Sinistralidade", valor: pct(o.sinistralidade) }] })),
+  { cor: COR.s1, fmt: (v) => pct(v), nomeValor: "Participação", rotuloAria: "Dez maiores operadoras por receita" });
+  tabelaSimples($("t-concentracao"), ["Operadora", "Receita", "Participação"], top.map((o) => [o.cad.nome, reais(o.receita_contraprestacoes), pct(o.receita_contraprestacoes / total)]), [1, 2]);
+}
+
+function renderizarBeneficiarios() {
+  const alvo = limpar($("g-beneficiarios")), B = D.beneficiarios;
+  const cob = estado.segmento === "odontologico" ? "odontologico" : "medico_hospitalar";
+  if (!B || !B.por_cobertura || !B.por_cobertura[cob]) {
+    $("sub-beneficiarios").textContent = "";
+    alvo.append(el("div", { class: "vazio", texto: "Dados de beneficiários não processados nesta execução." }));
+    return;
+  }
+  const info = B.por_cobertura[cob];
+  $("sub-beneficiarios").textContent = `Planos ${cob === "odontologico" ? "exclusivamente odontológicos" : "de assistência médica"} · posição de ${rotComp(B.competencia)}`;
+  const k = el("div", { class: "kpis", estilo: "grid-template-columns: repeat(2, 1fr); margin-bottom: 12px" });
+  const d = ok(info.total_anterior) ? delta(info.total, info.total_anterior, "rel", 0, rotComp(B.competencia_anterior)) : null;
+  k.append(kpi("Beneficiários", pessoas(info.total), d), kpi("HHI por beneficiários", num(info.hhi, 0), null, "concentração por número de vidas"));
+  alvo.append(k);
+  const cont = info.contratacao || {}, totalC = Object.values(cont).reduce((a, b) => a + (b || 0), 0);
+  const cats = [["coletivo_empresarial", COR.s1], ["coletivo_adesao", COR.s2], ["individual", COR.s3]];
+  if (totalC > 0) {
+    alvo.append(el("div", { class: "legenda" }, ...cats.map(([c, cor]) => el("span", {}, el("span", { class: "chave-caixa", estilo: `background:${cor}` }), document.createTextNode(CONTRATACAO[c])))));
+    const g = el("div", { class: "grafico" });
+    alvo.append(g);
+    const outros = totalC - cats.reduce((s, [c]) => s + (cont[c] || 0), 0);
+    barrasEmpilhadas(g, {
+      linhas: [{ rotulo: "Tipo de contratação", partes: cats.map(([c]) => (100 * (cont[c] || 0)) / totalC), total: 100 - (100 * outros) / totalC }],
+      categorias: cats.map(([c, cor], i) => ({ nome: CONTRATACAO[c], cor, claro: i === 2 })), fmt: (v) => fmt(v, 1) + "%", fmtEixo: (t) => fmt(t, 0) + "%",
+      rotuloTotal: "Soma", rotuloAria: "Beneficiários por tipo de contratação",
+    });
+  }
+  alvo.append(el("h3", { texto: "Estados com mais beneficiários", estilo: "font-size:13px;margin:12px 0 4px" }));
+  const gUf = el("div", { class: "grafico" });
+  alvo.append(gUf);
+  barrasSimples(gUf, (info.uf || []).slice(0, 8).map(([uf, v]) => ({ rotulo: uf, valor: v })), { cor: COR.s1, fmt: pessoas, nomeValor: "Beneficiários", rotuloAria: "Beneficiários por UF" });
+  tabelaSimples($("t-beneficiarios"), ["Recorte", "Beneficiários"], [
+    ["Total", fmt(info.total || 0, 0)], ...Object.entries(cont).map(([c, v]) => [CONTRATACAO[c] || c, fmt(v || 0, 0)]),
+    ...(info.uf || []).map(([uf, v]) => [`UF ${uf}`, fmt(v || 0, 0)]), ...(info.top || []).map(([n, r, v]) => [`${n} (${r})`, fmt(v || 0, 0)]),
+  ], [1]);
+}
+
+// ------------------------------------------------------------------ tabela de operadoras
+const COLUNAS_OPS = [
+  ["nome", "Operadora", (o) => o.cad.nome, null],
+  ["modalidade", "Modalidade", (o) => CURTO[o.cad.modalidade] || o.cad.modalidade, null],
+  ["beneficiarios", "Beneficiários", (o) => o.beneficiarios, pessoas],
+  ["receita_contraprestacoes", "Receita", (o) => o.receita_contraprestacoes, (v) => reais(v)],
+  ["sinistralidade", "Sinistralidade", (o) => o.sinistralidade, (v) => pct(v)],
+  ["indice_despesa_administrativa", "Desp. adm.", (o) => o.indice_despesa_administrativa, (v) => pct(v)],
+  ["indice_despesa_comercializacao", "Desp. com.", (o) => o.indice_despesa_comercializacao, (v) => pct(v)],
+  ["indice_combinado", "Índ. combinado", (o) => o.indice_combinado, (v) => pct(v)],
+  ["margem_operacional", "Margem op.", (o) => o.margem_operacional, (v) => pct(v)],
+  ["margem_liquida", "Margem líq.", (o) => o.margem_liquida, (v) => pct(v)],
+  ["liquidez_corrente", "Liq. corrente", (o) => o.liquidez_corrente, (v) => num(v)],
+];
+function renderizarTabela() {
+  const termo = estado.busca.trim().toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+  let ops = linhasOperadoras(estado.periodo, estado.janela).filter((o) =>
+    (!estado.amostra || o.amostra) && (!estado.modalidade || o.cad.modalidade === estado.modalidade) &&
+    (!estado.porte || o.cad.porte === estado.porte) && (!estado.uf || o.cad.uf === estado.uf) &&
+    (!termo || `${o.cad.nome} ${o.cad.reg_ans}`.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").includes(termo)));
+  const col = COLUNAS_OPS.find((c) => c[0] === estado.ordem.col) || COLUNAS_OPS[5];
+  ops.sort((a, b) => {
+    const va = col[2](a), vb = col[2](b);
+    if (va === null || va === undefined) return 1;
+    if (vb === null || vb === undefined) return -1;
+    return (typeof va === "string" ? va.localeCompare(vb, "pt-BR") : va - vb) * estado.ordem.dir;
+  });
+  $("sub-operadoras").textContent = `${rotJanela(estado.periodo, estado.janela)} · clique em uma linha para ver o detalhe · clique no cabeçalho para ordenar`;
+  const t = limpar($("tabela-ops")), cab = el("tr");
+  COLUNAS_OPS.forEach(([k, rot, , f]) => {
+    const ativo = estado.ordem.col === k, seta = ativo ? (estado.ordem.dir > 0 ? " ▲" : " ▼") : "";
+    const th = el("th", { class: `ordenavel${f ? " n" : ""}`, tabindex: 0, scope: "col", "aria-sort": ativo ? (estado.ordem.dir > 0 ? "ascending" : "descending") : "none", texto: rot + seta });
+    const ordenar = () => { estado.ordem = { col: k, dir: ativo ? -estado.ordem.dir : f ? -1 : 1 }; renderizarTabela(); };
+    th.addEventListener("click", ordenar);
+    th.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); ordenar(); } });
+    cab.append(th);
+  });
+  t.append(el("thead", {}, cab));
+  const corpo = el("tbody");
+  for (const o of ops.slice(0, estado.limite)) {
+    const tr = el("tr", { tabindex: 0, class: estado.operadora === o.op ? "ativa" : null });
+    COLUNAS_OPS.forEach(([k, , get, f], i) => {
+      if (i === 0) tr.append(el("td", {}, document.createTextNode(o.cad.nome), el("div", { class: "reg", texto: `Registro ANS ${o.cad.reg_ans}${o.cad.uf ? " · " + o.cad.uf : ""}` })));
+      else if (k === "modalidade") tr.append(el("td", {}, document.createTextNode(get(o) || "–"), el("div", { class: "reg", texto: `porte ${(PORTE[o.cad.porte] || "–").toLowerCase()}` })));
+      else tr.append(el("td", { class: f ? "n" : null, texto: f ? f(get(o)) : get(o) || "–" }));
+    });
+    const abrir = () => selecionarOperadora(o.op);
+    tr.addEventListener("click", abrir);
+    tr.addEventListener("keydown", (e) => { if (e.key === "Enter") abrir(); });
+    corpo.append(tr);
+  }
+  t.append(corpo);
+  $("contagem").textContent = `Mostrando ${Math.min(estado.limite, ops.length)} de ${ops.length} operadoras`;
+  $("mais").hidden = ops.length <= estado.limite;
+}
+
+function selecionarOperadora(op) {
+  estado.operadora = op;
+  renderizarDetalhe(); renderizarTabela(); renderizarDispersao();
+  $("c-operadoras").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+function renderizarDetalhe() {
+  const alvo = limpar($("detalhe"));
+  if (estado.operadora === null) return;
+  const c = CAD[estado.operadora];
+  if (!c || c.segmento !== estado.segmento) { estado.operadora = null; return; }
+  const o = OPS.find((r) => r.op === estado.operadora && r.periodo === estado.periodo && r.janela === estado.janela);
+  const caixa = el("div", { class: "detalhe" });
+  const fechar = el("button", { class: "botao", type: "button", texto: "Fechar" });
+  fechar.addEventListener("click", () => { estado.operadora = null; renderizarDetalhe(); renderizarTabela(); renderizarDispersao(); });
+  caixa.append(el("div", { class: "cabeca" }, el("div", {}, el("h3", { texto: c.nome }),
+    el("div", { class: "selo", texto: `Registro ANS ${c.reg_ans} · ${c.modalidade} · ${c.uf || "UF não informada"} · porte ${(PORTE[c.porte] || "–").toLowerCase()}${c.situacao === "cancelada" ? " · registro cancelado" : ""}` })), fechar));
+  const modRef = merc(estado.periodo, estado.janela, "modalidade", c.modalidade);
+  const k = el("div", { class: "kpis" });
+  if (o) {
+    k.append(
+      kpi("Sinistralidade", pct(o.sinistralidade), null, `${CURTO[c.modalidade] || c.modalidade}: ${pct(modRef && modRef.sinistralidade)}`),
+      kpi("Receita de contraprestações", reais(o.receita_contraprestacoes), null, rotJanela(estado.periodo, estado.janela)),
+      kpi("Margem líquida", pct(o.margem_liquida), null, `Resultado líquido ${reais(o.resultado_liquido)}`),
+      kpi("Beneficiários", pessoas(o.beneficiarios), null, ok(o.receita_por_beneficiario_mes) ? `Mensalidade média R$ ${fmt(o.receita_por_beneficiario_mes, 0)}` : "fim do trimestre"),
+    );
+  } else k.append(el("div", { class: "vazio", texto: "A operadora não tem dados nesta janela/período." }));
+  caixa.append(k);
+  const serieOp = {}, serieMod = valoresSerie("modalidade", c.modalidade, "sinistralidade");
+  SER.filter((s) => s.op === estado.operadora).forEach((s) => (serieOp[s.periodo] = s.sinistralidade));
+  if (estado.janela !== "12_meses") Object.assign(serieMod, Object.fromEntries(PER.map((p) => { const r = merc(p, "12_meses", "modalidade", c.modalidade); return [p, r ? r.sinistralidade : null]; })));
+  caixa.append(el("div", { class: "legenda" },
+    el("span", {}, el("span", { class: "chave-linha", estilo: "border-color:var(--s1)" }), document.createTextNode("Operadora")),
+    el("span", {}, el("span", { class: "chave-linha", estilo: "border-color:var(--contexto)" }), document.createTextNode(`${CURTO[c.modalidade] || c.modalidade} (total)`)),
+    el("span", { texto: "· sinistralidade em 12 meses" })));
+  const g = el("div", { class: "grafico" });
+  caixa.append(g);
+  alvo.append(caixa);
+  graficoLinhas(g, {
+    periodos: PER, altura: 200, series: [{ nome: "Modalidade", cor: COR.ctx, valores: serieMod, contexto: true }, { nome: "Operadora", cor: COR.s1, valores: serieOp }],
+    dicaContexto: true, fmtEixo: (t) => pct(t, 0), fmtValor: (v) => pct(v), marcar: estado.periodo, rotuloAria: `Sinistralidade de ${c.nome}`,
+  });
+}
+
+// ------------------------------------------------------------------ conciliação
+function renderizarConciliacao() {
+  const linhas = [...CONC].sort((a, b) => (a.periodo < b.periodo ? 1 : a.periodo > b.periodo ? -1 : 0));
+  const cont = { confere: 0, diverge: 0, sem_dados: 0 };
+  linhas.forEach((l) => (cont[l.status] = (cont[l.status] || 0) + 1));
+  const comDados = cont.confere + cont.diverge;
+  const resumo = limpar($("resumo-conc"));
+  resumo.append(el("span", { texto: `${cont.confere} de ${comDados} números comparáveis conferem com a ANS` }),
+    el("span", { texto: `${cont.sem_dados} fora do período processado` }),
+    el("span", { texto: `Definição de sinistralidade adotada: ${META.variante_sinistralidade === "liquida" ? "sobre contraprestações líquidas de tributos" : "sobre contraprestações efetivas"}` }));
+  const fmtValor = (ind, v) => (!ok(v) ? "–" : ["sinistralidade", "pct_resultado_liquido_positivo", "roe"].includes(ind) ? pct(v) : reais(v));
+  const fmtDif = (ind, v) => (!ok(v) ? "–" : ["sinistralidade", "pct_resultado_liquido_positivo", "roe"].includes(ind) ? pp(v) : reais(v));
+  const recorte = (l) => (l.recorte === "setor" ? "Setor (todas)" : l.recorte === "segmento" ? (l.valor_recorte === "medico_hospitalar" ? "Médico-hospitalares" : l.valor_recorte) :
+    l.recorte === "porte_mh" ? `Porte ${PORTE[l.valor_recorte] || l.valor_recorte}` : CURTO[l.valor_recorte] || l.valor_recorte);
+  const t = limpar($("tabela-conc")), cab = el("tr");
+  ["Período", "Recorte", "Indicador", "ANS", "Calculado", "Diferença", "Situação", "Fonte"].forEach((c, i) => cab.append(el("th", { class: i >= 3 && i <= 5 ? "n" : null, texto: c })));
+  t.append(el("thead", {}, cab));
+  const corpo = el("tbody");
+  const ROT = { confere: ["✓", "Confere"], diverge: ["!", "Diverge"], sem_dados: ["–", "Sem dados"] };
+  for (const l of linhas) {
+    const [icone, rot] = ROT[l.status] || ROT.sem_dados;
+    const fonte = el("td");
+    if (l.url && /^https?:\/\//.test(l.url)) fonte.append(el("a", { href: l.url, target: "_blank", rel: "noopener noreferrer", texto: l.fonte || "fonte" }));
+    else fonte.textContent = l.fonte || "";
+    corpo.append(el("tr", {},
+      el("td", { texto: `${rotPer(l.periodo)}${l.janela === "trimestre" ? " (trimestre)" : l.janela === "12_meses" ? " (12 meses)" : ""}` }),
+      el("td", { texto: recorte(l) }), el("td", { texto: INDICADOR[l.indicador] || l.indicador }),
+      el("td", { class: "n", texto: fmtValor(l.indicador, l.valor_ans) }), el("td", { class: "n", texto: fmtValor(l.indicador, l.valor_calculado) }),
+      el("td", { class: "n", texto: fmtDif(l.indicador, l.diferenca) }),
+      el("td", {}, el("span", { class: `status ${l.status}` }, el("span", { class: "icone", "aria-hidden": "true", texto: icone }), document.createTextNode(rot))),
+      fonte));
+  }
+  t.append(corpo);
+}
+
+// ------------------------------------------------------------------ textos fixos
+function renderizarTextos() {
+  document.title = META.titulo || document.title;
+  $("titulo").textContent = META.titulo || "Observatório da Saúde Suplementar";
+  $("subtitulo").textContent = META.subtitulo || "";
+  $("selo").textContent = `Dados até o ${rotPer(META.periodo_mais_recente || PER[PER.length - 1])} · atualizado em ${META.gerado_em || ""} · fonte: ANS (DIOPS, CADOP e SIB)`;
+  $("link-fonte").href = META.fonte_url || "https://dadosabertos.ans.gov.br/FTP/PDA/";
+  const met = limpar($("metodologia"));
+  const p = (t) => el("p", { texto: t }), h = (t) => el("h3", { texto: t });
+  const lista = (itens) => el("ul", {}, ...itens.map((i) => el("li", { texto: i })));
+  met.append(
+    p("Todos os números são recalculados a partir dos arquivos brutos publicados pela ANS no Portal de Dados Abertos: demonstrações contábeis trimestrais enviadas pelas operadoras (DIOPS), cadastro de operadoras ativas e canceladas (CADOP) e informações consolidadas de beneficiários (SIB)."),
+    h("Definições"),
+    lista([
+      META.variante_sinistralidade === "liquida"
+        ? "Sinistralidade = eventos indenizáveis líquidos (grupo 41) ÷ contraprestações efetivas líquidas de tributos diretos (grupos 31 + 32)."
+        : "Sinistralidade = eventos indenizáveis líquidos (grupo 41 do plano de contas) ÷ contraprestações efetivas (grupo 31).",
+      "Índice combinado = (despesa assistencial + administrativa + comercialização) ÷ contraprestações.",
+      "Resultado operacional = contraprestações − tributos diretos + outras receitas operacionais − despesas assistenciais, administrativas, de comercialização e outras despesas operacionais.",
+      "Resultado líquido = receitas totais − despesas totais − impostos e participações sobre o lucro.",
+      "Razões de mercado são somas ponderadas (soma das despesas ÷ soma das receitas), como faz a ANS, e não médias simples entre operadoras.",
+      "Porte pelo número de beneficiários: pequeno (< 20 mil), médio (20 a 100 mil) e grande (> 100 mil).",
+    ]),
+    h("Janelas de tempo"),
+    lista(["Acumulado no ano: como a ANS divulga (ex.: 1º semestre).", "Trimestre isolado: diferença entre acumulados.", "12 meses: janela móvel, sem sazonalidade."]),
+    h("Limitações"),
+    lista([
+      "Os dados são os informados pelas operadoras à ANS e podem ser reenviados/corrigidos depois.",
+      "A ANS aplica critérios próprios de consistência no seu painel; pequenas diferenças são esperadas (veja a conferência acima).",
+      "Operadoras com receita muito pequena ou com valores atípicos ficam fora das distribuições e da dispersão, mas entram nos totais.",
+    ]),
+  );
+  const downloads = el("p", {}, document.createTextNode("Baixe os dados: "));
+  [["dados/mercado_indicadores.csv", "indicadores de mercado"], ["dados/operadoras_ultimo_trimestre.csv", "operadoras (último trimestre)"],
+    ["dados/operadoras_indicadores.csv.gz", "série completa por operadora"], ["dados/conciliacao_ans.csv", "conferência com a ANS"],
+    ["dados/relatorio_qualidade.json", "relatório de qualidade"]].forEach(([href, rot], i) => {
+    if (i) downloads.append(document.createTextNode(" · "));
+    downloads.append(el("a", { href, texto: rot }));
+  });
+  met.append(downloads);
+  if (META.url_repositorio && /^https?:\/\//.test(META.url_repositorio)) {
+    met.append(el("p", {}, document.createTextNode("Código aberto e metodologia completa: "), el("a", { href: META.url_repositorio, rel: "noopener", texto: META.url_repositorio })));
+  }
+  const autor = META.autor || {}, aut = limpar($("autoria"));
+  if (autor.nome) {
+    aut.append(document.createTextNode(`Feito por ${autor.nome}${autor.descricao ? " — " + autor.descricao : ""}`));
+    [["linkedin", "LinkedIn"], ["github", "GitHub"], ["site", "Site"]].forEach(([k, rot]) => {
+      if (autor[k] && /^https?:\/\//.test(autor[k])) { aut.append(document.createTextNode(" · ")); aut.append(el("a", { href: autor[k], rel: "noopener", texto: rot })); }
+    });
+  }
+}
+
+function renderizar() {
+  esconderDica();
+  renderizarDestaque(); renderizarSerie(); renderizarMultiplos(); renderizarDecomposicao(); renderizarResultado();
+  renderizarDispersao(); renderizarConcentracao(); renderizarBeneficiarios(); renderizarDetalhe(); renderizarTabela();
+}
+
+renderizarTextos();
+montarFiltros();
+montarSelecaoTabela();
+renderizar();
+renderizarConciliacao();
+let espera;
+window.addEventListener("resize", () => { clearTimeout(espera); espera = setTimeout(renderizar, 150); });
+})();
+</script>
+</body>
+</html>

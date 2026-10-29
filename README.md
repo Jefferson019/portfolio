@@ -2,7 +2,7 @@
 # Portfolio de DataScience
 
 Este é o repositório dos meus projetos pessoais.
-=======
+
 # Olá, eu sou Jefferson Marques da Silva  
 
 **Cientista de Dados Sênior** com +10 anos de experiência em **ciência de dados, auditoria e inteligência aplicada à saúde suplementar**, já tendo gerado **mais de R$ 27 milhões em economias comprovadas** com soluções baseadas em **Machine Learning, IA Generativa e Big Data**.  
@@ -18,6 +18,7 @@ Este é o repositório dos meus projetos pessoais.
 ---
 
 ## Projetos em Destaque  
+- ✅ **[Observatório da Saúde Suplementar](datascience/prj_observatorio_saude_suplementar)** — sinistralidade e indicadores econômico-financeiros de todas as operadoras de planos de saúde, calculados a partir dos dados abertos da ANS, com conferência automática contra os números oficiais e atualização mensal. **[Ver painel](https://jefferson019.github.io/portfolio/observatorio-saude-suplementar/)**  
 - ✅ **Detecção de anomalias em contas médicas** com métodos estatísticos e ML (IQR, 3 Sigmas, Isolation Forest, centroides).  
 - ✅ **Forecasting de despesas assistenciais** com ARIMA, SARIMA, Prophet e LSTM.  
 - ✅ **Pipeline OCR + NLP + deduplicação de documentos médicos em tempo real** com Spark Streaming + Kafka.  

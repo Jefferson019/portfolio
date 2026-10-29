@@ -1,0 +1,25 @@
+# Dados gerados (são recriados pelo pipeline)
+dados/bronze/
+dados/prata/
+dados/ouro/
+site/
+
+# O histórico de beneficiários é versionado de propósito
+!dados/historico/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+build/
+dist/
+
+# Sistema / editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
