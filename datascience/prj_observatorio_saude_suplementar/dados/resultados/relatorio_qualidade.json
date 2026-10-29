@@ -1,6 +1,6 @@
 {
  "fonte": "https://dadosabertos.ans.gov.br/FTP/PDA/",
- "gerado_em": "2026-10-29 23:14:07",
+ "gerado_em": "2026-10-29 23:19:40",
  "leitura": {
   "2018T1": {
    "arquivo": "1T2018.zip",
@@ -5195,12 +5195,11 @@
   "registros": []
  },
  "conciliacao": {
-  "confere": 67,
-  "diverge": 2
+  "confere": 69
  },
  "periodo_mais_recente": "2026T2",
  "variante_sinistralidade": "liquida",
  "n_trimestres": 34,
  "primeiro_periodo": "2018T1",
- "duracao_segundos": 41.6
+ "duracao_segundos": 40.7
 }
