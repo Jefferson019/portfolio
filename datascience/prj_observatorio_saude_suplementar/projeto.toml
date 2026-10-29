@@ -1,0 +1,26 @@
+# Configuração do projeto: edite aqui seus dados de autor e os parâmetros do pipeline.
+# Variáveis de ambiente com o mesmo nome em maiúsculas (ex.: OBS_ANO_INICIO) têm prioridade.
+
+[autor]
+nome = "Jefferson Marques da Silva"
+descricao = "Dados e IA para operadoras de planos de saúde"
+linkedin = "https://www.linkedin.com/in/jefferson-marques-da-silva-431606165"
+github = "https://github.com/Jefferson019"
+site = ""
+
+[painel]
+titulo = "Observatório da Saúde Suplementar"
+subtitulo = "Sinistralidade e indicadores econômico-financeiros das operadoras de planos de saúde, calculados a partir dos dados abertos da ANS"
+url_repositorio = "https://github.com/Jefferson019/portfolio/tree/main/datascience/prj_observatorio_saude_suplementar"
+# Quantos trimestres aparecem nas séries do painel
+trimestres_no_painel = 24
+
+[pipeline]
+# Primeiro ano das demonstrações contábeis baixadas (a série de 12 meses começa um ano depois)
+ano_inicio = 2018
+# Quantos fins de trimestre de beneficiários (SIB) processar, além do mês mais recente
+beneficiarios_trimestres = 5
+# Definição da sinistralidade: "auto" escolhe a variante que reproduz os números oficiais da ANS;
+# "bruta" = eventos indenizáveis (41) / contraprestações (31);
+# "liquida" = eventos indenizáveis (41) / contraprestações líquidas de tributos diretos (31 + 32)
+sinistralidade = "auto"

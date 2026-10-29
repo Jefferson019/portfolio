@@ -1,0 +1,104 @@
+name: Observatório — atualizar dados e painel
+
+on:
+  schedule:
+    - cron: "37 11 8 * *" # todo dia 8, às 08:37 de Brasília
+  workflow_dispatch:
+    inputs:
+      sem_beneficiarios:
+        description: "Pular os beneficiários (execução mais rápida)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: observatorio-atualizar
+  cancel-in-progress: false
+
+env:
+  PROJETO: datascience/prj_observatorio_saude_suplementar
+
+defaults:
+  run:
+    working-directory: datascience/prj_observatorio_saude_suplementar
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: datascience/prj_observatorio_saude_suplementar/pyproject.toml
+
+      - name: Restaurar arquivos já baixados da ANS
+        uses: actions/cache@v4
+        with:
+          path: |
+            datascience/prj_observatorio_saude_suplementar/dados/bronze/demonstracoes_contabeis
+            datascience/prj_observatorio_saude_suplementar/dados/prata/contabil
+          key: ans-${{ github.run_id }}
+          restore-keys: ans-
+
+      - name: Instalar
+        run: pip install ".[parquet]"
+
+      - name: Rodar pipeline
+        env:
+          # Mude para "1" só se o certificado do portal da ANS falhar (os arquivos são públicos)
+          ANS_PERMITIR_HTTP: "0"
+        run: |
+          if [ "${{ inputs.sem_beneficiarios }}" = "true" ]; then
+            python -m observatorio_ans --sem-beneficiarios
+          else
+            python -m observatorio_ans
+          fi
+
+      - name: Versionar o histórico de beneficiários
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dados/historico
+          if ! git diff --cached --quiet; then
+            git commit -m "Observatório: atualiza histórico de beneficiários"
+            git pull --rebase
+            git push
+          fi
+
+      - name: Montar o site (painel em /observatorio-saude-suplementar/)
+        working-directory: ${{ github.workspace }}
+        run: |
+          mkdir -p _site
+          cp -r "$PROJETO/site" _site/observatorio-saude-suplementar
+          touch _site/.nojekyll
+          cat > _site/index.html << 'HTML'
+          <!DOCTYPE html>
+          <html lang="pt-BR"><head><meta charset="utf-8">
+          <meta http-equiv="refresh" content="0; url=observatorio-saude-suplementar/">
+          <title>Portfólio — Jefferson Marques da Silva</title></head>
+          <body><p><a href="observatorio-saude-suplementar/">Observatório da Saúde Suplementar</a></p></body></html>
+          HTML
+
+      - name: Preparar o site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  publicar:
+    needs: atualizar
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}observatorio-saude-suplementar/
+    steps:
+      - name: Publicar no GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
