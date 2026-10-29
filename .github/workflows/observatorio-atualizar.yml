@@ -62,13 +62,15 @@ jobs:
             python -m observatorio_ans
           fi
 
-      - name: Versionar o histórico de beneficiários
+      - name: Versionar histórico de beneficiários e conferência com a ANS
         run: |
+          mkdir -p dados/resultados
+          cp dados/ouro/conciliacao_ans.csv dados/ouro/relatorio_qualidade.json dados/resultados/
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add dados/historico
+          git add dados/historico dados/resultados
           if ! git diff --cached --quiet; then
-            git commit -m "Observatório: atualiza histórico de beneficiários"
+            git commit -m "Observatório: atualiza dados versionados"
             git pull --rebase
             git push
           fi
