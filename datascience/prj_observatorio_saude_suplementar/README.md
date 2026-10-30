@@ -125,8 +125,8 @@ ultimo = ops.query("periodo == periodo.max() and janela == '12_meses' and amostr
 
 O projeto fica nesta pasta do repositório `portfolio`; os workflows do GitHub Actions ficam na raiz do repositório
 (`.github/workflows/observatorio-testes.yml` e `observatorio-atualizar.yml`), porque o GitHub só executa workflows de
-lá. O passo a passo (ligar o GitHub Pages, disparar a primeira atualização e copiar o projeto para um repositório
-próprio) está em [docs/como-publicar.md](docs/como-publicar.md).
+lá. O painel é publicado no GitHub Pages e atualizado automaticamente todo dia 8; para atualizar na hora, rode o
+workflow "Observatório — atualizar dados e painel" na aba Actions.
 
 ## Estrutura
 
@@ -144,7 +144,7 @@ próprio) está em [docs/como-publicar.md](docs/como-publicar.md).
 │   ├── referencias/       # números oficiais usados na conferência (com fonte e link)
 │   └── templates/         # HTML do painel (sem dependências externas)
 ├── tests/                 # testes ponta a ponta contra um espelho sintético do portal
-├── docs/                  # metodologia, dicionário de indicadores, publicação
+├── docs/                  # metodologia e dicionário de indicadores
 ├── dados/historico/       # agregados pequenos de beneficiários, versionados mês a mês
 └── projeto.toml           # seus dados de autor e parâmetros do pipeline
 ```
