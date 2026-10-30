@@ -1,0 +1,32 @@
+# Estado local do bundle e artefatos de build (NUNCA versionar .whl/.jar)
+.databricks/
+build/
+dist/
+*.whl
+*.jar
+*.egg-info/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Segredos e credenciais — use secret scopes / OIDC
+.env
+.env.*
+.databrickscfg
+*.pem
+
+# Dados locais: amostras reais e PII nunca entram no git
+# (fixtures/ contém apenas dados SINTÉTICOS)
+data/
+scratch/
+*.parquet
+
+# IDE
+.idea/
+.DS_Store

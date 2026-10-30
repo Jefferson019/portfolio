@@ -1,0 +1,30 @@
+# Lakeflow Spark Declarative Pipeline (antigo DLT) — camadas bronze/silver/gold.
+# Boas práticas:
+#  - serverless: true (menos gestão de cluster, custo por uso)
+#  - catalog/schema padrão vindos das variáveis do bundle (sem hardcode)
+#  - código-fonte em arquivos .py/.sql versionados (não em notebooks)
+#  - modo triggered (padrão) — contínuo só se precisar de latência < 1 min
+resources:
+  pipelines:
+    contas_medicas_pipeline:
+      name: contas_medicas_pipeline
+      catalog: ${var.catalog}
+      schema: ${var.schema}
+      serverless: true
+      channel: CURRENT
+      photon: true
+      # A pasta raiz entra no sys.path → as transformações podem
+      # importar o pacote `contas_medicas` (lógica testável em pytest).
+      root_path: ../src
+      libraries:
+        - glob:
+            include: ../src/pipelines/contas_medicas/transformations/**
+      configuration:
+        # Parâmetros lidos no código com spark.conf.get(...)
+        contas_medicas.landing_path: /Volumes/${var.catalog}/${var.schema}/landing/contas_medicas
+      notifications:
+        - email_recipients:
+            - ${var.notification_email}
+          alerts:
+            - on-update-failure
+            - on-update-fatal-failure

@@ -1,0 +1,96 @@
+# =============================================================================
+# Declarative Automation Bundle (antigo "Databricks Asset Bundle" / DAB)
+# Projeto: contas_medicas — pipeline medalhão de contas médicas (dados sintéticos)
+#
+# Boas práticas aplicadas aqui:
+#  - UM bundle por produto/time, cobrindo TODOS os ambientes (dev/staging/prod)
+#  - Nada hardcoded por ambiente: tudo via `variables` + `targets`
+#  - dev em `mode: development` (prefixo [dev usuario], schedules pausados)
+#  - prod em `mode: production` rodando como SERVICE PRINCIPAL (run_as)
+#  - Deploy em pasta do time/SP, nunca em /Workspace/Shared
+# Docs: https://docs.databricks.com/dev-tools/bundles/
+# =============================================================================
+bundle:
+  name: contas_medicas
+  # Garante que todo mundo use uma versão compatível do CLI
+  databricks_cli_version: ">= 0.250.0"
+
+include:
+  - resources/*.yml
+
+# Wheel do pacote Python em src/contas_medicas, construído a cada deploy.
+artifacts:
+  contas_medicas_whl:
+    type: whl
+    path: .
+    build: uv build --wheel
+    # Versão única por build → evita cache de dependências no serverless
+    dynamic_version: true
+
+variables:
+  catalog:
+    description: Catálogo do Unity Catalog (um por ambiente)
+  schema:
+    description: Schema de destino
+  warehouse_id:
+    description: SQL Warehouse usado pelo job de metadados (comentários de tabela)
+  notification_email:
+    description: E-mail para alertas de falha
+    default: dados@example.com
+  run_as_sp:
+    description: Application ID do service principal que executa em staging/prod
+    default: ""
+
+# Tags aplicadas a todos os recursos (custos/governança)
+presets:
+  tags:
+    projeto: contas_medicas
+    dominio: saude_suplementar
+
+targets:
+  # ---------------------------------------------------------------- DEV ----
+  dev:
+    mode: development # prefixa recursos com [dev <usuario>] e pausa schedules
+    default: true
+    workspace:
+      host: https://adb-DEV.azuredatabricks.net # TODO: troque pelo seu workspace de dev
+    variables:
+      catalog: dev
+      # Schema pessoal por desenvolvedor → ninguém pisa no dado do outro
+      schema: ${workspace.current_user.short_name}
+      warehouse_id: "TODO_WAREHOUSE_DEV"
+
+  # ------------------------------------------------------------ STAGING ----
+  staging:
+    mode: production
+    workspace:
+      host: https://adb-STAGING.azuredatabricks.net # TODO
+      root_path: /Workspace/Users/${var.run_as_sp}/.bundle/${bundle.name}/${bundle.target}
+    variables:
+      catalog: staging
+      schema: contas_medicas
+      warehouse_id: "TODO_WAREHOUSE_STG"
+    run_as:
+      service_principal_name: ${var.run_as_sp}
+    permissions:
+      - group_name: engenharia-dados
+        level: CAN_VIEW
+
+  # --------------------------------------------------------------- PROD ----
+  prod:
+    mode: production
+    workspace:
+      host: https://adb-PROD.azuredatabricks.net # TODO
+      root_path: /Workspace/Users/${var.run_as_sp}/.bundle/${bundle.name}/${bundle.target}
+    variables:
+      catalog: prod
+      schema: contas_medicas
+      warehouse_id: "TODO_WAREHOUSE_PRD"
+    run_as:
+      service_principal_name: ${var.run_as_sp}
+    permissions:
+      # CAN_MANAGE só para os donos; demais só visualizam
+      - group_name: engenharia-dados-admins
+        level: CAN_MANAGE
+      - group_name: engenharia-dados
+        level: CAN_VIEW

@@ -1,0 +1,15 @@
+{
+  "python.testing.pytestEnabled": true,
+  "python.testing.pytestArgs": ["tests"],
+  "python.analysis.extraPaths": ["src"],
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true
+  },
+  "yaml.schemas": {
+    "./.vscode/bundle_schema.json": [
+      "databricks.yml",
+      "resources/*.yml"
+    ]
+  }
+}

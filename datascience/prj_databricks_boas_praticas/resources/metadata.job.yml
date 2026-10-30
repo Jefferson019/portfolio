@@ -1,0 +1,19 @@
+# Job de METADADOS: comentários de tabelas/colunas tratados como código.
+# A documentação oficial recomenda manter os comentários em .sql junto do
+# bundle e aplicá-los por um job, para que as definições de negócio fiquem
+# sempre corretas no Unity Catalog.
+resources:
+  jobs:
+    contas_medicas_metadata_job:
+      name: contas_medicas_metadata_job
+      parameters:
+        - name: catalog
+          default: ${var.catalog}
+        - name: schema
+          default: ${var.schema}
+      tasks:
+        - task_key: aplicar_comentarios
+          sql_task:
+            warehouse_id: ${var.warehouse_id}
+            file:
+              path: ../src/sql/metadata/comments.sql
