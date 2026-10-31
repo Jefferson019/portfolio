@@ -1,0 +1,86 @@
+name: Eleições TSE — baixar dados e analisar
+
+# Baixa os arquivos diretamente do repositório de dados abertos do TSE, roda a análise em Python
+# e grava os resultados (tabelas + relatório) de volta na mesma branch. Os .zip originais do TSE
+# e as tabelas intermediárias ficam disponíveis como artifact da execução.
+on:
+  workflow_dispatch:
+    inputs:
+      anos:
+        description: "Anos de eleição geral, separados por espaço"
+        type: string
+        default: "2018 2022"
+  push:
+    paths:
+      - "datascience/prj_eleicoes_tse/src/**"
+      - "datascience/prj_eleicoes_tse/pyproject.toml"
+      - ".github/workflows/eleicoes-atualizar.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: eleicoes-tse-${{ github.ref }}
+  cancel-in-progress: false
+
+defaults:
+  run:
+    working-directory: datascience/prj_eleicoes_tse
+
+jobs:
+  analisar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      ANOS: ${{ inputs.anos || '2018 2022' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: datascience/prj_eleicoes_tse/pyproject.toml
+
+      - name: Restaurar arquivos já baixados do TSE
+        uses: actions/cache@v4
+        with:
+          path: datascience/prj_eleicoes_tse/dados/bronze
+          key: tse-bronze-${{ env.ANOS }}-${{ github.run_id }}
+          restore-keys: tse-bronze-${{ env.ANOS }}-
+
+      - name: Instalar
+        run: pip install ".[parquet]"
+
+      - name: Baixar do TSE e analisar
+        run: |
+          set +e
+          python -m eleicoes_tse --anos $ANOS --refazer
+          codigo=$?
+          set -e
+          if [ "$codigo" = "1" ]; then
+            echo "::warning::Totais calculados divergem do resultado oficial — veja dados/resultados/conferencia_tse.csv"
+          elif [ "$codigo" != "0" ]; then
+            exit "$codigo"
+          fi
+
+      - name: Guardar os arquivos originais do TSE e as tabelas intermediárias
+        uses: actions/upload-artifact@v4
+        with:
+          name: dados-tse-${{ github.run_id }}
+          path: |
+            datascience/prj_eleicoes_tse/dados/bronze
+            datascience/prj_eleicoes_tse/dados/prata
+          compression-level: 0
+          retention-days: 90
+
+      - name: Gravar resultados e relatório na branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dados/resultados relatorio
+          if ! git diff --cached --quiet; then
+            git commit -m "Eleições TSE: atualiza resultados e relatório ($ANOS)"
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi

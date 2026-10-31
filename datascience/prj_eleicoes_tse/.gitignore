@@ -1,0 +1,14 @@
+# Arquivos originais do TSE e tabelas intermediárias (recriados pelo pipeline)
+dados/bronze/
+dados/prata/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+build/
+dist/
