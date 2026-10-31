@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-10-31 03:32 UTC",
+  "gerado_em": "2026-10-31 12:32 UTC",
   "anos": [
     2018,
     2022
@@ -34,24 +34,24 @@
       "ano": 2022,
       "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_candidato_munzona/votacao_candidato_munzona_2022.zip",
       "arquivo": "votacao_candidato_munzona_2022.zip",
-      "bytes": 567870643,
-      "sha256": "f01ac506fbd33e9507dcb29305ec5841501479ea0d36b4be49793e132c99a1d7"
+      "bytes": 575880779,
+      "sha256": "8f1328df3d2ad8d133a706fd05979ce455a3fa4bae92e3f8a46b7cc1a9f8f108"
     },
     {
       "conjunto": "detalhe_votacao_munzona",
       "ano": 2022,
       "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/detalhe_votacao_munzona/detalhe_votacao_munzona_2022.zip",
       "arquivo": "detalhe_votacao_munzona_2022.zip",
-      "bytes": 4446907,
-      "sha256": "ae8bf91a62eb00dcaf60c4085f2a83dcde3b005e822c088164439cee69be1159"
+      "bytes": 4449562,
+      "sha256": "8d364bd339ac72a10ef38013c258f620fb36e5d8a784f9ed84b6669b34782b5d"
     },
     {
       "conjunto": "consulta_cand",
       "ano": 2022,
       "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2022.zip",
       "arquivo": "consulta_cand_2022.zip",
-      "bytes": 4441736,
-      "sha256": "d8fda23be824e31212878106d051ab7ac8f9f0af117b497c332fc6d5040151d8"
+      "bytes": 4440845,
+      "sha256": "b3377448a6b6607a0f92577bed1bb92d71542bf6760e4a43dfc1d2ea0234d8cf"
     }
   ],
   "conferencia_ok": true,

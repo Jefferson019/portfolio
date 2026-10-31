@@ -1,6 +1,6 @@
 # Eleições gerais no Brasil — análise com os dados abertos do TSE
 
-Relatório gerado automaticamente em **2026-10-31 03:32 UTC** por `python -m eleicoes_tse` a partir dos arquivos baixados do repositório de dados abertos do TSE ([cdn.tse.jus.br/estatistica/sead/odsele](https://dadosabertos.tse.jus.br/)). Anos analisados: **2018, 2022**. As tabelas usadas em cada número estão em [`dados/resultados/`](../dados/resultados/).
+Relatório gerado automaticamente em **2026-10-31 12:32 UTC** por `python -m eleicoes_tse` a partir dos arquivos baixados do repositório de dados abertos do TSE ([cdn.tse.jus.br/estatistica/sead/odsele](https://dadosabertos.tse.jus.br/)). Anos analisados: **2018, 2022**. As tabelas usadas em cada número estão em [`dados/resultados/`](../dados/resultados/).
 
 ## 1. Resultado nacional para presidente
 
@@ -191,8 +191,8 @@ Arquivos originais baixados nesta execução (o SHA-256 permite conferir que sã
 | 2018 | votacao_candidato_munzona | [votacao_candidato_munzona_2018.zip](https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_candidato_munzona/votacao_candidato_munzona_2018.zip) | 395.4 MB | `f880848ef4ba340b…` |
 | 2018 | detalhe_votacao_munzona | [detalhe_votacao_munzona_2018.zip](https://cdn.tse.jus.br/estatistica/sead/odsele/detalhe_votacao_munzona/detalhe_votacao_munzona_2018.zip) | 4.3 MB | `df68c258a2261dff…` |
 | 2018 | consulta_cand | [consulta_cand_2018.zip](https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2018.zip) | 4.7 MB | `57f6881f1aa03614…` |
-| 2022 | votacao_candidato_munzona | [votacao_candidato_munzona_2022.zip](https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_candidato_munzona/votacao_candidato_munzona_2022.zip) | 567.9 MB | `f01ac506fbd33e95…` |
-| 2022 | detalhe_votacao_munzona | [detalhe_votacao_munzona_2022.zip](https://cdn.tse.jus.br/estatistica/sead/odsele/detalhe_votacao_munzona/detalhe_votacao_munzona_2022.zip) | 4.4 MB | `ae8bf91a62eb00dc…` |
-| 2022 | consulta_cand | [consulta_cand_2022.zip](https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2022.zip) | 4.4 MB | `d8fda23be824e312…` |
+| 2022 | votacao_candidato_munzona | [votacao_candidato_munzona_2022.zip](https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_candidato_munzona/votacao_candidato_munzona_2022.zip) | 575.9 MB | `8f1328df3d2ad8d1…` |
+| 2022 | detalhe_votacao_munzona | [detalhe_votacao_munzona_2022.zip](https://cdn.tse.jus.br/estatistica/sead/odsele/detalhe_votacao_munzona/detalhe_votacao_munzona_2022.zip) | 4.4 MB | `8d364bd339ac72a1…` |
+| 2022 | consulta_cand | [consulta_cand_2022.zip](https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2022.zip) | 4.4 MB | `b3377448a6b6607a…` |
 
 Observações metodológicas: votos de presidente somados por município a partir dos arquivos por município e zona (`votacao_candidato_munzona`); percentuais sobre votos válidos (exclui brancos e nulos), como na divulgação oficial; o código de município é o do TSE (não o do IBGE); `ZZ` = votos no exterior.
