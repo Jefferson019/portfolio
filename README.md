@@ -19,6 +19,7 @@ Este é o repositório dos meus projetos pessoais.
 
 ## Projetos em Destaque  
 - ✅ **[Observatório da Saúde Suplementar](datascience/prj_observatorio_saude_suplementar)** — sinistralidade e indicadores econômico-financeiros de todas as operadoras de planos de saúde, calculados a partir dos dados abertos da ANS, com conferência automática contra os números oficiais e atualização mensal. **[Ver painel](https://jefferson019.github.io/portfolio/observatorio-saude-suplementar/)**  
+- ✅ **[Eleições gerais no Brasil](datascience/prj_eleicoes_tse)** — resultado presidencial por UF e município, participação e perfil das candidaturas em 2018 e 2022, com dados baixados direto do TSE, análise em Python e conferência automática contra o resultado oficial. **[Ver relatório](datascience/prj_eleicoes_tse/relatorio/RELATORIO.md)**  
 - ✅ **Detecção de anomalias em contas médicas** com métodos estatísticos e ML (IQR, 3 Sigmas, Isolation Forest, centroides).  
 - ✅ **Forecasting de despesas assistenciais** com ARIMA, SARIMA, Prophet e LSTM.  
 - ✅ **Pipeline OCR + NLP + deduplicação de documentos médicos em tempo real** com Spark Streaming + Kafka.  

@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eleicoes-tse"
+version = "0.1.0"
+description = "Análise das eleições gerais brasileiras a partir dos dados abertos do TSE"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Jefferson Marques da Silva" }]
+keywords = ["TSE", "eleições", "dados abertos", "presidente", "abstenção", "candidaturas"]
+dependencies = [
+    "pandas>=2.1",
+    "numpy>=1.26",
+    "requests>=2.31",
+    "matplotlib>=3.8",
+]
+
+[project.optional-dependencies]
+parquet = ["pyarrow>=15"]
+dev = ["pytest>=8", "ruff>=0.5"]
+
+[project.scripts]
+eleicoes-tse = "eleicoes_tse.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+eleicoes_tse = ["referencias/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["E501"]

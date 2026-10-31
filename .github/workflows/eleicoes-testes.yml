@@ -1,0 +1,32 @@
+name: Eleições TSE — testes
+
+on:
+  push:
+    paths:
+      - "datascience/prj_eleicoes_tse/**"
+      - ".github/workflows/eleicoes-*.yml"
+  pull_request:
+    paths:
+      - "datascience/prj_eleicoes_tse/**"
+      - ".github/workflows/eleicoes-*.yml"
+
+defaults:
+  run:
+    working-directory: datascience/prj_eleicoes_tse
+
+jobs:
+  testes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: datascience/prj_eleicoes_tse/pyproject.toml
+      - name: Instalar
+        run: pip install -e ".[dev]"
+      - name: Lint
+        run: ruff check . && ruff format --check .
+      - name: Testes (espelho sintético do TSE, sem acesso à internet)
+        run: pytest -q
